@@ -1,0 +1,289 @@
+/*
+ * Styles for Admin Panel
+ */
+
+:root {
+  --tip_bg: #f2f2f2;
+  --block_head_bg: #e2e2e2;
+  --block_border: #e2e2e2;
+  --block_head_color: #3b3b3b;
+  --block_header_summary_color: #767676;
+  --block_hover_bg: #f6f6f6;
+  --th_bg: #f3f3f3;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.scroll-wrap {
+  border: solid 1px #ccc;
+  overflow-y: auto;
+  position: relative;
+  padding: 0 20px;
+}
+
+.fieldgroup_unseen.scroll-wrap {
+  border: solid 1px #ccc !important;
+  overflow-y: auto !important;
+  padding: 0 20px !important;
+  position: relative !important;
+}
+
+.scroll-wrap > .fieldset__wrapper {
+  position: absolute;
+  width: 100%;
+}
+
+.layout-region--node-main,
+.layout-region--node-footer {
+  width: calc(100% - 500px) !important;
+}
+.layout-region--node-secondary {
+  width: 500px !important;
+}
+@media only screen and (max-width: 1600px)  {
+  .layout-region--node-main,
+  .layout-region--node-footer,
+  .layout-region--node-secondary {
+    float: none !important;
+    width: 100% !important;
+  }
+}
+
+.display--none {
+  display: none !important;
+}
+
+.js .paragraphs-subform {
+  margin-top: 0 !important;
+}
+
+.js .paragraphs-subform .field-multiple-table thead {
+  display: none;
+}
+
+.field--widget-paragraphs th {
+  background: var(--th_bg);
+}
+
+.js .paragraphs-description .summary-content {
+  color: var(--block_header_summary_color) !important;
+}
+
+.field--widget-paragraphs tr:hover,
+.field--widget-paragraphs tr:focus {
+  background: white;
+  background-image: radial-gradient(var(--block_hover_bg) 1px, transparent 0);
+  background-size: 10px 10px;
+}
+
+.field--type-entity-reference-revisions:not(.field--name-field-widgets) {
+  border: solid 2px var(--block_border);
+  padding: 0 20px;
+}
+
+.js .field--type-entity-reference-revisions .paragraph-type-title {
+  font-weight: bold;
+  font-size: 20px;
+  flex-basis: calc(100% - 100px);
+}
+
+.field--type-entity-reference-revisions .paragraph-type-top,
+.paragraph-top {
+  align-items: center;
+  background: var(--block_head_bg);
+  color: var(--block_head_color);
+  font-weight: bold;
+  padding: 0px 20px;
+  grid-template-columns: auto auto 1fr auto !important;
+}
+
+.field--widget-entity-reference-paragraphs .field-multiple-table,
+.field--widget-entity-reference-paragraphs .field-multiple-table th,
+.field--widget-entity-reference-paragraphs .field-multiple-table td {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+.js .field--widget-entity-reference-paragraphs .field-multiple-table td {
+  padding: 20px;
+}
+
+.js .field--widget-entity-reference-paragraphs .field-multiple-table td.field-multiple-drag {
+  padding: 0;
+}
+.js .field--widget-entity-reference-paragraphs .field-multiple-table td .tabledrag-handle {
+  display: table-cell !important;
+}
+.js .field--widget-entity-reference-paragraphs .field-multiple-table td .tabledrag-handle::after {
+  margin-left: 0px;
+  padding: 0 5px;
+  width: 20px;
+}
+
+.js .field--widget-entity-reference-paragraphs .field-multiple-table td.delta-order {
+  padding: 0;
+  text-align: center;
+  width: 0;
+}
+
+.filter-wrapper {
+  margin-left: 40px;
+}
+.form-type--textfield + .filter-wrapper {
+  display: none;
+}
+
+.filter-guidelines {
+  position: relative;
+}
+
+.field-multiple-table td {
+  position: relative;
+}
+
+.entities-list.entity-type--media .item-container {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.entities-list.entity-type--media .item-container .button {
+  margin: 0;
+  flex: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.layout-region--node-secondary,
+.layout-region--node-main,
+.layout-region--node-footer {
+  margin: 0 !important;
+  padding: 0 10px !important;
+}
+
+.layout-region--node-main .layout-region__content,
+.layout-region--node-footer .layout-region__content {
+  margin: 0 !important;
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+.vertical-tabs__menu-link:focus::after {
+  border-color: #d9dff2 !important;
+}
+
+.fieldset.fieldset_ip_pro_tips {
+  background: var(--tip_bg);
+  border: none;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.fieldset_ip_pro_tips .fieldset__legend {
+  display: none;
+}
+.fieldset_ip_pro_tips .fieldset__wrapper {
+  margin: 10px !important;
+}
+
+.js .claro-details__wrapper--vertical-tabs-item::before {
+  display: inline !important;
+}
+.js .vertical-tabs .vertical-tabs__item {
+  overflow: visible !important;
+}
+
+/*
+ * Field group styles
+ */
+.fieldgroup_row > .fieldset__wrapper,
+.fieldgroup_row > .details-wrapper {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+
+.fieldgroup_row.align-top > .fieldset__wrapper,
+.fieldgroup_row.align-top > .details-wrapper {
+  align-items: flex-start;
+}
+
+.fieldgroup_row.stretch > .fieldset__wrapper,
+.fieldgroup_row.stretch > .details-wrapper {
+  align-items: stretch;
+}
+
+.fieldgroup_row.full > .fieldset__wrapper > *,
+.fieldgroup_row.full > .details-wrapper > * {
+  flex: 1;
+  overflow: hidden;
+}
+
+.fieldgroup_row .media-library-selection .media-library-item--grid {
+  width: 100%;
+}
+
+.fieldgroup_unseen {
+  box-shadow: none !important;
+  border: none !important;
+  margin-block: 0 !important;
+}
+
+.fieldgroup_unseen > legend {
+  display: none !important;
+}
+
+.fieldgroup_unseen > .fieldset__wrapper,
+.fieldgroup_unseen > .details-wrapper {
+  margin: 0 !important;
+}
+
+/*
+ * Field specific styles
+ */
+
+.tablefield-table-wrapper {
+  max-width: calc(100vw - 800px);
+  overflow-x: auto;
+}
+@media only screen and (max-width: 1600px)  {
+  .tablefield-table-wrapper {
+    max-width: calc(100vw - 300px);
+  }
+}
+
+
+.field--name-field-umdt-ct-article-topics .form-checkboxes,
+.field--name-field-umdt-ct-article-college .form-checkboxes,
+.field--name-field-umdt-ct-article-social-id .form-checkboxes {
+  column-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.field--name-field-umdt-ct-article-topics .form-checkboxes .form-item__label.option {
+  white-space: nowrap;
+}
+
+.field--name-field-terms-offered .form-checkboxes {
+  column-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.field--name-field-tags .form-checkboxes {
+  column-gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.field--name-field-user-driver-license input.form-text {
+  color: #fff;
+}

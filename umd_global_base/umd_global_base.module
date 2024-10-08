@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * umd_global_base module file.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Admin panel specific style/js file importing process.
+ */
+function umd_global_base_page_attachments(array &$attachments) {
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'umd_global_base/admin';
+  }
+}
+
+include __DIR__ . '/inc/utils.module.php';
+include __DIR__ . '/inc/node.module.php';
+include __DIR__ . '/inc/paragraphs.module.php';
+include __DIR__ . '/inc/template.module.php';
+include __DIR__ . '/inc/view.module.php';

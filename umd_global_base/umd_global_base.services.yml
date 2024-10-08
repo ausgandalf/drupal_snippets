@@ -1,0 +1,6 @@
+services:
+  umd_global_base.customtwigfilters_extension:
+    class: Drupal\umd_global_base\TwigExtension\CustomTwigFilters
+    arguments: ['@renderer']
+    tags:
+      - { name: twig.extension }
