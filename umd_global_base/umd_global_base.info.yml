@@ -2,7 +2,7 @@ name: UMD Global Base
 type: module
 description: 'Manage paragraphs and handle content type specific processes.'
 core_version_requirement: ^8 || ^9 || ^10
-package: auslee986--umd_global
+package: ausgandalf--umd_global
 libraries:
   - umd_global_base/admin
 dependencies:
