@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Onehouse_base module file.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Admin panel specific style/js file importing process.
+ */
+function onehouse_base_page_attachments(array &$attachments) {
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'onehouse_base/admin';
+  }
+}
+
+include __DIR__ . '/src/core/utils.module.php';
+include __DIR__ . '/src/core/fields.module.php';
+include __DIR__ . '/src/core/form.module.php';
+include __DIR__ . '/src/core/mail.module.php';
+include __DIR__ . '/src/core/node.module.php';
+include __DIR__ . '/src/core/paragraphs.module.php';
+include __DIR__ . '/src/core/signup.module.php';
+include __DIR__ . '/src/core/template.module.php';
+include __DIR__ . '/src/core/view.module.php';
+include __DIR__ . '/src/core/webform.module.php';

@@ -1,0 +1,67 @@
+{% set _isStandAlone = not _parent_type and not _root_type %}
+{% set _linkType = content.field_ip_text_block_link_type.0['#markup'] %}
+
+{%
+  set classes = [
+    _parent_type == 'ip_sub_item' ? '' : 'paragraph-widget',
+    'paragraph-widget--text-block',
+    _page_type == 'bidder_page' ? 'paragraph-widget--application-text',
+    _isStandAlone ? 'paragraph-widget--text-html',
+  ]
+%}
+
+{%
+  set _additional_text_content_class = 'text-content--' ~ _page_type
+%}
+
+{% block paragraph %}
+
+{% if _isStandAlone %}
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+{% endif %}
+
+  <div class="text-content {{ _additional_text_content_class }}">
+  {% block content %}
+    {% if content.field_ip_text_block_title|field_value %}
+
+      {% if _parent_type == 'ip_featured_block' %}
+        <h3>{{ content.field_ip_text_block_title|raw }}</h3>
+      {% else %}
+        <h2>{{ content.field_ip_text_block_title|raw }}</h2>
+      {% endif %}
+
+    {% endif %}
+
+    {% if content.field_ip_text_block_text|field_value %}
+
+      {% if _parent_type == 'ip_featured_block' %}
+        <div class="text-content {{ _additional_text_content_class }}">
+          {{ content.field_ip_text_block_text|raw }}
+        </div>
+      {% else %}
+        {{ content.field_ip_text_block_text|raw }}
+      {% endif %}
+
+    {% endif %}
+
+    {% if content.field_ip_text_block_links|field_value %}
+      <ul class="link-block--ul">
+        {%
+          set linkData = {
+            'links': content.field_ip_text_block_links,
+            'link_class': '',
+            'link_pre': '<li>',
+            'link_suff': '</li>',
+          }
+        %}
+        {% include directory ~ '/templates/_includes/components/_links.html.twig' with linkData %}
+      </ul>
+    {% endif %}
+  {% endblock %}
+  </div>
+
+{% if _isStandAlone %}
+</div>
+{% endif %}
+
+{% endblock paragraph %}

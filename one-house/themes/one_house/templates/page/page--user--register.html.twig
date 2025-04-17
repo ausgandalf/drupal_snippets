@@ -1,0 +1,38 @@
+{% extends "page.html.twig" %}
+
+{% set page_content_class = 'content--user content--user-guest content--signup' %}
+
+{% block page_hero %}
+	{%
+		set heroData = {
+			'hero' : {
+				'custom_breadcrumbs': [
+					{
+						'url': '/',
+						'title': 'Home'
+					},
+					{
+						'title': 'Sign Up'
+					}
+				],
+				'title': page_title,
+			}
+		}
+	%}
+	{% include directory ~ '/templates/_includes/components/hero.html.twig' with heroData %}
+{% endblock %}
+
+{% block content %}
+<div class="property-block property-block--register layout--2cols">
+	<div class="column--left">
+		<div class="inner">
+			{{ page.content }}
+		</div>
+	</div>
+	<div class="column--right">
+		<div class="inner text-content">
+			{{ _guide|raw }}
+		</div>
+	</div>
+</div>
+{% endblock %}

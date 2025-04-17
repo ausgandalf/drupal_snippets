@@ -1,0 +1,152 @@
+.paragraph-widget--how-we-work{
+    h2{
+        font-size:rem(55);
+    }
+    p{
+        font-size:rem(20);
+        max-width:rem(800);
+        margin-inline:auto;
+        line-height: rem(32);
+        margin-bottom:rem(30);
+        @include mq($min, $lg_desktop) {
+            font-size:rem(22);
+            line-height: rem(28);
+        }
+    }
+    .button{
+        margin-block:rem(25);
+    }
+}
+
+.how-we-work{
+    margin-top:rem(40);
+    margin-bottom:rem(100);
+    padding:rem(50) rem(38);
+    background-color:#fafafa;
+    position:relative;
+    @extend %negate-outer-pad-x;
+    @include mq($min, $tablet){
+        width:100%;
+        padding-block:0;
+        background-color:#fff;
+        margin-inline:auto;
+    }
+    .how-we-work__container{
+        display:flex;
+        gap:rem(10);
+        overflow-x:auto;
+        overflow-y:hidden;
+        scroll-behavior: smooth;
+        max-width:rem(1120);
+        margin-inline:auto;
+        &::-webkit-scrollbar{
+            display:none;
+        }
+        .how-we-work_icon{
+            width:rem(160);
+            @include mq($min, $tablet){
+                width:rem(135);
+            }
+            svg, img {
+                width:rem(160);
+                height:rem(200);
+                @include mq($min, $tablet){
+                    width:rem(101);
+                    height:rem(125);
+                }
+            }
+
+            img {
+                object-fit: contain;
+            }
+        }
+        .how-we-work_arrow{
+            padding-top:rem(50);
+            @include mq($min, $tablet){
+                padding-top:rem(20);
+            }
+            svg{
+                width:rem(75);
+                height:rem(20);
+                @include mq($min, $tablet){
+                    width:rem(37);
+                    height:rem(8);
+                }
+            }
+        }
+        .how-we-work_label{
+            font-size:rem(23);
+            font-weight:700;
+            text-align: center;
+            margin:0;
+            line-height: rem(25);
+            color:$secondary;
+            padding-bottom:rem(40);
+        }
+    }
+    .how-we-work__mobile-nav{
+        position: absolute;
+        width:100%;
+        margin-inline:auto;
+        bottom:rem(-40);
+        left:0;
+        display:flex;
+        gap:rem(20);
+        justify-content: center;
+        @include mq($min, $tablet){
+            display:none;
+        }
+        .how-we-work__nav-previous,
+        .how-we-work__nav-next {
+        pointer-events: initial;
+        cursor: pointer;
+        width: rem(85);
+        height: rem(85);
+        background-color: $pavement;
+        transform: translateY(0);
+        transition: 0.25s box-shadow ease-in-out;
+        border: none;
+        border-radius:100%;
+        &.disabled{
+            opacity: 0.5;
+            &:hover{
+                box-shadow:none;
+            }
+        }
+        @include mq($min, $tablet) {
+            width: rem(85);
+            height: rem(85);
+        }
+        &:hover {
+            box-shadow:0px -2px 20px #00000033;
+        }
+        &::after {
+            content: "";
+            border-top: rem(5) solid $brick;
+            border-left: rem(5) solid $brick;
+            width: rem(28);
+            height: rem(28);
+            position: absolute;
+            left: calc(50% + (#{rem(14)} / 4.5));
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+            transition: 0.3s border-color ease-in-out;
+            @include mq($min, $tablet) {
+            border-width: rem(7);
+            }
+        }
+        }
+
+        .how-we-work__nav-previous {
+        left: 0;
+        }
+
+        .how-we-work__nav-next {
+        right: 0;
+        &::after {
+            left: calc(50% - (#{rem(14)} / 4.5));
+            transform: translateX(-50%) translateY(-50%) rotate(135deg);
+        }
+        }
+    }
+}

@@ -1,0 +1,172 @@
+{% extends "@pages/page-structure.twig" %}
+{% block content %}
+    {% include "@components/hero/hero--internal.twig" with internal_hero %}
+
+<div data-drupal-messages-fallback="" class="hidden"></div>
+<div class="paragraph-widget paragraph-widget--text-html paragraph-widget--body">
+    <div class="text-content">
+        <h2 class="text-align-center"><strong>Listings Lorem</strong></h2>
+        <p class="text-align-center">This page is a full list of properties that can be filtered to suit your needs Lorem Ipsum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="text-align-center"><a href="#">Become a Bidder</a></p>
+    </div>
+</div>
+<div class="paragraph-widget paragraph-widget--property-finder" id="ip_paragraph_adv-1">
+    <div class="tabs">
+        <div class="tabs__nav">
+            <ul>
+                <li>
+                    <button class="tabs__nav__button active" id="tab__toggle__sale" aria-controls="tab__sale">For Sale</button>
+                </li>
+                <li>
+                    <button class="tabs__nav__button" id="tab__toggle__sold" aria-controls="tab__sold">Previously Sold</button>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs__content">
+            <div class="tabs__content__tab active" id="tab__sale" aria-hidden="false" aria-labelledby="tab__toggle__sale">
+                <div class="views-element-container">
+                    <div class="js-view-dom-id-57ecd88b00873ede5fe72157a7a537ed01f225a736103af226649125f65ae944 view--property-list view--property-list--block_sale" data-once="ajax-pager">
+                        <form class="views-exposed-form" data-drupal-selector="views-exposed-form-property-list-block-sale" action="/properties" method="get" id="views-exposed-form-property-list-block-sale" accept-charset="UTF-8" data-once="exposed-form">
+                            <div class="js-form-item form-item js-form-type-input form-item-search js-form-item-searcy">
+                                <label for="edit-search">Search Street or Neighborhood</label>
+                                <input type="text" id="edit-search" name="search" class="form-input" />
+                                <div class="form-item-search--icon">
+                                    <svg aria-hidden="false" width="38" height="25">
+                                        <use xlink:href="#icon-onehouse_search_icon"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="js-form-item form-item js-form-type-select form-item-zip-code js-form-item-zip-code">
+                                <label for="edit-zip-code">Zip</label>
+                                <select data-drupal-selector="edit-zip-code" id="edit-zip-code" name="zip_code" class="form-select">
+                                    <option value="All" selected="selected">All</option>
+                                    <option value="2">21218</option>
+                                </select>
+                            </div>
+                            <div class="js-form-item form-item js-form-type-select form-item-status js-form-item-status">
+                                <label for="edit-status">Type</label>
+                                <select data-drupal-selector="edit-status" id="edit-status" name="status" class="form-select">
+                                    <option value="All" selected="selected">All</option>
+                                    <option value="0">Auction</option>
+                                    <option value="2">Sold</option>
+                                    <option value="1">Immediate Sale</option>
+                                    <option value="3">Under Contract</option>
+                                </select>
+                            </div>
+                            <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                                <input data-drupal-selector="edit-submit-property-list" type="submit" id="edit-submit-property-list" value="Browse" class="button js-form-submit form-submit">
+                            </div>
+                        </form>
+
+                        {% include "@components/property-cards/property-card-set.twig" with sale_properties %}
+
+                        <div class="pagination">
+                            <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+                                <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+                                <ul class="pager__items js-pager__items">
+                                    <li class="pager__item is-active">
+                                        <a href="?page=0" title="Current page"><span class="visually-hidden"> Current page </span>1</a>
+                                    </li>
+                                    <li class="pager__item">
+                                        <a href="?page=1" title="Go to page 2"><span class="visually-hidden"> Page </span>2</a>
+                                    </li>
+                                    <li class="pager__item">
+                                        <a href="?page=2" title="Go to page 3"><span class="visually-hidden"> Page </span>3</a>
+                                    </li>
+                                    <li class="pager__item pager__item--next">
+                                        <a href="?page=1" title="Go to next page" rel="next">
+                                            <span class="visually-hidden">Next page</span>
+                                            <span aria-hidden="true"><svg aria-hidden="false" width="38" height="25">
+                                            <use xlink:href="#icon-onehouse_pagination_arrow"></use>
+                                        </svg></span>
+                                        </a>
+                                    </li>
+                                    <li class="pager__item pager__item--last">
+                                        <a href="?page=2" title="Go to last page">
+                                            <span class="visually-hidden">Last page</span>
+                                            <span aria-hidden="true"><svg aria-hidden="false" width="38" height="25">
+                                                <use xlink:href="#icon-onehouse_pagination_doublearrow"></use>
+                                            </svg></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="tabs__content__tab" id="tab__sold" aria-hidden="true" aria-labelledby="tab__toggle__sold">
+                <div class="views-element-container">
+                    <div class="js-view-dom-id-b12cd4bde986e121f7fdf8a4dfa5abbce5137d18179ae87101438229af2e6825 view--property-list view--property-list--block_sold" data-once="ajax-pager">
+                        <form class="views-exposed-form" data-drupal-selector="views-exposed-form-property-list-block-sold" action="/properties" method="get" id="views-exposed-form-property-list-block-sold" accept-charset="UTF-8" data-once="exposed-form">
+                            <div class="js-form-item form-item js-form-type-input form-item-search js-form-item-searcy">
+                                <label for="edit-search--2">Search Street or Neighborhood</label>
+                                <input type="text" id="edit-search--2" name="search" class="form-input" />
+                                <div class="form-item-search--icon">
+                                    <svg aria-hidden="false" width="38" height="25">
+                                        <use xlink:href="#icon-onehouse_search_icon"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="js-form-item form-item js-form-type-select form-item-zip-code js-form-item-zip-code">
+                                <label for="edit-zip-code--2">Zip</label>
+                                <select data-drupal-selector="edit-zip-code" id="edit-zip-code--2" name="zip_code" class="form-select">
+                                    <option value="All" selected="selected">- Any -</option>
+                                    <option value="2">21218</option>
+                                </select>
+                            </div>
+                            <div class="js-form-item form-item js-form-type-select form-item-status js-form-item-status">
+                                <label for="edit-status--2">Type</label>
+                                <select data-drupal-selector="edit-status" id="edit-status--2" name="status" class="form-select">
+                                    <option value="All" selected="selected">- Any -</option>
+                                    <option value="0">Auction</option>
+                                    <option value="2">Sold</option>
+                                    <option value="1">Immediate Sale</option>
+                                    <option value="3">Under Contract</option>
+                                </select>
+                            </div>
+                            <div class="js-form-item form-item js-form-type-select form-item-year-sold js-form-item-year-sold">
+                                <label for="edit-year-sold">Year Sold</label>
+                                <select data-drupal-selector="edit-year-sold" id="edit-year-sold" name="year_sold" class="form-select">
+                                    <option value="All" selected="selected">- Any -</option>
+                                </select>
+                            </div>
+                            <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2">
+                                <input data-drupal-selector="edit-submit-property-list-2" type="submit" id="edit-submit-property-list--2" value="Browse" class="button js-form-submit form-submit" />
+                            </div>
+                        </form>
+                        {% include "@components/property-cards/property-card-set.twig" with sold_properties %}
+                        <div class="pagination">
+                            <nav class="pager" role="navigation" aria-labelledby="pagination-heading--2">
+                                <h4 id="pagination-heading--2" class="visually-hidden">Pagination</h4>
+                                <ul class="pager__items js-pager__items">
+                                    <li class="pager__item is-active">
+                                        <a href="?page=0" title="Current page"><span class="visually-hidden"> Current page </span>1</a>
+                                    </li>
+                                    <li class="pager__item">
+                                        <a href="?page=1" title="Go to page 2"><span class="visually-hidden"> Page </span>2</a>
+                                    </li>
+                                    <li class="pager__item">
+                                        <a href="?page=2" title="Go to page 3"><span class="visually-hidden"> Page </span>3</a>
+                                    </li>
+                                    <li class="pager__item pager__item--next">
+                                        <a href="?page=1" title="Go to next page" rel="next"><span class="visually-hidden">Next page</span><span aria-hidden="true"><svg aria-hidden="false" width="38" height="25">
+                                            <use xlink:href="#icon-onehouse_pagination_arrow"></use>
+                                        </svg></span>
+                                        </a>
+                                    </li>
+                                    <li class="pager__item pager__item--last">
+                                        <a href="?page=2" title="Go to last page"><span class="visually-hidden">Last page</span> <span aria-hidden="true"><svg aria-hidden="false" width="38" height="25">
+          <use xlink:href="#icon-onehouse_pagination_doublearrow"></use>
+        </svg></span></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

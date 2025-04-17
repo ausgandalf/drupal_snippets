@@ -1,0 +1,98 @@
+<style>
+  .welcome-page {
+    padding: 30px 50px;
+    max-width: 1100px;
+    margin-inline: auto;
+  }
+  .welcome-page h1 {
+    font-size: 60px;
+    color: #6638B6;
+    line-height: 1.1
+  }
+  .welcome-page h2 {
+    font-size: 40px;
+  }
+  .welcome-page h3 {
+    font-size: 24px;
+  }
+  .welcome-page code,
+  .welcome-page pre {
+    background-color: #ffecd1;
+    padding: 1px 10px;
+    margin-inline: 5px;
+    display: inline;
+  }
+  .welcome-page pre {
+    padding: 1px 0;
+  }
+  .welcome-page ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  .welcome-page a {
+    color: #6638B6;
+    font-weight: bold;
+    text-decoration: none;
+  }
+</style>
+<div class="welcome-page">
+  <h1>idfive pattern lab component library (starter version)</h1>
+
+  <p>The idfive component library is a front-end framework/starter, focusing on functionality over opinionated styles. It features purposeful and semantic HTML, minimal JavaScript, and SASS variables for easy customization.</p>
+
+  <p>It is designed to be modified once downloaded, and all CSS/JS/etc to be modified per specific project. It acts as a starter, with common, accessible components present in a vanilla way, that can be used or not, and styles as needed.</p>
+
+  <h2>Installation</h2>
+
+  <h3>Scaffolding</h3>
+  <p>Depending on the project, this can be downloaded/cloned in several different places, but best practice is to keep the folder named
+    <code>idfive-pattern-lab-starter</code>, wherever you choose to utilize it.
+    <br>
+    For example:<br>
+    Drupal:
+    <code>/themes/custom/client_theme/idfive-pattern-lab-starter</code>
+  </p>
+
+
+  <h3>Remove .git tracking</h3>
+  <p>Remove the repo git, as the desire is to commit all to your new client theme:
+    <code>rm -R .git</code>
+  </p>
+
+  <h3>Dependencies</h3>
+
+  <p>Dependencies need to be installed with
+    <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank">node/npm</a>, and is best pinned to stable versions via
+    <a href="https://github.com/nvm-sh/nvm" target="_blank">nvm</a>. More on
+    <a href="https://developers.idfive.com/#/front-end/node" target="_blank">node usage at idfive</a>.</p>
+  <pre>- cd spscc-frontend
+- nvm use
+- npm install</pre>
+
+  <h2>Development</h2>
+
+  <p>The component library includes
+    <a href="https://patternlab.io/" target="_blank">Pattern Lab</a>
+    for component based development. Your own components can be added to the
+    <code>source/_patterns/components</code>
+    folder. Static assets such as JavaScript, CSS and images will be served out of the
+    <code>build</code>
+    folder.</p>
+
+  <h3>To start the development server:</h3>
+  <pre>- cd spscc-frontend
+- nvm use (if you haven't previously done so, this uses version 19.0.0, so you may need to install)
+- npm run develop</pre>
+
+    <h3>Building for production</h3>
+
+    <p>To build your code for production, run the following:</p>
+    <pre>- npm run develop (this will need to be run to build the pattern lab files)
+- build:all (this will minify the css and js files)</pre>
+    <p>The <code>public</code> folder contains all of your compiled assets (CSS, JavaScript etc.) and contains a static generated version of your Fractal component library, which can be used for previews and an online 
+    reference to your component library</p>
+
+    <h2>More Information</h2>
+    <p>For more information see the <code>README.md</code> file at the root of this repository</p>
+
+</div>

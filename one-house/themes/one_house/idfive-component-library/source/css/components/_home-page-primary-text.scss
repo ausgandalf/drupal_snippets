@@ -1,0 +1,86 @@
+.paragraph-widget--home-page-primary-text{
+    max-width:none;
+}
+.home-page-primary-text{
+    @extend %negate-outer-pad-x;
+    position: relative;
+    display:flex;
+    gap:rem(0);
+    padding:rem(65) rem(25);
+    flex-direction: column;
+    isolation:isolate;
+    @include mq($min, $desktop){
+        flex-direction: row;
+        padding:rem(80) rem(65);
+        gap:rem(32);
+    }
+    &:before{
+        content:"";
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+        background: url(../images/IMG_Quote_Overlay.png);
+        background-size: cover;
+        z-index: -2;
+    }
+    &:after{
+        content:"";
+        position: absolute;
+        inset:0;
+        background-color:$pavement;
+        opacity: 0.7;
+        z-index:-1;
+        mix-blend-mode: multiply;
+    }
+    .home-page-primary-text__header{
+        width:100%;
+        text-align:center;
+        @include mq($min, $desktop){
+            width:60%;
+            text-align:left;
+        }
+        h3{
+            color:$white;
+            font-family: $headerfont;
+            font-size:rem(24);
+            line-height:rem(36);
+            letter-spacing: rem(1);
+            text-align: center;
+            font-weight:400;
+            padding-top:0;
+            @include mq($min, $desktop){
+                text-align: left;
+                font-size:rem(36);
+                line-height:1.473;
+            }
+        }
+    }
+    .home-page-primary-text__content{
+        width:100%;
+        text-align:center;
+        @include mq($min, $desktop){
+            width:40%;
+            text-align:left;
+        }
+        p{
+            color:$white;
+            font-size:rem(20);
+            line-height:1.4;
+            padding-bottom:rem(15);
+            padding-inline:rem(10);
+            @include mq($min, $desktop){
+                padding-inline:rem(0);
+            }
+        }
+        .home-page-primary-text__content-cta{
+            a{
+                font-family: $headerfont;
+                color:$white;
+                font-weight:400;
+                letter-spacing:rem(1);
+            }
+        }
+    }
+}

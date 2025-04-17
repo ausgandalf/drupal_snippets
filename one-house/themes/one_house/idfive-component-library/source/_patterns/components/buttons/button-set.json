@@ -1,0 +1,19 @@
+{
+  "button_set": {
+    "button_alt": false,
+    "buttons": [
+      {
+        "button": {
+          "text": "Button One",
+          "url": "https://idfive.com/"
+        }
+      },
+      {
+        "button": {
+          "text": "Button Two",
+          "url": "https://idfive.com/"
+        }
+      }
+    ]
+  }
+}

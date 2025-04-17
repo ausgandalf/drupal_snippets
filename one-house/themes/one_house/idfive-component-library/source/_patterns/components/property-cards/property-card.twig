@@ -1,0 +1,23 @@
+<div class="property-card views-row {% if card.image.src %} has-image {% endif %}">
+  <a href="{{ card.url }}"><span><span>{{ card.address }}</span></span></a>
+  <div class="property_image">
+    {% if card.image.src %}<img src="{{ card.image.src }}" alt="{{ card.image.alt }}" loading="lazy">{% endif %}
+  </div>
+  <div class="card__content">
+    <div class="property_title">
+      <h3><span class="address-line1">{{ card.address }}</span></h3>
+    </div>
+    <div class="property_neighborhood">
+      <a href="#" hrefland="en">
+        {{ card.body|raw }}
+      </a>
+    </div>
+    <p class="property_status">
+        <span class="property_status__label">{{ card.status_label }}</span>: 
+        <span class="property_status__details">{{ card.status_detail }}</span>
+    </p>
+    <div class="arrow-button">
+      <div class="arrow"><span></span></div>
+    </div>
+  </div>
+</div>

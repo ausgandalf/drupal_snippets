@@ -1,0 +1,33 @@
+.button-set {
+  ul {
+    display:flex;
+    flex-direction:column;
+    gap:rem(0);
+    @include mq($min, $tablet){
+      column-gap:rem(30);
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .multi-column-content__column & {
+      @include mq($min, $tablet){
+        flex-direction: column;
+      }
+
+      @include mq($min, $desktop){
+        column-gap:rem(30);
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+
+    li {
+      margin-top: rem(20);
+      margin-bottom:rem(0);
+
+      .button {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,210 @@
+.paragraph-widget--body{
+    h2{
+        padding-top:rem(70);
+        font-family:$header3font;
+        strong{
+            text-transform:none;
+        }
+    }
+    p{
+        font-size:rem(20);
+    }
+}
+
+.tabs{
+    .tabs__nav{
+        border-bottom:solid rem(1) #958683;
+        ul{
+            display:flex;
+            li{
+                width:50%;
+                @include mq($min, $tablet){
+                    width:inherit;
+                    display:inline;
+                }
+                &:last-child{
+                    width:70%;
+                    @include mq($min, $tablet){
+                        width:inherit;
+                    }
+                }
+                .tabs__nav__button{
+                    width:100%;
+                    height:100%;
+                    position:relative;
+                    font-size:rem(24);
+                    padding:rem(20) rem(30);
+                    border:solid rem(1) #958683;
+                    background-color:#fff;
+                    border-bottom:none;
+                    color:$pavement;
+                    font-weight:700;
+                    margin-right:0;
+                    cursor:pointer;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: box-shadow .3s ease-in-out;
+                    @include mq($min, $tablet){
+                        width:inherit;
+                        height:inherit;
+                    }
+                    &:hover {
+                        box-shadow:0px -2px 20px #00000033;
+                    }
+                    &.active{
+                        background-color:#efecec;
+                        border:solid rem(1) #958683;
+                        border-bottom:none;
+                        cursor:default;
+                        z-index:5;
+                        margin-bottom:rem(-1);
+                        @include mq($min, $tablet){
+                            border:solid rem(1) #efecec;
+                        }
+                        &:hover {
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .tabs__content{
+        .tabs__content__tab{
+            display:none;
+            &.active{
+                display:block;
+            }
+            form{
+                display:flex;
+                flex-direction: column;
+                border-bottom:solid rem(1) #958683;
+                padding-block:rem(10);
+                margin-bottom:rem(40);
+                @include mq($min, $desktop){
+                    flex-direction: row;
+                    align-items: end;
+                    padding-left:rem(30);
+                }
+                .form-item, .form-actions{
+                    padding-right:0;
+                    margin-block:rem(10);
+                    @include mq($min, $desktop){
+                        margin-top:rem(10);
+                        margin-bottom:rem(20);
+                        padding-right:rem(30);
+                    }
+                    label, select, input{
+                        display:block;
+                        width:100%;
+                        font-size:rem(22);
+                    }
+                    label{
+                        font-weight:600;
+                        font-size:rem(24);
+                        padding-bottom:rem(10);
+                    }
+                    label[for="edit-search"]{
+                        text-align:center;
+                        padding-inline:rem(30);
+                        padding-bottom:rem(20);
+                        line-height:1.16;
+                        @include mq($min, $desktop){
+                            text-align:left;
+                            padding-inline:inherit;
+                            padding-bottom:rem(10);
+                            line-height:1.53;
+                        }
+                    }
+                    select, input{
+                        height:rem(38);
+                        font-size:rem(18);
+                        font-weight:400;
+                        background-color:#fafafa;
+                    }
+                    input[name="search"]{
+                        padding-right:rem(50);
+                    }
+                    select{
+                        font-style:italic;
+                    }
+                    input[type="submit"]{
+                        &:hover{
+                            background-color:$primary;
+                        }
+                    }
+                }
+                .form-actions{
+                    margin-block:rem(20);
+                }
+                .form-item-search{
+                    width:100%;
+                    position:relative;
+                    @include mq($min, $desktop){
+                        width:40%;
+                    }
+                    .form-item-search--icon{
+                        position:absolute;
+                        width:rem(30);
+                        height:rem(30);
+                        bottom:rem(2);
+                        right:rem(20);
+                        @include mq($min, $desktop){
+                            right:rem(40);
+                        }
+                    }
+                }
+                .form-item-zip-code{
+                    width:100%;
+                    @include mq($min, $desktop){
+                        width:17%;
+                    }
+                }
+                .form-item-status{
+                    width:100%;
+                    @include mq($min, $desktop){
+                        width:28%;
+                    }
+                }
+                .form-item-year-sold{
+                    width:100%;
+                    @include mq($min, $desktop){
+                        width:15%;
+                    }
+                }
+                .form-actions{
+                    input{
+                        width:100%;
+                        @include mq($min, $desktop){
+                            width:auto;
+                        }
+                    }
+                    input[type='submit']{
+                        padding:0;
+                        height:rem(41);
+                    }
+                    &:last-child{
+                        padding-right:0;
+                    }
+                }
+            }
+        }
+    }
+}
+.tabs__content__tab#tab__sold{
+    .form-item-status{
+        @include mq($min, $desktop){
+            width:20%;
+        }
+    }
+}
+.property-block{
+    h3{
+        text-align: center;
+        font-size:rem(42);
+        @include mq($min, $desktop){
+            font-size:rem(47);
+        }
+    }
+}

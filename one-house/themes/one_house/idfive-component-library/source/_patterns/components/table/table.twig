@@ -1,0 +1,21 @@
+<div class="table" role="region" aria-labelledby="{{ table.caption_ID }}" tabindex="0">
+  <table>
+    <caption id="{{ table.caption_ID }}">{{table_caption}}</caption>
+    <thead>
+      <tr>
+        {% for header in table.headers %}
+          <th>{{ header }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in table.rows %}
+        <tr>
+          {% for column in row %}
+            <td>{{ column }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

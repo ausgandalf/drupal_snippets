@@ -1,0 +1,142 @@
+{
+    "title": "Home Page",
+    "bodyClass": "kitchen-sink home-page",
+    "homepage_hero": {
+        "hero": {
+        "title": "One House<span class='title-line2'><br />at a Time</span>",
+        "subtitle": "Rebuilding Baltimore",
+        "background_image": "../../images/IMG_Hero_Sky.png"
+        },
+        "hero_button_set": {
+        "button_set": {
+            "button_alt": false,
+            "buttons": [
+                {
+                    "button": {
+                    "text": "Become a Bidder",
+                    "url": "https://idfive.com/"
+                    }
+                },
+                {
+                    "button": {
+                    "text": "Browse Properties",
+                    "url": "https://idfive.com/"
+                    }
+                }
+            ]
+        }
+        },
+        "mobile_button_set": {
+            "button_set": {
+                "button_alt": false,
+                "buttons": [
+                    {
+                        "button": {
+                        "text": "Become a Bidder",
+                        "url": "https://idfive.com/"
+                        }
+                    },
+                    {
+                        "button": {
+                        "text": "Browse Properties",
+                        "url": "https://idfive.com/"
+                        }
+                    }
+                ]
+            }
+        },
+        "hero_breadcrumbs": {
+            "breadcrumbs": {
+                "links": [
+                    {
+                        "url": "https://idfive.com",
+                        "name": "Home"
+                    },
+                    {
+                        "url": "https://idfive.com",
+                        "name": "About"
+                    },
+                    {
+                        "url": "https://idfive.com",
+                        "name": "Team"
+                    }
+                ]
+                }
+            }
+    },
+    "home_page_primary_text":{
+        "primary_text": {
+            "header":"One House is a nonprofit that streamlines the transfer of vacant properties to court-appointed receivers lorem ipsum.",
+            "content":"We are committed to bringing you outstanding service through lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "url":"#",
+            "link_text":"Learn more"
+        }
+    },
+    "dates_and_deadlines":{
+        "title": "Dates and<br />Deadlines",
+        "dates": [
+            {
+                "day":"04",
+                "month":"oct",
+                "name":"Application Deadline.",
+                "content":"For the October 11th auction lorem ipsum."
+            },
+            {
+                "day":"11",
+                "month":"oct",
+                "name":"Online Auction.",
+                "content":"Lorem Ipsum dolor sit amet."
+            },
+            {
+                "day":"12",
+                "month":"Oct",
+                "name":"End of Auction.",
+                "content":"Unsold properties moved to immediate sales lorem."
+            }
+        ]
+    },
+    "success_story":{
+        "carousel": {
+            "slides": [
+              {
+                "image": "../../images/IMG_Individual_Property_Carousel.jpg"
+              },
+              {
+                "image": "../../images/IMG_Individual_Property_Carousel.jpg"
+              },
+              {
+                "image": "../../images/IMG_Individual_Property_Carousel.jpg"
+              }
+            ],
+            "content": "<h3>Harwood</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nunc accumsan malesuada vitae vel ornare pulvinar scelerisque. Imperdiet facilisi elit arcu auctor convallis.</p><a href='#' class='button'>Read the Story</a>"
+        }
+    },
+    "featured_quote":{
+        "blockquote": {
+            "quote": "Let's face it, the universe is messy. It is nonlinear, turbulent, and chaotic. It is dynamic. It spends its time in transient behavior on its way to somewhere else.",
+            "author": "Donella H. Meadows",
+            "source": "Thinking in Systems: A Primer",
+            "sourceUrl": "https://idfive.com",
+            "portrait": "../../images/IMG_Quote.jpg"
+        }
+    },
+    "cta":{
+        "call_to_action": {
+            "title": "FIND PROPERTIES BASED ON YOUR NEEDS LOREM",
+            "text": "With One House Match, lorem ipsum voluptas sit aspernatur aut odit aut fugit.",
+            "button_set": {
+              "button_set": {
+                "button_alt": false,
+                "buttons": [
+                    {
+                    "button": {
+                        "text": "Sign In",
+                        "url": "https://idfive.com/"
+                        }
+                    }
+                    ]
+                }
+            }
+        }
+    }
+}

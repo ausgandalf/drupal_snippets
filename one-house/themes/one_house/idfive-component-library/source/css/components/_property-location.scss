@@ -1,0 +1,29 @@
+.property-block--property-location{
+    padding-inline:rem(10);
+}
+
+.property-block--map{
+    max-width:1090px;
+    @include mq($min, $desktop){
+        margin-inline:auto;
+    }
+    @extend %negate-outer-pad-x;
+    .block-inner{
+        @include mq($min, $desktop){
+            padding:rem(60);
+        }
+        padding:rem(20);
+        padding-bottom:rem(10);
+        border:solid rem(2) $secondary;
+    }
+    .block-title{
+        text-align: center;
+        font-size:rem(42);
+        font-family:$header3font;
+        color:$pavement;
+        text-transform: none;
+        @include mq($min, $desktop){
+            font-size:rem(47);
+        }
+    }
+}

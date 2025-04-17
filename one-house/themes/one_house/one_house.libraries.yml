@@ -1,0 +1,15 @@
+global:
+  version: VERSION
+  css:
+    base:
+     idfive-component-library/public/css/style.css: {}
+     idfive-component-library/public/css/print.css: { media: print }
+     style.css: {}
+  js:
+    idfive-component-library/public/js/bundle.js: {}
+    script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

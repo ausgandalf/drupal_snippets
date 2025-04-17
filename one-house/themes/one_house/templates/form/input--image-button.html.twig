@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+
+{% set _plus_img = '/themes/custom/one_house/idfive-component-library/public/images/icons/Icon_Add_Form_Field.svg' %}
+{% set _minus_img = '/themes/custom/one_house/idfive-component-library/public/images/icons/Icon_Remove_Form_Field.svg' %}
+
+{% set _src = attributes.src.__toString() %}
+{% if _src == '/modules/contrib/webform/images/icons/plus.svg' %}
+  {% set attributes = attributes.setAttribute('src', _plus_img) %}
+{% elseif _src == '/modules/contrib/webform/images/icons/minus.svg' %}
+  {% set attributes = attributes.setAttribute('src', _minus_img) %}
+{% endif %}
+
+<input{{ attributes }} />{{ children }}

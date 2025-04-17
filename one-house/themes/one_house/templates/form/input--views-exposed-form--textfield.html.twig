@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+
+{% set _name = attributes.name|render %}
+
+<input{{ attributes }} />{{ children }}
+
+{% if _name == 'key' %}
+<div class="form-item-key--icon">
+    <svg aria-hidden="false" width="38" height="25">
+        <use xlink:href="#icon-onehouse_search_icon"></use>
+    </svg>
+</div>
+{% endif %}

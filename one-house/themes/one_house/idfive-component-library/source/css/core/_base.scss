@@ -1,0 +1,191 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: $white;
+  -webkit-text-size-adjust: 100%;
+  color: $black;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+hr{
+  color:#A1908E;
+}
+.skip-link {
+  background-color: $white;
+  display: inline-block;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  &:focus {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+.paragraph-widget {
+  margin-bottom: rem(50);
+  max-width: rem(1200);
+  margin-inline:auto;
+  @include mq($min, $lg_tablet) {
+    margin-bottom: rem(70);
+  }
+  @include mq($min, $lg_desktop) {
+    margin-bottom: rem(90);
+  }
+  &.paragraph-widget--text-html {
+    margin-bottom: rem(20);
+    @include mq($min, $lg_tablet) {
+      margin-bottom: rem(40);
+    }
+  }
+}
+
+%caption {
+  caption-side: bottom;
+  // display: table-caption;
+  font-style:italic;
+  font-size:rem(18);
+  line-height:1.5;
+}
+
+// basic page WYSIWYG image styles
+.alignleft,
+.align-left,
+.alignright,
+.align-right,
+.aligncenter,
+.align-center,
+.alignnone,
+.align-none {
+  margin: rem(36) 0;
+  display: table;
+  max-width: 100%;
+  @include mq($min, $tablet) {
+    margin: rem(8) 0;
+  }
+  @include mq($max, $pre-tablet) {
+    width: 100% !important;
+  }
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom:rem(15)
+  }
+}
+.text-align-center{
+  text-align: center;
+}
+.aligncenter,
+.align-center {
+  margin-top: rem(45);
+  // margin-inline:rem(-35); // WHY IS THIS NEEDED????
+  position: relative;
+
+  margin: rem(60) auto;
+  clear: both;
+  text-align:center;
+
+  @include mq($max, $pre-tablet) {
+
+  }
+  @include mq($min, $lg_desktop) {
+
+  }
+  @include mq($min, $lg_desktop) {
+    max-width: 100%;
+  }
+
+  figcaption {
+    text-align: center;
+    position: relative;
+    padding-inline:rem(30);
+    @include mq($min, $lg_desktop) {
+      padding-right: rem(104);
+    }
+  }
+}
+
+.alignleft,
+.align-left,
+.alignright,
+.align-right {
+  float: none;
+  text-align:center;
+  @include mq($min, $tablet) {
+    max-width: 37%;
+    margin-bottom: rem(20);
+    text-align:left;
+  }
+}
+
+.alignleft,
+.align-left {
+  @include mq($min, $tablet) {
+    margin-right: rem(55);
+    float: left;
+  }
+  @include mq($min, $lg_desktop) {
+    margin-right: rem(88);
+  }
+}
+
+.alignright,
+.align-right {
+  @include mq($min, $tablet) {
+    margin-left: rem(55);
+    float: right;
+  }
+  @include mq($min, $lg_desktop) {
+    margin-left: rem(88);
+  }
+}
+
+.visually-hidden{
+  position:absolute;
+  right:9999px;
+}
+
+figcaption {
+  @extend %caption;
+  @include mq($max, $pre-tablet) {
+    text-align: center;
+  }
+}
+
+.text-content {
+  p {
+    @include mq($max, $pre-tablet) {
+      text-align: center;
+    }
+  }
+
+  img {
+    @include mq($max, $pre-tablet) {
+      width: 100% !important;
+    }
+  }
+}

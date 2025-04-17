@@ -1,0 +1,30 @@
+# Default settings should not be located here. This file is only used to
+# override existing settings. If your theme is the one that introduces a new
+# theme setting, it should use the Drupal Bootstrap base theme's
+# @BootstrapSetting annotation discovery process. This ensures that sub-theme
+# settings are inherited from base themes themes properly and to determine when
+# a setting should be saved to config as "overridden".
+#
+# @see \Drupal\bootstrap\Plugin\SettingBase
+# @see \Drupal\bootstrap\Plugin\SettingInterface
+# @see \Drupal\bootstrap\Plugin\SettingManager
+# @see \Drupal\bootstrap\Plugin\Form\SystemThemeSettings
+# @see \Drupal\bootstrap\ThemeSettings
+
+# Disable the CDN provider so compiled source files can be used.
+features:
+   comment_user_picture: true
+   favicon: true
+   logo: true
+   name: true
+   node_user_picture: true
+settings:
+  idfive_breadcrumbs_show_node_title: 0
+  idfive_search_block_placeholder: ''
+  idfive_search_block_button_text: ''
+  idfive_disable_base_css: false
+  idfive_disable_base_js: false
+  idfive_page_site_name: true
+  idfive_page_site_logo: true
+  idfive_assets_path: ''
+langcode: en

@@ -1,0 +1,27 @@
+.multi-column-content {
+  @include mq($min, $tablet) {
+    display: flex;
+    margin-right: rem(-40);
+  }
+  &.multi-column-content-two-col {
+    @include mq($min, $tablet) {
+      margin-right: rem(-100);
+    }
+  }
+}
+.multi-column-content__column {
+  margin: 0 0 rem(40) 0;
+  @include mq($min, $tablet) {
+    flex: 1 1 0px;
+    padding-right: rem(40);
+    margin-bottom: 0;
+  }
+  .multi-column-content-two-col & {
+    @include mq($min, $tablet) {
+      padding-right: rem(100);
+    }
+  }
+  .text-content {
+    margin-bottom: 0;
+  }
+}

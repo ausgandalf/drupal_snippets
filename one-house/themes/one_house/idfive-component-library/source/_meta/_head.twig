@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="{{ htmlClass }}" lang="en">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://use.typekit.net/dtt6ywt.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="screen" >
+    <link rel="stylesheet" href="../../css/print.css?{{ cacheBuster }}" media="print" >
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" >
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <script src="../../js/bundle.js" defer></script>
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    {{ patternLabHead | raw }}
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="{{ bodyClass }}">
+    <a class="skip-link" href="#main-content">Skip To Main Content</a>
+    {% include "@core/iconset/iconset.svg"%}

@@ -1,0 +1,41 @@
+{%
+  set classes = [
+    'paragraph-widget' ~ ((_page_type == 'homepage') ? '--home'),
+    'paragraph-widget--views-embed',
+  ]
+%}
+
+{% block paragraph %}
+
+  <div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+    {% block content %}
+      {% if (content.field_ip_views_embed_title|field_value) or (content.field_ip_views_embed_link|field_value) %}
+        <div class="headline">
+
+          {% if content.field_ip_views_embed_title|field_value %}
+            <h2>{{ content.field_ip_views_embed_title }}</h2>
+          {% endif %}
+
+          {% if content.field_ip_views_embed_link|field_value %}
+            {%
+              set linkData = {
+                'links': content.field_ip_views_embed_link,
+                'link_class': 'btn btn--secondary',
+              }
+            %}
+            {% include directory ~ '/templates/_includes/components/_links.html.twig' with linkData %}
+          {% endif %}
+
+        </div>
+      {% endif %}
+
+      <div class="content">
+        {{ content.field_ip_views_embed_view }}
+      </div>
+
+    {% endblock %}
+
+  </div>
+
+{% endblock paragraph %}

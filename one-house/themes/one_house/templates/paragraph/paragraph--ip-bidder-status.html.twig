@@ -1,0 +1,102 @@
+{% set _format = content.field_ip_bidder_status_format.0['#markup'] %}
+{% set _format = _format > 1 ? 1 : _format %}
+
+{%
+  set classes = [
+    'paragraph-widget',
+    'paragraph-widget--match-status',
+  ]
+%}
+
+{%
+  set _status_labels = [
+    'Not submitted'|t,
+    'Pending'|t,
+    'Active'|t,
+    'Expired'|t,
+    'Suspended'|t,
+  ]
+%}
+
+{% block paragraph %}
+
+{% if _bidder_status_note|length %}
+  {% set _noteRaw %}
+    <span class="bidder-status-note"> — {{ _bidder_status_note }}</span>
+  {% endset %}
+
+  {% set _note %}
+    <span class="bidder-status-note" style="font-weight: normal; font-size: 0.9em;"> ( {{ _bidder_status_note }} )</span>
+  {% endset %}
+{% endif %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+    {% if _format == 0 %}
+
+      <p>{{ _status_labels[_bidder_status]|raw }}{{ _noteRaw|raw }}</p>
+
+      {% if (_user.field_user_participate.value != 1) %}
+        {{ content.field_ip_bidder_status_no_msg|raw }}
+      {% endif %}
+
+    {% else %}
+
+      {% if _bidder_status == 4 %}
+        <div class="match-status-bar expired-suspended suspended">
+            <span class="icon">
+                <svg aria-hidden="false" width="33" height="28">
+                    <use xlink:href="#icon-onehouse_expired-suspended"></use>
+                </svg>
+            </span>
+            <div class="status-message">{{ _site_info.messages.bidder_status_4|raw }}{{ _note|raw }}</div>
+        </div>
+      {% elseif _bidder_status == 3 %}
+        <div class="match-status-bar expired-suspended exipred">
+            <span class="icon">
+                <svg aria-hidden="false" width="33" height="28">
+                    <use xlink:href="#icon-onehouse_expired-suspended"></use>
+                </svg>
+            </span>
+            <div class="status-message">{{ _site_info.messages.bidder_status_3|raw }}{{ _note|raw }}</div>
+        </div>
+      {% elseif _bidder_status == 2 %}
+        <div class="match-status-bar active-status">
+            <span class="icon">
+                <svg aria-hidden="false" width="33" height="28">
+                    <use xlink:href="#icon-onehouse_active"></use>
+                </svg>
+            </span>
+            <div class="status-message">{{ _site_info.messages.bidder_status_2|raw }}{{ _note|raw }}</div>
+        </div>
+      {% elseif _bidder_status == 1 %}
+        <div class="match-status-bar pending-approval">
+            <span class="icon">
+                <svg aria-hidden="false" width="33" height="28">
+                    <use xlink:href="#icon-onehouse_pending_approval"></use>
+                </svg>
+            </span>
+            <div class="status-message">{{ _site_info.messages.bidder_status_1|raw }}{{ _note|raw }}</div>
+        </div>
+      {% else %}
+        <div class="match-status-bar not-submitted">
+            <span class="icon">
+                <svg aria-hidden="false" width="33" height="28">
+                    <use xlink:href="#icon-onehouse_not-submitted"></use>
+                </svg>
+            </span>
+            <div class="status-message">{{ _site_info.messages.bidder_status_0|raw }}{{ _note|raw }}</div>
+        </div>
+      {% endif %}
+
+      {% if (_user.field_user_participate.value != 1) %}
+        {{ content.field_ip_bidder_status_no_msg|raw }}
+      {% endif %}
+
+    {% endif %}
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

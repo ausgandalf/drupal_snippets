@@ -1,0 +1,71 @@
+{
+    "title":"One House at a Time | My Dashboard",
+    "internal_hero":{
+        "hero": {
+            "title": "MY DASHBOARD",
+            "subtitle": "",
+            "background_image": "",
+            "hero_image": {
+              "url":"",
+              "alt":""
+            }
+        },
+        "hero_breadcrumbs": {
+            "breadcrumbs": {
+              "links": [
+                {
+                  "url": "https://idfive.com",
+                  "name": "Home"
+                },
+                {
+                  "url": "https://idfive.com",
+                  "name": "My Dashboard"
+                }
+              ]
+            }
+        }
+    },
+    "suggested_properties":{
+        "card_set": {
+            "horizontal": false,
+            "cards": [
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "2023-06-17"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "2023-06-17"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "2023-06-17"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "title": "One House at a Time | Search Results",
+    "bodyClass": "kitchen-sink",
+    "mainClass": "", 
+    "internal_hero":{
+          "hero": {
+              "title": "Search",
+              "subtitle": "",
+              "background_image": "",
+              "hero_image": {
+                "url":"",
+                "alt":""
+              }
+          },
+          "hero_breadcrumbs": {
+              "breadcrumbs": {
+                "links": [
+                  {
+                    "url": "https://idfive.com",
+                    "name": "Home"
+                  },
+                  {
+                    "url": "https://idfive.com",
+                    "name": "Search"
+                  }
+                ]
+              }
+          }
+      }
+  }

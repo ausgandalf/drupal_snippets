@@ -1,0 +1,22 @@
+<div class="carousel-holder carousel-holder--property-images {{ items|length < 2 ? 'carousel-holder--singular' }}" data-items-count="{{ items|length }}">
+  {# Carousel Content #}
+  <div class="carousel">
+    {%- for item in items -%}
+      <div class="carousel__slide">
+        <div class="carousel__slide-image">
+          {{- item.content -}}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+  {# Carousel Nav #}
+  <div class="carousel__nav {{ items|length < 2 ? 'disabled' }}">
+    <div class="carousel__nav-sizer"></div>
+    <button class="carousel__nav-previous" aria-label="Previous slide">
+      <span class="visible-for-screen-readers">Previous slide</span>
+    </button>
+    <button class="carousel__nav-next" aria-label="Next slide">
+      <span class="visible-for-screen-readers">Next slide</span>
+    </button>
+  </div>
+</div>

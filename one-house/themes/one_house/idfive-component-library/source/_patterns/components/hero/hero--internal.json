@@ -1,0 +1,84 @@
+{
+  "hero": {
+    "title": "One House at a Time",
+    "subtitle": "Rebuilding Baltimore",
+    "background_image": "",
+    "hero_image": {
+      "url":"../../images/IMG_KS_Hero.png",
+      "alt":"interior-hero__building-image"
+    }
+  },
+  "hero_breadcrumbs": {
+    "breadcrumbs": {
+      "links": [
+        {
+          "url": "https://idfive.com",
+          "name": "Home"
+        },
+        {
+          "url": "https://idfive.com",
+          "name": "About"
+        },
+        {
+          "url": "https://idfive.com",
+          "name": "Team"
+        }
+      ]
+    }
+  },
+  "hero_subnav": {
+    "subnav": {
+      "items": [
+        {
+          "url": "https://www.iastate.edu/",
+          "title": "Parent Page",
+          "current": false,
+          "children": []
+        },
+        {
+          "url": "https://www.iastate.edu/",
+          "title": "Sibling Page Title Lorem Ipsum",
+          "current": false,
+          "children": []
+        },
+        {
+          "url": "https://www.iastate.edu/",
+          "title": "Sibling Page Title Lorem Ipsum",
+          "current": false,
+          "children": []
+        },
+        {
+          "url": "https://www.iastate.edu/",
+          "title": "Sibling Page Title Lorem Ipsum",
+          "current": false,
+          "children": []
+        },
+        {
+          "url": "https://www.iastate.edu/",
+          "title": "Kitchen Sink",
+          "current": true,
+          "children": [
+            {
+              "url": "https://www.iastate.edu/",
+              "title": "Child Page Title Lorem",
+              "current": false,
+              "children": []
+            },
+            {
+              "url": "https://www.iastate.edu/",
+              "title": "Child Page Title Lorem",
+              "current": false,
+              "children": []
+            }
+          ]
+        },
+        {
+          "url": "https://www.iastate.edu/",
+          "title": "Sibling Page Title Lorem Ipsum",
+          "current": false,
+          "children": []
+        }
+      ]
+    }
+  }
+}

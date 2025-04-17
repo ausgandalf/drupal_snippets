@@ -1,0 +1,328 @@
+{
+  "title": "Kitchen Sink",
+  "bodyClass": "kitchen-sink",
+  "kitchen_sink_hero": {
+    "hero": {
+      "title": "One House<span class='title-line2'> at a Time</span>",
+      "subtitle": "Rebuilding Baltimore",
+      "background_image": "",
+      "hero_image": {
+        "url":"../../images/IMG_KS_Hero.png",
+        "alt":"interior-hero__building-image"
+      }
+    },
+    "hero_button_set": {
+      "button_set": {
+        "button_alt": false,
+        "buttons": [
+          {
+            "button": {
+              "text": "Become a Bidder",
+              "url": "https://idfive.com/"
+            }
+          },
+          {
+            "button": {
+              "text": "Browse Properties",
+              "url": "https://idfive.com/"
+            }
+          }
+        ]
+      }
+    },
+    "mobile_button_set": {
+      "button_set": {
+        "button_alt": false,
+        "buttons": [
+          {
+            "button": {
+              "text": "Become a Bidder",
+              "url": "https://idfive.com/"
+            }
+          },
+          {
+            "button": {
+              "text": "Browse Properties",
+              "url": "https://idfive.com/"
+            }
+          }
+        ]
+      }
+    },
+    "hero_breadcrumbs": {
+      "breadcrumbs": {
+        "links": [
+          {
+            "url": "https://idfive.com",
+            "name": "Home"
+          },
+          {
+            "url": "https://idfive.com",
+            "name": "About"
+          },
+          {
+            "url": "https://idfive.com",
+            "name": "Team"
+          }
+        ]
+      }
+    }
+  },
+  "kitchen_sink_hero2": {
+    "hero": {
+      "title": "One House<span class='title-line2'> at a Time</span>",
+      "subtitle": "Rebuilding Baltimore",
+      "background_image": "",
+      "hero_image": {
+        "url":"",
+        "alt":""
+      }
+    },
+    "hero_button_set": {
+      "button_set": {
+        "button_alt": false,
+        "buttons": [
+          {
+            "button": {
+              "text": "Become a Bidder",
+              "url": "https://idfive.com/"
+            }
+          },
+          {
+            "button": {
+              "text": "Browse Properties",
+              "url": "https://idfive.com/"
+            }
+          }
+        ]
+      }
+    },
+    "mobile_button_set": {
+      "button_set": {
+        "button_alt": false,
+        "buttons": [
+          {
+            "button": {
+              "text": "Become a Bidder",
+              "url": "https://idfive.com/"
+            }
+          },
+          {
+            "button": {
+              "text": "Browse Properties",
+              "url": "https://idfive.com/"
+            }
+          }
+        ]
+      }
+    },
+    "hero_breadcrumbs": {
+      "breadcrumbs": {
+        "links": [
+          {
+            "url": "https://idfive.com",
+            "name": "Home"
+          },
+          {
+            "url": "https://idfive.com",
+            "name": "About"
+          },
+          {
+            "url": "https://idfive.com",
+            "name": "Team"
+          }
+        ]
+      }
+    }
+  },
+  "kitchen_sink_button_set": {
+    "button_set": {
+      "button_alt": false,
+      "buttons": [
+        {
+          "button": {
+            "text": "Button One",
+            "url": "https://idfive.com/"
+          }
+        },
+        {
+          "button": {
+            "text": "Button Two",
+            "url": "https://idfive.com/"
+          }
+        }
+      ]
+    }
+  },
+  "kitchen_sink_card_set": {
+    "card_set": {
+      "horizontal": false,
+      "cards": [
+        {
+          "card": {
+            "title": "Card Title",
+            "body": "<p>Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>",
+            "image": {
+              "src": "../../images/IMG_Success_Story.jpg",
+              "alt": ""
+            },
+            "url": "https://idfive.com",
+            "optional_text": "Learn More"
+          }
+        },
+        {
+          "card": {
+            "title": "Card Title",
+            "body": "<p>Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>",
+            "image": {
+              "src": "../../images/IMG_Success_Story.jpg",
+              "alt": ""
+            },
+            "url": "https://idfive.com",
+            "optional_text": "Learn More"
+          }
+        },
+        {
+          "card": {
+            "title": "Card Title",
+            "body": "<p>Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>",
+            "image": {
+              "src": "../../images/IMG_Success_Story.jpg",
+              "alt": ""
+            },
+            "url": "https://idfive.com",
+            "optional_text": "Learn More"
+          }
+        }
+      ]
+    }
+  },
+  "kitchen_sink_card_set2": {
+    "card_set": {
+      "horizontal": false,
+      "cards": [
+        {
+          "card": {
+            "title": "Card Title",
+            "body": "<p>Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>",
+            "image": {
+              "src": "",
+              "alt": ""
+            },
+            "url": "https://idfive.com",
+            "optional_text": "Learn More"
+          }
+        },
+        {
+          "card": {
+            "title": "Card Title",
+            "body": "<p>Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>",
+            "image": {
+              "src": "",
+              "alt": ""
+            },
+            "url": "https://idfive.com",
+            "optional_text": "Learn More"
+          }
+        },
+        {
+          "card": {
+            "title": "Card Title",
+            "body": "<p>Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>",
+            "image": {
+              "src": "",
+              "alt": ""
+            },
+            "url": "https://idfive.com",
+            "optional_text": "Learn More"
+          }
+        }
+      ]
+    }
+  },
+  "kitchen_sink_blockquote": {
+    "blockquote": {
+      "quote": "Lorem Ipsum Dolor Sit Amet duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur sit amet suis aut dolor.",
+      "author": "FirstNmae LastName",
+      "source": "Role",
+      "sourceUrl": "https://idfive.com",
+      "portrait": "../../images/IMG_Quote.jpg"
+    }
+  },
+  "kitchen_sink_carousel": {
+    "carousel": {
+      "headline": "Image Gallery Headline",
+      "subhead": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque habitant aenean facilisi fringilla tincidunt. In convallis rhoncus, mi duis volutpat imperdiet.",
+      "slides": [
+        {
+          "image": "../../images/IMG_KS_How-Images-Can-Be-Used-Large.jpg",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nunc accumsan malesuada vitae vel ornare pulvinar scelerisque. Imperdiet facilisi elit arcu auctor convallis.</p>"
+        },
+        {
+          "image": "../../images/IMG_KS_How-Images-Can-Be-Used-Large.jpg",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nunc accumsan malesuada vitae vel ornare pulvinar scelerisque. Imperdiet facilisi elit arcu auctor convallis.</p>"
+        },
+        {
+          "image": "../../images/IMG_KS_How-Images-Can-Be-Used-Large.jpg",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nunc accumsan malesuada vitae vel ornare pulvinar scelerisque. Imperdiet facilisi elit arcu auctor convallis.</p>"
+        }
+      ]
+    }
+  },
+  "kitchen_sink_accordion": {
+    "accordion": {
+      "accordions": [
+        {
+          "title": "Accordion 1",
+          "content": "<p>This is the content area of accordion 1</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p>"
+        },
+        {
+          "title": "Accordion 2",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p>"
+        },
+        {
+          "title": "Accordion 3",
+          "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p>"
+        }
+      ]
+    }
+  },
+  "kitchen_sink_call_to_action": {
+    "call_to_action": {
+      "title": "Call to Action Lorem Ipsum Dolor Sit",
+      "text":"",
+      "button_set": {
+        "button_set": {
+          "button_alt": false,
+          "buttons": [
+            {
+              "button": {
+                "text": "Button One",
+                "url": "https://idfive.com/"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "kitchen_sink_end_of_page_call_to_action": {
+    "end_of_page_call_to_action": {
+      "title": "End of Page CTA Lorem Ipsum",
+      "text": "Lorem Ipsum do adipiscing veniam exercitation dolore nostrud deserunt labore aute anim enim labore velit sint ut lorem esse adipiscing.",
+      "button_set": {
+        "button_set": {
+          "button_alt": true,
+          "buttons": [
+            {
+              "button_alt": {
+                  "text": "CTA Label Lorem",
+                  "url": "https://idfive.com/"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

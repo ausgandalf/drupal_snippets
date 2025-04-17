@@ -1,0 +1,103 @@
+.paragraph-widget--dates-and-deadlines{
+    margin-inline:rem(-25);
+    @include mq($min, $tablet){
+        margin-inline:auto;
+    }
+}
+
+.dates-and-deadlines{
+    background-color:$offwhite;
+    border-radius:rem(100);
+    display:flex;
+    flex-direction: column;
+    gap:rem(20);
+    padding:rem(40) rem(30) rem(80);
+    @include mq($min, $tablet){
+        gap:0;
+        border-radius:rem(200);
+        flex-direction: row;
+        padding:rem(100) rem(70);
+    }
+    @include mq($min, $lg_tablet){
+        border-radius:rem(350);
+    }
+    .dates-and-deadlines__title-container{
+        width:100%;
+        @include mq($min, $tablet){
+            margin:auto 0;
+            width:45%;
+        }
+        .dates-and-deadlines__title{
+            font-size:rem(55);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: rem(1.5);
+            padding-top:rem(40);
+            padding-bottom:rem(30);
+            @include mq($min, $lg_tablet){
+                font-size:rem(77);
+                text-transform: uppercase;
+                text-align:left;
+                letter-spacing: rem(1.5);
+            }
+        }
+    }
+    .dates-and-deadlines__content{
+        width:100%;
+        @include mq($min, $tablet){
+            width:55%;
+        }
+        .dates-and-deadlines__content-event{
+            display:flex;
+            flex-direction: column;
+            gap:rem(25);
+            margin-bottom:rem(25);
+            @include mq($min, $sm_palm){
+                flex-direction: row;
+            }
+            .dates-and-deadlines__content-event__date{
+                background-size:contain;
+                background-image:url('../images/icons/onehouse_hp_calendar.svg');
+                background-repeat: no-repeat;
+                background-position:center center;
+                min-width:rem(120);
+                height:rem(124);
+                .dates-and-deadlines__content-event__date-day{
+                    font-size:rem(39);
+                    line-height:rem(47);
+                    font-family: $headerfont;
+                    color:$cement;
+                    text-align:center;
+                    margin-bottom:0;
+                    padding-top:rem(25);
+                }
+                .dates-and-deadlines__content-event__date-month{
+                    font-size:rem(32);
+                    line-height:rem(33);
+                    font-family: $headerfont;
+                    text-transform: uppercase;
+                    color:$brick;
+                    text-align:center;
+                    margin-top:rem(5);
+                    margin-bottom:0;
+                }
+            }
+            .dates-and-deadlines__content-event__content{
+                font-size:rem(20);
+                line-height:rem(28);
+                color:$pavement;
+                margin:auto 0;
+                overflow: hidden;
+                text-align: center;
+                @include mq($min, $sm_palm){
+                    text-align: left;
+                    width:70%;
+                }
+                @include mq($min, $tablet){
+                    font-size:rem(24);
+                    line-height:rem(32);
+                }
+            }
+        }
+    }
+}

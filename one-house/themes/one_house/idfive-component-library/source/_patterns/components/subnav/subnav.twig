@@ -1,0 +1,20 @@
+<nav class="subnav" aria-label="Sidebar">
+  <div class="subnav__list" id="subnav-list">
+    <ul>
+      {% for item in subnav.items %}
+        <li>
+          <a href="{{ item.url }}" {% if item.current %} aria-current="page" {% endif %}>{{ item.title }}</a>
+          {% if item.children|length %}
+            <ul>
+              {% for child in item.children %}
+                <li>
+                  <a href="{{ child.url }}" {% if child.current %} aria-current="page" {% endif %}>{{ child.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

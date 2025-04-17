@@ -1,0 +1,13 @@
+<div class="accordion">
+  {% for accordion in accordion.accordions %}
+    <div class="accordion__accordion">
+      <h2 class="accordion__title">
+        <button type="button" class="accordion__trigger">{{ accordion.title }}</button>
+        <span class="sp-before-icon"></span>
+      </h2>
+      <div class="accordion__content">
+        <div class="accordion__content-wrap">{{ accordion.content|raw }}</div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

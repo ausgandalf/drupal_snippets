@@ -1,0 +1,59 @@
+.property-block--property-history{
+    h3{
+        color:$pavement;
+    }
+    padding-inline:rem(10);
+}
+
+.property-history{
+    border:solid rem(2) $secondary;
+    padding-block:rem(60);
+    display:flex;
+    flex-direction: column;
+    gap:rem(40);
+    max-width:1090px;
+    @extend %negate-outer-pad-x;
+    @include mq($min, $desktop){
+        margin-inline:auto;
+    }
+    .property-history__row{
+        display:flex;
+        justify-content: space-evenly;
+        flex-direction:column;
+        @include mq($min, $desktop){
+            flex-direction: row;
+        }
+        .property-history__property{
+            text-align:center;
+            max-width:rem(300);
+            margin-inline:auto;
+            margin-bottom:rem(40);
+            @include mq($min, $desktop){
+                margin-bottom:0;
+            }
+            svg{
+                margin-bottom:rem(10);
+            }
+            h3{
+                font-family:$font;
+                font-size:rem(23);
+                margin:0;
+                padding:0;
+                @include mq($min, $desktop){
+                    margin-block:rem(10);
+                    font-size:rem(32);
+                }
+            }
+            p, li{
+                font-size:rem(20);
+                margin:0;
+                @include mq($min, $desktop){
+                    font-size:rem(22);
+                }
+                a{
+                    color:$primary;
+                }
+            }
+        }
+    }
+}

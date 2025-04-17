@@ -1,0 +1,20 @@
+<div class="feature{% if feature.image.src %}{% else %} feature--no-image{% endif %}">
+  {% if feature.image.src %}
+    <div class="feature__media">
+      <img src="{{ feature.image.src }}" alt="{{ feature.image.alt }}" loading="lazy">
+    </div>
+  {% endif %}
+  <div class="feature__content">
+    <h3>{{ feature.title }}</h3>
+    {% if feature.body_copy %}
+      <div>{{ feature.body_copy|raw }}</div>
+    {% endif %}
+    <ul>
+      {% for link in feature.links %}
+        <li>
+          <a href="{{ link.src }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

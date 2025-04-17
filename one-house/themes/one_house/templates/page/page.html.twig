@@ -1,0 +1,37 @@
+{% include directory ~ '/templates/_includes/global/header.html.twig' %}
+
+<main class="content {{ page_content_class }}" id="main-content">
+	<div class="outer-pad">
+		{% block sys_content %}
+			{{ messages }}
+
+			{% if logged_in and page.admin_tabs  %}
+				<div class="admin--tabs">{{ page.admin_tabs }}</div>
+			{% endif %}
+
+			{{ page.help }}
+		{% endblock %}
+
+		{% block page_hero %}
+
+			{%
+				set heroData = {
+					'hero' : {
+						'breadcrumbs': page.breadcrumbs,
+						'title': page_title,
+					}
+				}
+			%}
+			{% include directory ~ '/templates/_includes/components/hero.html.twig' with heroData %}
+
+		{% endblock %}
+
+		{% block content %}
+			{{ page.pre_content }}
+			{{ page.content }}
+		{% endblock %}
+
+	</div>
+</main>
+
+{% include directory ~ '/templates/_includes/global/footer.html.twig' %}

@@ -1,0 +1,170 @@
+// ==================================================
+// Begin Media Query Mixin
+// ==================================================
+// $Variables
+// Supports
+// @media min-width
+// @media max-width
+// @media min-width and max-width
+// @media min-width and max-height
+// @media min-height and max-width
+// @media min-height and max-height
+
+$viewport-increment: 0.1px; // customize to suite
+
+// XXL Desktop
+$xxl_desktop: 1680px; // customize to suite
+$pre-xxl_desktop: $xxl_desktop - $viewport-increment;
+$post-xxl_desktop: $xxl_desktop + $viewport-increment;
+
+// XL Desktop
+$xl_desktop: 1440px; // customize to suite
+$pre-xl_desktop: $xl_desktop - $viewport-increment;
+$post-xl_desktop: $xl_desktop + $viewport-increment;
+
+// Lg Desktop
+$lg_desktop: 1200px; // customize to suite
+$pre-lg_desktop: $lg_desktop - $viewport-increment;
+$post-lg_desktop: $lg_desktop + $viewport-increment;
+
+// Desktop
+$desktop: 1024px; // customize to suite
+$pre-desktop: $desktop - $viewport-increment;
+$post-desktop: $desktop + $viewport-increment;
+
+//Up to Tablet
+$lg_tablet: 991px;
+$pre-lg_tablet: $lg_tablet - $viewport-increment;
+$post-lg_tablet: $lg_tablet + $viewport-increment;
+
+// Tablet
+$tablet: 768px; // customize to suite
+$pre-tablet: $tablet - $viewport-increment;
+$post-tablet: $tablet + $viewport-increment;
+
+// Palm
+$palm: 667px; // customize to suite
+$pre-palm: $palm - $viewport-increment;
+$post-palm: $palm + $viewport-increment;
+
+// Palm_sm
+$sm_palm: 480px; // customize to suite
+$pre-sm_palm: $sm_palm - $viewport-increment;
+$post-sm_palm: $sm_palm + $viewport-increment;
+
+// Palm_xsm
+$xsm_palm: 380px; // customize to suite
+$pre-xsm_palm: $xsm_palm - $viewport-increment;
+$post-xsm_palm: $xsm_palm + $viewport-increment;
+
+// Toggle Points
+$mediaToggle: 1199px;
+$mediaFull: $lg_desktop;
+// Constraints
+$min: min-width;
+$max: max-width;
+$minH: min-height;
+$maxH: max-height;
+// ==================================================
+// $Media Query @Mixin
+// ==================================================
+@mixin mq($constraint, $viewport1, $viewport2: null, $constraint2: null) {
+  @if $constraint2 !=null {
+    @media screen and ($constraint: $viewport1) and ($constraint2: $viewport2) {
+      @content;
+    }
+  } @else if $constraint==$min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+  } @else if $constraint==$max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+  } @else if $constraint==$minH {
+    @media screen and ($minH: $viewport1) {
+      @content;
+    }
+  } @else if $constraint==$maxH {
+    @media screen and ($maxH: $viewport1) {
+      @content;
+    }
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+  }
+}
+
+// ==================================================
+// End Media Query Mixin
+// ==================================================
+
+// ==================================================
+// Font size helper mixins
+// ==================================================
+@mixin _font-size($weight: 400, $size: 22, $line: 32) {
+  line-height: rem($line);
+  font-size: rem($size);
+  font-weight: $weight;
+}
+
+
+@mixin absolute--center() {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute--full() {
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+}
+
+@mixin position-absolute ($top: null, $left: null, $right: null, $bottom: null) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin fixed--full() {
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 100vw;
+}
+
+@mixin error-text() {
+  color:$primary;
+  font-size:rem(18);
+  font-style: italic;
+  font-weight: normal;
+}
+
+@mixin override-button-simple() {
+  background: none;
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: $font;
+  font-size: rem(22);
+  font-weight: bold;
+  letter-spacing: 0px;
+  min-width: 0;
+  opacity: 0.8;
+  padding: 0;
+  transition: opacity 0.3s linear;
+  width: auto;
+  &:hover {
+    color: $primary;
+    opacity: 1;
+  }
+}

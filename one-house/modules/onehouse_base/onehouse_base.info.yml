@@ -1,0 +1,22 @@
+name: One House Base
+type: module
+description: 'Manage paragraphs and handle content type specific processes.'
+core_version_requirement: ^8 || ^9 || ^10
+package: idfive--onehouse
+libraries:
+  - onehouse_base/admin
+dependencies:
+  - drupal:node
+  - entity_reference_revisions
+  - views
+  - media
+  - field
+  - file
+  - filter
+  - image
+  - link
+  - paragraphs
+  - viewfield
+  - field_group
+  - inline_entity_form
+  - link_attributes

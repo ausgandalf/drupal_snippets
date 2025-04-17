@@ -1,0 +1,16 @@
+{
+  "carousel": {
+    "slides": [
+      {
+        "image": "../../images/carousel-slide-1-fpo.png"
+      },
+      {
+        "image": "../../images/carousel-slide-2-fpo.png"
+      },
+      {
+        "image": "../../images/carousel-slide-3-fpo.png"
+      }
+    ],
+    "content": "<h3>Harwood</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nunc accumsan malesuada vitae vel ornare pulvinar scelerisque. Imperdiet facilisi elit arcu auctor convallis.</p><a href='#' class='button'>Read the Story</a>"
+  }
+}

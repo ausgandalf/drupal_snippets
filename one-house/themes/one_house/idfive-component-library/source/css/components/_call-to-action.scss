@@ -1,0 +1,63 @@
+.call-to-action, .end-of-page-call-to-action{
+  padding: rem(55) 0;
+  @include mq($min, $tablet) {
+    padding: rem(55) rem(39)
+  }
+  @include mq($min, $desktop) {
+    padding: rem(60) rem(106);
+  }
+  .call-to-action__title {
+    text-align:center;
+    font-size:rem(54);
+    font-weight:400;
+    letter-spacing: rem(1);
+    font-family: $headerfont;
+    @include mq($min, $desktop) {
+      font-size:rem(70);
+    }
+  }
+  .call-to-action__text {
+    margin-bottom: rem(30);
+    text-align: center;
+    font-size:rem(22);
+    @include mq($min, $desktop) {
+      font-size:rem(20);
+    }
+    @include mq($min, $tablet) {
+      margin-bottom: 0;
+      flex: 1 1 0;
+    }
+  }
+  .button-set{
+    margin-top:rem(20);
+    ul{
+      display: flex;
+      justify-content: center;
+      column-gap: 20px;
+      flex-wrap: wrap;
+      flex-direction:column;
+      @include mq($min, $tablet){
+        flex-direction:row;
+      }
+      li{
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+.property-block--end-of-page-cta{
+  @extend %negate-outer-pad-x;
+  margin-bottom:0;
+  padding-inline:rem(40);
+}
+
+.end-of-page-call-to-action__text-wrap{
+  text-align:center;
+  color:$white;
+  .end-of-page-call-to-action__title{
+    color:$white;
+    font-family: $headerfont
+  }
+}

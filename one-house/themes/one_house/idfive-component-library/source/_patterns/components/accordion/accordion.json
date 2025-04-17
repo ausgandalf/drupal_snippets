@@ -1,0 +1,18 @@
+{
+  "accordion": {
+    "accordions": [
+      {
+        "title": "Accordion 1",
+        "content": "<p>This is the content area of accordion 1</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p>"
+      },
+      {
+        "title": "Accordion 2",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p>"
+      },
+      {
+        "title": "Accordion 3",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae mattis ex. Aliquam pharetra dictum lacus et rutrum. In ac mauris eu diam consequat egestas. Praesent ornare magna nec dictum varius. Donec rhoncus dapibus metus, at convallis quam mattis eget. Fusce in faucibus massa.</p>"
+      }
+    ]
+  }
+}

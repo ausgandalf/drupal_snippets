@@ -1,0 +1,23 @@
+{%
+  set classes = [
+    'paragraph-sub-widget',
+  ]
+%}
+
+{% if _parent_type == 'ip_accordion' %}
+  <div {{attributes.addClass(classes, 'accordion__accordion').setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+    <h2 class="accordion__title">
+      <button type="button" class="accordion__trigger">{{ content.field_ip_sub_item_label }}</button>
+      <span class="sp-before-icon"></span>
+    </h2>
+    <div class="accordion__content">
+      <div class="accordion__content-wrap">
+        {{ content.field_ip_sub_item_content|raw }}
+      </div>
+    </div>
+  </div>
+{% elseif _parent_type == 'ip_tabs' %}
+  <div {{attributes.addClass(classes, 'tabbed-features__content').setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+    {{ content.field_ip_sub_item_content|raw }}
+  </div>
+{% endif %}

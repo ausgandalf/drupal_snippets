@@ -1,0 +1,53 @@
+{% set _hasImage = content.field_ip_blockquote_image|field_value %}
+
+{%
+  set classes = [
+    'paragraph-widget',
+    'paragraph-widget--how-we-work',
+  ]
+%}
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+  {% if content.field_ip_steps_block_title|field_value %}
+  <h2>{{ content.field_ip_steps_block_title|raw }}</h2>
+  {% endif %}
+
+  {% if content.field_ip_steps_block_text|field_value %}
+  <p>{{ content.field_ip_steps_block_text|raw }}</p>
+  {% endif %}
+
+  {% if content.field_ip_steps_block_link|field_value %}
+    {%
+      set linkData = {
+        'links': content.field_ip_steps_block_link,
+        'link_class': 'button',
+      }
+    %}
+    {% include directory ~ '/templates/_includes/components/_links.html.twig' with linkData %}
+  {% endif %}
+
+  {% if content.field_ip_steps_block_steps|field_value %}
+    <div class="how-we-work">
+      <div class="how-we-work__container">
+        {{ content.field_ip_steps_block_steps }}
+      </div>
+      <div class="how-we-work__mobile-nav">
+          <button class="how-we-work__nav-previous disabled" aria-label="Previous slide">
+              <span class="visible-for-screen-readers">Previous slide</span>
+          </button>
+          <button class="how-we-work__nav-next" aria-label="Next slide">
+              <span class="visible-for-screen-readers">Next slide</span>
+          </button>
+      </div>
+    </div>
+  {% endif %}
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

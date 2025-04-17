@@ -1,0 +1,51 @@
+{% set _videoType = content.field_ip_video_type.0['#markup'] %}
+{% set _videoOrient = content.field_ip_video_orientation.0['#markup'] %}
+
+{% set _vYouTube = content.field_ip_video_youtube_code|render|striptags|trim|raw %}
+{% set _vVimeo = content.field_ip_video_vimeo_code|render|striptags|trim|raw %}
+
+{% set _noWrapper = (_parent_field == 'field_homepage_section1_video') %}
+
+{%
+  set classes = [
+    'paragraph-widget',
+    'paragraph-widget--video-embed',
+  ]
+%}
+
+{% block paragraph %}
+
+{% if not _noWrapper %}<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>{% endif %}
+
+  {% block content %}
+
+
+  <div class="video-embed {{ _videoOrient == '1' ? 'video-embed--tall' }}">
+    <div class="video-embed__media-wrap">
+      {% if content.field_ip_video_wallpaper|field_value %}
+        {{ content.field_ip_video_wallpaper }}
+      {% else %}
+        {% if _videoType == "1" and _vYouTube|length %}
+          <img src="https://img.youtube.com/vi/{{ _vYouTube }}/hqdefault.jpg" alt="Video Poster" loading="lazy">
+        {% elseif _videoType == "2" and _vVimeo|length %}
+          <img src="https://vumbnail.com/{{ _vVimeo }}.jpg" alt="Video Poster" loading="lazy">
+        {% endif %}
+      {% endif %}
+      {% if _videoType == "1" and _vYouTube|length %}
+        <div class="video-embed__video" data-vid="{{ _vYouTube }}"></div>
+      {% elseif _videoType == "2" and _vVimeo|length %}
+        <div data-vimeo-id="{{ _vVimeo }}" class="video--vim"></div>
+      {% else %}
+        {{ content.field_ip_video_own|field_value }}
+      {% endif %}
+    </div>
+    {% if content.field_ip_video_caption|field_value %}
+      <div class="video-embed__caption">{{ content.field_ip_video_caption }}</div>
+    {% endif %}
+  </div>
+
+  {% endblock %}
+
+{% if not _noWrapper %}</div>{% endif %}
+
+{% endblock paragraph %}

@@ -1,0 +1,46 @@
+<div class="hero{% if hero_subnav %} hero-with-subnav{% endif %}">
+  <div class="hero__inner{% if hero.background_image|field_value %} hero-with-image{% endif %}" {% if hero.background_image %} style="background-image: url('{{ hero.background_image|render|attr('src') }}')" {% endif %}>
+    <div class="hero__arc">
+      <svg aria-hidden="false" >
+          <use xlink:href="#icon-one-house-shape"></use>
+      </svg>
+    </div>
+    <div class="hero__title-container">
+      <p class="hero__subtitle">{{ hero.subtitle|raw }}</p>
+      <h1 class="hero__title">{{ hero.title|raw }}</h1>
+      <div class="hero__title-buttons">
+        {% if content.field_hero_buttons|field_value %}
+          <ul>
+            {%
+              set linkData = {
+                'links': content.field_hero_buttons,
+                'link_class': 'button',
+                'link_pre': '<li>',
+                'link_suff': '</li>',
+              }
+            %}
+            {% include directory ~ '/templates/_includes/components/_links.html.twig' with linkData %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+    <div class="hero__buttons-mobile">
+      {% if content.field_hero_buttons|field_value %}
+        <ul>
+          {%
+            set linkData = {
+              'links': content.field_hero_buttons,
+              'link_class': 'button',
+              'link_pre': '<li>',
+              'link_suff': '</li>',
+            }
+          %}
+          {% include directory ~ '/templates/_includes/components/_links.html.twig' with linkData %}
+        </ul>
+      {% endif %}
+    </div>
+    <div class="hero__building">
+      {{ hero.image }}
+    </div>
+  </div>
+</div>

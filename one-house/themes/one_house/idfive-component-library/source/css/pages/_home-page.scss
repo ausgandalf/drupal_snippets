@@ -1,0 +1,43 @@
+.home-page{
+    .paragraph-widget{
+        h2{
+            font-size:rem(55);
+            text-align:center;
+            font-family: $headerfont;
+            text-transform: uppercase;
+            @include mq($min, $lg_desktop) {
+                font-size:rem(66);
+            }
+        }
+        h3{
+            font-size:rem(47);
+            text-align: center;
+            padding-block:rem(20);
+        }
+    }
+
+    .paragraph-widget--how-we-work{
+        text-align: center;
+    }
+
+    .paragraph-widget--text-html {
+        .text-content{
+            h2, h3, p{
+                text-align: center;
+            }
+        }
+    }
+}
+
+.ks-page-section-name{
+    background-color:#E8E8E8;
+    padding:rem(30) rem(40);
+    margin-block:rem(50);
+    @extend %negate-outer-pad-x;
+}
+
+.page-node-type-homepage {
+    .hero__inner {
+        margin: 0;
+    }
+}

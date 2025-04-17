@@ -1,0 +1,84 @@
+<div class="property-snapshot">
+    <div class="property-snapshot__row">
+        {% if property_snapshot.rent %}
+            <div class="property-snapshot__property">
+                <div class="property-snapshot__property-icon">
+                    <svg aria-hidden="false" width="50" height="50">
+                        <use xlink:href="#icon-onehouse_prop_snapshot_ground_rent"></use>
+                    </svg>
+                </div>
+                <div class="property-snapshot__property-details">
+                    <h3>Ground Rent</h3>
+                    <p>{{ property_snapshot.rent }}</p>
+                </div>
+            </div>
+        {% endif %}
+        {% if property_snapshot.year_built %}
+            <div class="property-snapshot__property">
+                <div class="property-snapshot__property-icon">
+                    <svg aria-hidden="false" width="50" height="50">
+                        <use xlink:href="#icon-onehouse_snapshot_year_built"></use>
+                    </svg>
+                </div>
+                <div class="property-snapshot__property-details">
+                    <h3>Year Built</h3>
+                    <p>{{ property_snapshot.year_built }}</p>
+                </div>
+            </div>
+        {% endif %}
+        {% if property_snapshot.structure %}
+            <div class="property-snapshot__property">
+                <div class="property-snapshot__property-icon">
+                    <svg aria-hidden="false" width="50" height="50">
+                        <use xlink:href="#icon-onehouse_snapshot_structure"></use>
+                    </svg>
+                </div>
+                <div class="property-snapshot__property-details">
+                    <h3>Structure</h3>
+                    <p>{{ property_snapshot.structure }}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <div class="property-snapshot__row">
+        {% if property_snapshot.neighborhood %}
+            <div class="property-snapshot__property">
+                <div class="property-snapshot__property-icon">
+                    <svg aria-hidden="false" width="50" height="50">
+                        <use xlink:href="#icon-onehouse_snapshot_neighborhood"></use>
+                    </svg>
+                </div>
+                <div class="property-snapshot__property-details">
+                    <h3>Neighborhood</h3>
+                    <p>{{ property_snapshot.neighborhood|raw }}</p>
+                </div>
+            </div>
+        {% endif %}
+        {% if property_snapshot.stories %}
+            <div class="property-snapshot__property">
+                <div class="property-snapshot__property-icon">
+                    <svg aria-hidden="false" width="50" height="50">
+                        <use xlink:href="#icon-onehouse_snapshot_stories"></use>
+                    </svg>
+                </div>
+                <div class="property-snapshot__property-details">
+                    <h3>Stories</h3>
+                    <p>{{ property_snapshot.stories }}</p>
+                </div>
+            </div>
+        {% endif %}
+        {% if property_snapshot.property_type %}
+            <div class="property-snapshot__property">
+                <div class="property-snapshot__property-icon">
+                    <svg aria-hidden="false" width="50" height="50">
+                        <use xlink:href="#icon-onehouse_snapshot_property-type"></use>
+                    </svg>
+                </div>
+                <div class="property-snapshot__property-details">
+                    <h3>Property Type</h3>
+                    <p>{{ property_snapshot.property_type }}</p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

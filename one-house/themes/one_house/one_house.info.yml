@@ -1,0 +1,21 @@
+core: 8.x
+core_version_requirement: ^9 || ^10
+type: theme
+base theme: idfive
+name: One House
+description: 'One House (one_house), is a child theme of the general idfive Drupal 8 theme.'
+package: idfive
+
+libraries:
+  - one_house/global
+regions:
+   primary_menu: 'Primary menu'
+   secondary_menu: 'Secondary menu'
+   utility_menu: 'Utility menu'
+   breadcrumbs: 'Breadcrumbs'
+   bidder_sidebar: 'Bidder Menu'
+   page_sidebar: 'Page Sidebar'
+   pre_content: 'Pre Content'
+   content: 'Content'
+   footer_menu: 'Footer menu'
+   available_blocks: 'Available Blocks'

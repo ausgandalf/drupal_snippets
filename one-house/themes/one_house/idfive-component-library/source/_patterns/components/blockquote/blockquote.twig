@@ -1,0 +1,22 @@
+<div>
+  <blockquote class="blockquote {% if blockquote.portrait %} has-image {% endif %}" {% if blockquote.sourceUrl %} cite="{{ blockquote.sourceUrl }}" {% endif %}>
+    <div class="blockquote__quote-container">
+      <div class="blockquote__quote-symbol">
+        <svg aria-hidden="false" width="105" height="80">
+            <use xlink:href="#icon-onehouse_blockquote_quote_icon"></use>
+        </svg>
+      </div>
+      <h3 class="blockquote__quote">{{ blockquote.quote }}</h3>
+      <p class="blockquote__author">{{ blockquote.author }}{% if blockquote.source %}, <cite class="blockquote__source">{{ blockquote.source }}</cite>
+      {% endif %}
+      </p>
+    </div>
+    {% if blockquote.portrait %}
+    <div class="blockquote__footer">
+        <div class="blockquote__portrait">
+          <img src="{{ blockquote.portrait }}" alt="portrait of {{ blockquote.author }}" loading="lazy" />
+        </div>
+    </div>
+    {% endif %}
+  </blockquote>
+</div>

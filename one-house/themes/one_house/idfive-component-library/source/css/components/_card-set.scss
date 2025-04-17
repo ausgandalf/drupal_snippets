@@ -1,0 +1,40 @@
+.card-set {
+  ul {
+    @include mq($min, $tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      //justify-content: space-between;
+      margin-right: rem(-32);
+      gap: rem(63) 0;
+    }
+    li {
+      margin-bottom: rem(20);
+      @include mq($min, $tablet) {
+        flex: 0 1 auto;
+        width: 33.33%;
+        padding-right: rem(32);
+        margin-bottom: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &.card-set--horizontal {
+    ul {
+      @include mq($min, $tablet) {
+        display: block;
+        gap: 0;
+        margin: 0;
+      }
+    }
+    li {
+      margin-bottom: rem(30);
+      @include mq($min, $tablet) {
+        width: auto;
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "blockquote": {
+    "quote": "Lorem Ipsum Dolor Sit Amet duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur sit amet suis aut dolor.",
+    "author": "FirstNmae LastName",
+    "source": "Role",
+    "sourceUrl": "https://idfive.com",
+    "portrait": "../../images/IMG_Quote.jpg"
+  }
+}

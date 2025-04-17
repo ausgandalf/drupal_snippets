@@ -1,0 +1,30 @@
+{% set _hasImage = content.field_ip_blockquote_image|field_value %}
+
+{%
+  set classes = [
+    'paragraph-widget',
+    'paragraph-widget--dates-and-deadlines',
+  ]
+%}
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+  <div class="dates-and-deadlines">
+    <div class="dates-and-deadlines__title-container">
+      {% if content.field_ip_date_board_title|field_value %}
+        <h2 class="dates-and-deadlines__title">{{ content.field_ip_date_board_title|raw }}</h2>
+      {% endif %}
+    </div>
+    <div class="dates-and-deadlines__content">
+      {{ content.field_ip_date_board_items }}
+    </div>
+  </div>
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

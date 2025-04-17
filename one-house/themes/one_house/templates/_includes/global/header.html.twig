@@ -1,0 +1,40 @@
+<header class="site-header">
+  <div class="site-header__top">
+    <a href="{{ front_page }}" class="site-header__logo">
+      <img src="{{ base_path ~ directory }}/idfive-component-library/public/images/icons/onehouse_logo_horizontal.svg" alt="One House At A Time" loading="lazy" />
+    </a>
+  </div>
+  <div class="site-header__main">
+    <a href="#site-header-mega-menu" class="site-header__mega-menu-open" role="button" aria-controls="site-header-mega-menu">
+      <span class="visible-for-screen-readers">Toggle Menu</span>
+      <span class="site-header__mega-menu-open-line-wrap">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </a>
+    <div class="site-header__mega-menu" id="site-header-mega-menu">
+      <div class="site-header__mega-menu-inner">
+        <div class="site-header__mega-menu-scroller">
+          <noscript>
+            <a href="#" role="button" class="nojs-close-menu">Close Main Menu</a>
+          </noscript>
+          <div>
+            <div class="site-header__mega-menu-main">
+              <div class="site-header__mega-menu-max-bound">
+                {{ page.primary_menu }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% if not logged_in %}
+    <div class="site-header__mobile-signin">
+      <a href="/user/login">Sign In / Sign Up</a>
+    </div>
+    {% endif %}
+
+  </div>
+</header>

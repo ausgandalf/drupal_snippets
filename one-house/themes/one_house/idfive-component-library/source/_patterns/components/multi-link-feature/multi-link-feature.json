@@ -1,0 +1,25 @@
+{
+  "feature": {
+    "image": {
+      "src": "../../images/feature-fpo.png",
+      "alt": ""
+    },
+    "title": "Feature Title Lorem Ipsum Dolor",
+    "body_copy": "<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+
+    "links": [
+      {
+        "url": "https://idfive.com/",
+        "title": "Link Lorem Ipsum Dolor"
+      },
+      {
+        "url": "https://idfive.com/",
+        "title": "Link Lorem Ipsum Dolor"
+      },
+      {
+        "url": "https://idfive.com/",
+        "title": "Link Lorem Ipsum Dolor"
+      }
+    ]
+  }
+}

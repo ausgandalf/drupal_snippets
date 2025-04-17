@@ -1,0 +1,245 @@
+{% extends "node--full.html.twig" %}
+
+{% set _zipcode = node.field_zip_code.target_id %}
+{% set _auction_status = content.field_property_auction_status.0['#markup'] %}
+
+{% block node_hero %}
+  {%
+    set heroData = {
+      'hero' : {
+        'breadcrumbs': breadcrumbs,
+        'title': content.field_preferred_title|field_value ? content.field_preferred_title : label,
+      }
+    }
+  %}
+  {% include directory ~ '/templates/_includes/components/hero.html.twig' with heroData %}
+
+  {{ _local_actions_block }}
+  {{ _primary_local_tasks_block }}
+
+{% endblock %}
+
+{% block node_body_content %}
+
+  {# Property image carousel section #}
+  <div class="paragraph-widget property-block property-block--property-image">
+    {{ content.field_property_images }}
+  </div>
+
+  {# Property details section #}
+  <div class="paragraph-widget property-block property-block--property-detail">
+    <div class="property-details">
+      <div class="property-details__about">
+          <div class="property-details__about-title">
+              <h2>About this property</h2>
+          </div>
+          <div class="property-details__about-description text-content">
+              {{ node.body.summary|raw }}
+          </div>
+      </div>
+      <div class="property-details__about--full text-content">
+        {{ content.body|raw }}
+      </div>
+      <div class="property-details__auction">
+          <div class="property-details__auction-title">Auction</div>
+          <div class="property-details__auction-details">
+              <div class="property-details__auction-details__date">
+                {% if _auction_status == '0' %}
+                  <p>Next Auction: {{ content.field_property_auction_date }}</p>
+                {% elseif _auction_status == '1' %}
+                  <p>{{ content.field_property_offer_link }}</p>
+                {% elseif _auction_status == '2' %}
+                  <p>
+                    Sold for: {{ content.field_property_sold_price }}
+                    {% if content.field_year_sold|field_value %}
+                      on {{ content.field_year_sold|render|striptags }}
+                    {% endif %}
+                  </p>
+                {% elseif _auction_status == '3' %}
+                  <p>Under contract as of: {{ content.field_property_contract_due }}</p>
+                {% endif %}
+              </div>
+              <div class="property-details__auction-details__house">
+                  <div class="property-details__auction-details__house-number">
+                    <h3>{{ content.field_property_beds|field_value ? content.field_property_beds|raw : '&nbsp;' }}</h3>
+                    <p>Beds</p>
+                  </div>
+                  <div class="property-details__auction-details__house-number">
+                    <h3>{{ content.field_property_baths|field_value ? content.field_property_baths|raw : '&nbsp;' }}</h3>
+                    <p>Baths</p>
+                  </div>
+                  <div class="property-details__auction-details__house-number">
+                    <h3>{{ content.field_property_sq_ft|field_value ? content.field_property_sq_ft|raw : '&nbsp;' }}</h3>
+                    <p>Sq Ft.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  {# Property snapshot section #}
+  <div class="paragraph-widget property-block property-block--property-snapshot">
+    <h3>Snapshot</h3>
+    <div class="property-snapshot">
+      {# Property snapshot row 1 #}
+      <div class="property-snapshot__row">
+        {# Property snapshot property ground rent #}
+        <div class="property-snapshot__property">
+            <div class="property-snapshot__property-icon">
+                <svg aria-hidden="false" width="50" height="50">
+                    <use xlink:href="#icon-onehouse_prop_snapshot_ground_rent"></use>
+                </svg>
+            </div>
+            <div class="property-snapshot__property-details">
+                <h3>Ground Rent</h3>
+                <p>{{ content.field_property_ground_rent }}</p>
+            </div>
+        </div>
+        {# Property snapshot property year-built #}
+        <div class="property-snapshot__property">
+            <div class="property-snapshot__property-icon">
+                <svg aria-hidden="false" width="50" height="50">
+                    <use xlink:href="#icon-onehouse_snapshot_year_built"></use>
+                </svg>
+            </div>
+            <div class="property-snapshot__property-details">
+                <h3>Year Built</h3>
+                <p>{{ content.field_property_year_built }}</p>
+            </div>
+        </div>
+        {# Property snapshot property structure #}
+        <div class="property-snapshot__property">
+            <div class="property-snapshot__property-icon">
+                <svg aria-hidden="false" width="50" height="50">
+                    <use xlink:href="#icon-onehouse_snapshot_structure"></use>
+                </svg>
+            </div>
+            <div class="property-snapshot__property-details">
+                <h3>Structure</h3>
+                <p>{{ content.field_property_structure }}</p>
+            </div>
+        </div>
+      </div>
+      {# Property snapshot row 2 #}
+      <div class="property-snapshot__row">
+        {# Property snapshot property neighborhook #}
+        <div class="property-snapshot__property">
+            <div class="property-snapshot__property-icon">
+                <svg aria-hidden="false" width="50" height="50">
+                    <use xlink:href="#icon-onehouse_snapshot_neighborhood"></use>
+                </svg>
+            </div>
+            <div class="property-snapshot__property-details">
+                <h3>Neighborhood</h3>
+                <p>{{ content.field_neighborhood }}</p>
+            </div>
+        </div>
+        {# Property snapshot property stories #}
+        <div class="property-snapshot__property">
+            <div class="property-snapshot__property-icon">
+                <svg aria-hidden="false" width="50" height="50">
+                    <use xlink:href="#icon-onehouse_snapshot_stories"></use>
+                </svg>
+            </div>
+            <div class="property-snapshot__property-details">
+                <h3>Stories</h3>
+                <p>{{ content.field_property_stories }}</p>
+            </div>
+        </div>
+        {# Property snapshot property type #}
+        <div class="property-snapshot__property">
+            <div class="property-snapshot__property-icon">
+                <svg aria-hidden="false" width="50" height="50">
+                    <use xlink:href="#icon-onehouse_snapshot_property-type"></use>
+                </svg>
+            </div>
+            <div class="property-snapshot__property-details">
+                <h3>Property Type</h3>
+                <p>{{ content.field_property_type }}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if content.field_property_map_embed|field_value %}
+    <div class="paragraph-widget property-block property-block--property-location">
+      <div class="property-block property-block--map">
+        <h2 class="block-title">Location</h2>
+        <div class="block-inner">
+          {% set _map_html = content.field_property_map_embed.0['#context']['value'] %}
+          {{ _map_html|raw }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if content.field_field_property_record|field_value or field_property_public_records|field_value %}
+  <div class="paragraph-widget property-block property-block--property-history">
+    <h3>This Property's One House History</h3>
+    <div class="property-history">
+      <div class="property-history__row">
+
+        <div class="property-history__property">
+            <svg aria-hidden="false" width="50" height="50">
+                <use xlink:href="#icon-onehouse_prop_history_prev_auction_year"></use>
+            </svg>
+            <h3>Previous Auction Year</h3>
+            <ul>
+            {% for record in _previous_record %}
+            <li>{{ record.year|striptags }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div class="property-history__property">
+            <svg aria-hidden="false" width="50" height="50">
+                <use xlink:href="#icon-onehouse_prop_history_previous_sale_mount"></use>
+            </svg>
+            <h3>Previous Sale Amount</h3>
+            <ul>
+            {% for record in _previous_record %}
+            <li>{{ record.price }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div class="property-history__property">
+            <svg aria-hidden="false" width="50" height="50">
+                <use xlink:href="#icon-onehouse_prop_history_landrec_link"></use>
+            </svg>
+            <h3>Public Land Records</h3>
+            {{ content.field_property_public_records }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {# Check if related properties can be found. #}
+
+  {% set _more_properties = NULL %}
+
+  {% set _result_count = drupal_view_result('property_list', 'block_suggestion', _zipcode, node.id)|length %}
+  {% if _result_count > 0 %}
+    {% set _more_properties = drupal_view('property_list', 'block_suggestion', _zipcode, node.id) %}
+  {% else %}
+    {% set _result_count = drupal_view_result('property_list', 'block_suggestion', 'all', node.id)|length %}
+    {% if _result_count > 0 %}
+      {% set _more_properties = drupal_view('property_list', 'block_suggestion', 'all', node.id) %}
+    {% endif %}
+  {% endif %}
+
+  {% if _more_properties %}
+  <hr />
+  <div class="paragraph-widget property-block property-block--other-properties">
+      <h3>Explore Other Properties</h3>
+      <div class="block-inner">
+        {{ _more_properties }}
+      </div>
+  </div>
+  {% endif %}
+
+{% endblock %}

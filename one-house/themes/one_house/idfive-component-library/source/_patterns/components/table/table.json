@@ -1,0 +1,33 @@
+{
+  "table": {
+    "caption_ID": "caption1",
+    "table_caption": "Table Caption Example",
+    "headers": ["Header 1", "Header 2", "Header 3", "Header 4"],
+    "rows": [
+      [
+        "<p><strong>Row 1: </strong>Lorem ipsum dolor sit amet</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>"
+      ],
+      [
+        "<p><strong>Row 2: </strong>Lorem ipsum dolor sit amet</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>"
+      ],
+      [
+        "<p><strong>Row 3: </strong>Lorem ipsum dolor sit amet</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>"
+      ],
+      [
+        "<p><strong>Row 4: </strong>Lorem ipsum dolor sit amet</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tortor dolor, tincidunt ac dui sit amet, iaculis placerat ante. Vivamus a congue odio, eu condimentum felis. Sed et lorem mi.</p>"
+      ]
+    ]
+  }
+}

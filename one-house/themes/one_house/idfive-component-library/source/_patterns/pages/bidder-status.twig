@@ -1,0 +1,339 @@
+{% extends "@pages/page-structure.twig" %}
+{% block content %}
+    {% include "@components/hero/hero--internal.twig" with internal_hero %}
+<div class="layout--sidebar">
+    <div class="block--sidebar">
+        <nav role="navigation" aria-labelledby="block-biddermainmenu-menu" id="block-biddermainmenu">
+            <h2 class="visually-hidden" id="block-biddermainmenu-menu">Bidder Main Menu</h2>
+            <nav class="nav nav--bidder" aria-label="Bidder Menu in Side">
+                <div class="nav__list">
+                    <ul>
+                        <li class="menu-item">
+                            <a href="/bidder/my-dashboard">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="21" height="21">
+                                        <use xlink:href="#icon-onehouse_my_dashboard_active"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">My Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item--active-trail">
+                            <a href="/bidder/my-bidder-status">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="27" height="27">
+                                        <use xlink:href="#icon-onehouse_status_default"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">My Bidder Status</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/bidder/one-house-match">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="26" height="22">
+                                        <use xlink:href="#icon-onehouse_one_house_match"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">One House Match</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/bidder/account-details">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="19" height="26">
+                                        <use xlink:href="#icon-onehouse_change_password"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">Change Password</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/user/logout">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="19" height="26">
+                                        <use xlink:href="#icon-onehouse_log-out"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </nav>
+    </div>
+    <div class="block--main">
+	    <div data-drupal-messages-fallback="" class="hidden"></div>
+        <div class="paragraph-widget paragraph-widget--match-status">
+            <h2>My Bidder status</h2>
+            <p>Not submitted</p>
+        </div>
+        <hr />
+        <div class="paragraph-widget paragraph-widget--application-text" id="ip_paragraph_adv-2">
+            <div class="text-content">
+                <h3>My One House Match Suggestions</h3>
+                <p><strong>Personal data will only be stored on the site temporarily until the review process has begun.</strong></p>
+                <p>Thank you for your interest in becoming a bidder with One House At A Time. Please complete the following application. You can type directly into the fields on the form and submit, or print it out if you prefer. Also, you can print a blank form and fill it in manually. Then, scan/email, fax, or mail the completed form and supporting documents our office.</p>
+                <p>Please contact us with any questions for assistance at: office@onehousebaltimore.org or call in at 410-467-1826</p>
+                <p>Note: The completed application and required documentation must be submitted no later that five (5) business days before an auction in order to participate as a bidder in that auction.</p>
+                <h3>Applicants Must Demonstrate:</h3>
+                <ol>
+                    <li>Financial ability: Submit documentation showing assets to support the purchase and rehabilitation of the vacant property within 12 months of the date of settlement.</li>
+                    <li>Business experience: Demonstrate thorough knowledge of and/or experience in real estate transactions and the rehabilitation of vacant property. Include addresses in Baltimore City (or if none, list other Maryland jurisdictions) where renovation work was completed with permits.</li>
+                    <li>Good standing: If Applicant (or its affiliates/related parties) owns property in Maryland including Baltimore City, then the applicant and its properties must be in good standing which includes but is not limited to: not having outstanding or unresolved housing code or building code enforcement actions/notices. Note: Prior ownership of property in Baltimore City (or Maryland) is not a prerequisite to qualifying.</li>
+                </ol>
+                <p>To verify good standing, all applicants must disclose:</p>
+                <ul>
+                    <li>All properties owned, in whole or in part, by the individuals and/or affiliates/related parties including members of the individual's immediate family, including LLCs owned in whole or in part by said persons.</li>
+                    <li>All properties owned, in whole or in part, by the affiliates/related parties including members, principals, partners, and/or resident agents of the corporate entity, including LLCs owned in whole or in part by said corporate entity.</li>
+                    <li>Any and all court actions or code enforcement actions involving a) Baltimore City and b) all other Maryland jurisdictions regarding any real property owned in whole or in part by the individuals or corporate entities or affiliates/related parties.</li>
+                    <li>Any and all relationships with any individuals and/or corporate entities that have been disqualified by One House At A Time in the past.</li>
+                </ul>
+            </div>
+        </div>
+        <hr />
+        <div class="paragraph-widget paragraph-widget--application-form">
+            <form class="user-form" accept-charset="UTF-8" method="post" action="#">
+                <div class="bidder-status-form general-information">
+                    <p class="validation-text">•Missing form field(s). Please complete to continue.</p>
+                    <h4>1. General Information</h4>
+                    <div class="applicant-name">
+                        <div class="js-form-item form-item general-first-name-item">
+                            <label for="general-first-name" class="js-form-required form-required">First Name</label>
+                            <input autocomplete="off" data-drupal-selector="general-first-name" type="text" id="general-first-name" name="first_name" size="25" maxlength="128" class="form-text required" required="required" aria-required="true" >
+                            <span class="validation-text">*Missing required information</span>
+                        </div>
+                        <div class="inline-form-items">
+                            <div class="js-form-item form-item general-last-name-item">
+                                <label for="general-last-name" class="js-form-required form-required">Last Name</label>
+                                <input autocomplete="off" data-drupal-selector="general-last-name" type="text" id="general-last-name" name="last_name" size="25" maxlength="128" class="form-text required" required="required" aria-required="true" >
+                                <span class="validation-text"></span>
+                            </div>
+                            <div class="js-form-item form-item general-suffix-item">
+                                <label for="general-suffix" class="">Suffix</label>
+                                <input autocomplete="off" data-drupal-selector="general-suffix" type="text" id="general-suffix" name="last_name" size="25" maxlength="128" class="form-text" aria-required="false" >
+                                <span class="validation-text"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="add-field-wrapper">
+                        <button class="add-field-button" value="Add a co-applicant">
+                            <svg aria-hidden="false" width="38" height="38">
+                                <use xlink:href="#icon-onehouse_add_form_field"></use>
+                            </svg>
+                            <span>Add a co-applicant</span>
+                        </button>
+                    </div>
+                    <div class="js-form-item form-item general-business-name-item">
+                        <label for="general-business-name" class="js-form-required form-required">Company/Business Name</label>
+                        <input autocomplete="off" data-drupal-selector="general-business-name" type="text" id="general-business-name" name="business_name" size="25" maxlength="128" class="form-text" aria-required="false" >
+                        <span class="validation-text"></span>
+                    </div>
+                    <div class="js-form-item form-item general-business-name-item">
+                        <label for="general-email" class="js-form-required form-required">Email Address</label>
+                        <input autocomplete="off" data-drupal-selector="general-email" type="email" id="general-email" name="email_address" size="25" maxlength="128" class="form-text required" required="required" aria-required="true" >
+                        <span class="validation-text"></span>
+                    </div>
+                    <div class="add-field-wrapper">
+                        <button class="add-field-button" value="Add another email">
+                            <svg aria-hidden="false" width="38" height="38">
+                                <use xlink:href="#icon-onehouse_add_form_field"></use>
+                            </svg>
+                            <span>Add another email address</span>
+                        </button>
+                    </div>
+                    <div class="js-form-item form-item general-phone-number-item">
+                        <label for="general-phone-number" class="js-form-required form-required">Phone Number</label>
+                        <input autocomplete="off" data-drupal-selector="general-phone-number" type="phone" id="general-phone-number" name="phone_number" size="25" maxlength="128" class="form-text required" required="required" aria-required="true" >
+                        <span class="validation-text"></span>
+                    </div>
+                    <div class="js-form-item form-item general-fax-number-item">
+                        <label for="general-fax-number" class="">Fax</label>
+                        <input autocomplete="off" data-drupal-selector="general-fax-number" type="phone" id="general-fax-number" name="fax_number" size="25" maxlength="128" class="form-text" aria-required="false" >
+                        <span class="validation-text"></span>
+                    </div>
+                    <div class="js-form-item form-item general-address-type-item">
+                        <label for="general-address-type" class="js-form-required form-required">Address Type</label>
+                        <select data-drupal-selector="edit-status" id="general-address-type" name="general-address-type" class="form-select required">
+                            <option>- Address type -</option>
+                        </select>
+                        <span class="validation-text"></span>
+                    </div>
+                    <div class="js-form-item form-item general-Address-item">
+                        <label for="general-Address" class="js-form-required form-required">Address</label>
+                        <input autocomplete="off" data-drupal-selector="general-Address" type="text" id="general-Address" name="address" size="25" maxlength="128" class="form-text required" required="required" aria-required="true" >
+                        <span class="validation-text"></span>
+                    </div>
+                    <div class="js-form-item form-item general-Address2-item">
+                        <label for="general-Address2" class="">Address Line 2</label>
+                        <input autocomplete="off" data-drupal-selector="general-Address2" type="text" id="general-Address2" name="address2" size="25" maxlength="128" class="form-text" aria-required="false" >
+                        <span class="validation-text"></span>
+                    </div>
+                    <div class="js-form-item form-item general-city-item">
+                        <label for="general-city" class="js-form-required form-required">City</label>
+                        <input autocomplete="off" data-drupal-selector="general-city" type="text" id="general-city" name="city" size="25" maxlength="128" class="form-text required" required="required" aria-required="true" >
+                        <span class="validation-text"></span>
+                    </div>
+                    <div class="js-form-item form-item general-state-item">
+                        <label for="general-state" class="js-form-required form-required">State</label>
+                        <select data-drupal-selector="general-state" id="general-state" name="state" class="form-select required">
+                            <option>- State -</option>
+                        </select>
+                        <span class="validation-text"></span>
+                    </div>
+                    <div class="js-form-item form-item general-zip-code-item">
+                        <label for="general-zip-code" class="js-form-required form-required">Zip Code</label>
+                        <input autocomplete="off" data-drupal-selector="general-zip-code" type="text" id="general-zip-code" name="zip-code" size="25" maxlength="128" class="form-text required" required="required" aria-required="true" >
+                        <span class="validation-text"></span>
+                    </div>
+                </div>
+                <div class="bidder-status-form legal-form">
+                    <h4>2. Legal form of applicant (check one):</h4>
+                    <p class="small-text">Personal data will only be stored on the site temporarily until the review process has begun. See the box below for necessary upload requirements…lorem ipsum dolor sit amet consectetur adipiscing.</p>
+                    <div class="legal-form text-content">
+                        <p>For all incorporated entities:</p>
+                        <ul>
+                            <li>Articles of Incorporation</li>
+                            <li>Operating Agreement (with list of members)</li>
+                            <li>Certificate of Good Standing as a registered business in Maryland</li>
+                            <li>Driver's License</li>
+                        </ul>
+                        <p>For Nonprofits:</p>
+                        <ul>
+                            <li>IRS 501(c)(3) Determination Letter</li>
+                        </ul>
+                    </div>
+                    <div class="bidder-status-form--form-checkboxes form-checkboxes">
+                        <div class="js-form-item form-item js-form-type-checkbox form-item-field-legal-form-person js-form-item-field-legal-form-person">
+                            <input data-drupal-selector="edit-field-legal-form-person" type="checkbox" id="edit-field-legal-form-person" name="field_user_form-person" value="2" checked="checked" class="form-checkbox">
+                            <label for="edit-field-legal-form-person" class="option">Person</label>
+                        </div>
+                        <div class="js-form-item form-item js-form-type-checkbox form-item-field-legal-form-proprietorship js-form-item-field-legal-form-proprietorship">
+                            <input data-drupal-selector="edit-field-legal-form-proprietorship" type="checkbox" id="edit-field-legal-form-proprietorship" name="field_legal-form-proprietorship" value="2" checked="checked" class="form-checkbox">
+                            <label for="edit-field-legal-form-proprietorship" class="option">Proprietorship</label>
+                        </div>
+                        <div class="js-form-item form-item js-form-type-checkbox form-item-field-legal-form-partnership js-form-item-field-legal-form-partnership">
+                            <input data-drupal-selector="edit-field-legal-form-partnership" type="checkbox" id="edit-field-legal-form-partnership" name="field_legal-form-partnership" value="2" checked="checked" class="form-checkbox">
+                            <label for="edit-field-legal-form-partnership" class="option">Partnership</label>
+                        </div>
+                        <div class="js-form-item form-item js-form-type-checkbox form-item-field-legal-form-corporation js-form-item-field-legal-form-corporation">
+                            <input data-drupal-selector="edit-field-legal-form-corporation" type="checkbox" id="edit-field-legal-form-corporation" name="field_legal-form-corporation" value="2" checked="checked" class="form-checkbox">
+                            <label for="edit-field-legal-form-corporation" class="option">Corporation</label>
+                        </div>
+                        <div class="js-form-item form-item js-form-type-checkbox form-item-field-legal-form-llc js-form-item-field-legal-form-llc">
+                            <input data-drupal-selector="edit-field-legal-form-llc" type="checkbox" id="edit-field-legal-form-llc" name="field_legal-form-llc" value="2" checked="checked" class="form-checkbox">
+                            <label for="edit-field-legal-form-llc" class="option">Limited Liability Company</label>
+                        </div>
+                        <div class="js-form-item form-item js-form-type-checkbox form-item-field-legal-form-nfp js-form-item-field-legal-form-nfp">
+                            <input data-drupal-selector="edit-field-legal-form-nfp" type="checkbox" id="edit-field-legal-form-nfp" name="field_legal-form-nfp" value="2" checked="checked" class="form-checkbox">
+                            <label for="edit-field-legal-form-nfp" class="option">Not-For-Profit</label>
+                        </div>
+                    </div>
+                    <div class="attach-file">
+                        <button href="#" class="button" value="Select a file"><span>Select a file</span></button>
+                        <span class="small-text">MyIRS501(c)(3).PDF</span>
+                    </div>
+                    <div class="attach-additional-file">
+                        <button href="#" class="attach-additional-file-btn" value="add another file">
+                            <span><svg aria-hidden="false" width="38" height="38">
+                                <use xlink:href="#icon-onehouse_attatch_document"></use>
+                            </svg></span>
+                            <span class="small-text">Add another attachment</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="bidder-status-form purchase-ability">
+                    <h4>3. Financial Ability to Purchase and Rehabilitate</h4>
+                    <p>Please attach documentation of financial ability to purchase and rehabilitate the property, including, but not limited to, bank statements, guaranteed lines of credit, or equity in properties owned. You may remove any personal information except your name or company name.</p>
+                    <div class="attach-file">
+                        <button href="#" class="button" value="Select a file"><span>Select a file</span></button>
+                        <span class="small-text">MyIRS501(c)(3).PDF</span>
+                    </div>
+                    <div class="attach-file">
+                        <button href="#" class="button" value="Select a file"><span>Select a file</span></button>
+                        <span class="small-text"></span>
+                    </div>
+                    <div class="attach-additional-file">
+                        <button href="#" class="attach-additional-file-btn" value="add another file">
+                            <span><svg aria-hidden="false" width="30" height="30">
+                                <use xlink:href="#icon-onehouse_attatch_document"></use>
+                            </svg></span>
+                            <span class="small-text">Add another attachment</span>
+                         </button>
+                    </div>
+                </div>
+                <div class="bidder-status-form purchase-ability">
+                    <h4>4. Describe Your Business</h4>
+                    <label for="business-description" class="no-bold textarea-labels">Please describe your business, its scope of operations, and how it demonstrates that you have the experience and ability to purchase and rehab vacant properties. List, by address, up to three properties in Baltimore City (if none, then list other Maryland properties) that the applicant has rehabbed with permits in the past five years.</label>
+                    <textarea placeholder="type your response here" name="business-description" id="business-description"></textarea>
+                    <div class="inline-form-items"><label for="business-initials" class="no-bold">If none, initial here</label><span><input autocomplete="off" data-drupal-selector="business-initials" type="text" id="business-initials" name="business-initials" size="25" maxlength="2" class="form-text form-initials"  aria-required="false" ></span></div>
+                    <p>If none, please upload copies of permits pulled in other jurisdictions showing scope of work completed.</p>
+                    <div class="attach-file">
+                        <button href="#" class="button" value="Select a file"><span>Select a file</span></button>
+                        <span class="small-text">MyIRS501(c)(3).PDF</span>
+                    </div>
+                    <div class="attach-file">
+                        <button href="#" class="button" value="Select a file"><span>Select a file</span></button>
+                        <span class="small-text"></span>
+                    </div>
+                    <div class="attach-additional-file">
+                        <button href="#" class="attach-additional-file-btn" value="add another file">
+                            <span><svg aria-hidden="false" width="30" height="30">
+                                <use xlink:href="#icon-onehouse_attatch_document"></use>
+                            </svg></span>
+                            <span class="small-text">Add another attachment</span>
+                         </button>
+                    </div>
+                </div>
+                <div class="bidder-status-form disclosures">
+                    <h4>5. Disclosures</h4>
+                    <label for="property-list" class="no-bold  textarea-labels"><strong>A. List all Properties owned</strong> in whole or in part by the individual and/or members of the individual’s immediate family and affiliates/related parties including LLCs owned in whole or in part by said persons. If a corporate entity, list all properties owned in whole or in part by the members, principals, partners, and/or resident agents of the corporate entities, including LLCs owned in whole or in part by said corporate entities or individuals.</label>
+                    <textarea placeholder="type your response here" name="property-list" id="property-list"></textarea>
+                    <div class="inline-form-items"><label for="property-list-initials" class="no-bold">If none, initial here</label><span><input autocomplete="off" data-drupal-selector="property-list-initials" type="text" id="property-list-initials" name="property-list-initials" size="25" maxlength="2" class="form-text form-initials"  aria-required="false" ></span></div>
+                    <div class="attach-file">
+                        <button href="#" class="button" value="Select a file"><span>Select a file</span></button>
+                        <span class="small-text">MyIRS501(c)(3).PDF</span>
+                    </div>
+                    <div class="attach-file">
+                        <button href="#" class="button" value="Select a file"><span>Select a file</span></button>
+                        <span class="small-text"></span>
+                    </div>
+                    <div class="attach-additional-file">
+                        <button href="#" class="attach-additional-file-btn" value="add another file">
+                            <span><svg aria-hidden="false" width="30" height="30">
+                                <use xlink:href="#icon-onehouse_attatch_document"></use>
+                            </svg></span>
+                            <span class="small-text">Add another attachment</span>
+                        </button>
+                    </div>
+
+                    <label for="court-actions" class="no-bold textarea-labels"><strong>B. List all court actions and all code enforcement actions in Maryland, including Baltimore City regarding any real property owned</strong> in whole or in part by the individuals or corporate entities.</label>
+                    <textarea placeholder="type your response here" name="court-actions" id="court-actions"></textarea>
+                    <div class="inline-form-items"><label for="court-action-initials" class="no-bold">If none, initial here</label><span><input autocomplete="off" data-drupal-selector="court-action-initials" type="text" id="court-action-initials" name="court-action-initials" size="25" maxlength="2" class="form-text form-initials"  aria-required="false" ></span></div>
+                    
+                    <label for="business-relationships" class="no-bold textarea-labels"><strong>C. List any and all relationships with any individuals and/or corporate entities that have been disqualified by One House Art A Time</strong> in the past.</p>
+                    <textarea placeholder="type your response here" name="business-relationships" id="business-relationships"></textarea>
+                    <div class="inline-form-items"><label for="business-relationships-initials" class="no-bold">If none, initial here</label><span><input autocomplete="off" data-drupal-selector="business-relationships-initials" type="text" id="business-relationships-initials" name="business-relationships-initials" size="25" maxlength="2" class="form-text form-initials"  aria-required="false" ></span></div>
+                </div>
+                <hr />
+                <div class="bidder-status-form affirmation">
+                    <h4>6. Affirmation</h4>
+                    <p><strong>I hereby swear or affirm, under the penalties of perjury, that the foregoing statements and answers contained in this application and any addendum attached hereto are true to the best of my knowledge, information, and belief.</strong></p>
+                    <p class="small-text">By typing your name below, you are signing this application electronically. You agree that your electronic signature is the legal equivalent of your manual signature on this application.</p>
+                    <div class="affirmation__fieldgroup">
+                        <label for="affirmation-signature">Signature</label>
+                        <input autocomplete="off" data-drupal-selector="affirmation-signature" type="text" id="affirmation-signature" name="affirmation-signature" size="25" maxlength="128" class="affirmation-signature form-text required" required="required" aria-required="true" >
+                        <label for="affirmation-date">Date</label>
+                        <input autocomplete="off" data-drupal-selector="affirmation-date" type="date" id="affirmation-date" name="affirmation-date" size="25" maxlength="128" class="affirmation-date form-text required" required="required" aria-required="true" >
+                    </div>
+                    <button class="button" type="submit" value="Submit">
+                        <span>Submit</span>
+                    </button>
+                    <p class="validation-text">•Missing form field(s). Please complete to continue.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

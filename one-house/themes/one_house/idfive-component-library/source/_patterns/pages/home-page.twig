@@ -1,0 +1,31 @@
+{% extends "@pages/page-structure.twig" %}
+{% block content %}
+  {% include "@components/hero/hero.twig" with homepage_hero %}
+        <div class="paragraph-widget paragraph-widget--home-page-primary-text">
+            {% include "@components/home-page-primary-text/home-page-primary-text.twig" with home_page_primary_text %}
+        </div>
+
+        <div class="paragraph-widget paragraph-widget--how-we-work">
+            <h2>How we work</h2>
+            <p>One House is a nonprofit that streamlines the transfer of vacant properties to court-appointed receivers lorem ipsum.</p>
+            <a href="#" class="button">Learn More</a>
+            {% include "@components/how-we-work/how-we-work.twig" %}
+        </div>
+
+        <div class="paragraph-widget paragraph-widget--dates-and-deadlines">
+            {% include "@components/dates-and-deadlines/dates-and-deadlines.twig" with dates_and_deadlines %}
+        </div>
+
+        <div class="paragraph-widget paragraph-widget--success-story">
+            <h2>Success Story</h2>
+            {% include "@components/carousel/carousel.twig" with success_story %}
+        </div>
+
+        <div class="paragraph-widget paragraph-widget--blockquote">
+            {% include "@components/blockquote/blockquote.twig" with featured_quote %}
+        </dov>
+
+        <div class="paragraph-widget paragraph-widget--call-to-action">
+            {% include "@components/calls-to-action/call-to-action.twig" with cta %}
+        </div>
+{% endblock %}

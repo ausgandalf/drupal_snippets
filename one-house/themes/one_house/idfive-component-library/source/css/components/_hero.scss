@@ -1,0 +1,235 @@
+.hero, .interior-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #E2ECF2;
+  height:rem(790);
+  @extend %negate-outer-pad-x;
+  .subnav {
+    position: absolute;
+    @include mq($min, $desktop) {
+      position: static;
+      float: right;
+      margin-left: rem(40);
+      margin-bottom: rem(40);
+    }
+  }
+  &.hero-with-subnav {
+    margin-bottom: rem(140);
+    @include mq($min, $desktop) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.hero__inner {
+  padding: rem(50) rem(30);
+  /*background-color: rgba($black, 0.2);*/
+  position: relative;
+  margin-bottom: rem(40);
+  height:100%;
+  overflow:hidden;
+  @include mq($min, $tablet){
+    margin-left:rem(-100);
+  }
+  @extend %negate-outer-pad-x;
+  @include mq($min, $lg_desktop) {
+    padding: rem(100) rem(60);
+    margin-bottom: rem(70);
+  }
+  .breadcrumbs {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+  &.hero-with-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    &:after {
+      content: "";
+      /*background-color: rgba($white, 0.75);*/
+      position: absolute;
+      inset: 0;
+    }
+  }
+  .hero__arc{
+    width:81%;
+    margin-left:rem(20);
+    height:rem(600);
+    position:absolute;
+    top:rem(70);
+    @include mq($min, $tablet){
+      position:absolute;
+      width:rem(635);
+      height:rem(670);
+      top:rem(130);
+      left:rem(120);
+      z-index:15;
+    }
+    svg{
+      width:100%;
+      height:100%;
+    }
+  }
+  .hero__title-container{
+    position:absolute;
+    top:rem(140);
+    left:0;
+    width:100%;
+    z-index:25;
+    @include mq($min, $tablet){
+      top:rem(280);
+      left:rem(215);
+      max-width:rem(600);
+      width: auto;
+    }
+    .hero__subtitle{
+      font-family: $headerfont;
+      font-size:rem(27);
+      color:$secondary;
+      margin:0;
+      text-align:center;
+      padding-bottom:rem(10);
+      @include mq($min, $tablet){
+        text-align:left;
+        font-size:rem(47);
+        padding-bottom:rem(15);
+        padding-left:rem(10);
+      }
+    }
+    .hero__title {
+      @extend %h1;
+      position: relative;
+      z-index: 1;
+      font-size:rem(87);
+      line-height:rem(87);
+      text-transform: uppercase;
+      margin:0;
+      text-align:center;
+      .title-line2{
+        display:none;
+        @include mq($min, $tablet){
+          display:inline;
+        }
+      }
+      @include mq($min, $tablet){
+        text-align:left;
+        font-size:rem(146);
+        line-height:0.96;
+        padding-bottom:rem(55);
+      }
+    }
+    .hero__title-buttons{
+      display: none;
+      ul{
+        display:flex;
+        gap:rem(25);
+        li {
+          a {
+            margin: 0;
+          }
+        }
+      }
+      @include mq($min, $tablet){
+        display:block;
+      }
+    }
+  }
+  .hero__buttons-mobile{
+    background-color:$primary;
+    position: absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    z-index: 36;
+    text-align: center;
+    padding:rem(25) rem(80);
+    display:block;
+    @include mq($min, $tablet){
+      display:none;
+    }
+
+    ul {
+      li {
+        &:not(:last-child) {
+          margin-bottom: rem(15);
+        }
+        a {
+          margin: 0;
+        }
+      }
+    }
+  }
+  .hero__building{
+    width:100%;
+    z-index:20;
+    position:absolute;
+    right:0;
+    top:rem(290);
+
+    @include mq($max, $pre-palm){
+      top:rem(350) !important;
+    }
+
+    @include mq($min, $tablet){
+      width:inherit;
+      position:absolute;
+      top:rem(285);
+      right:rem(0);
+    }
+    @include mq($min, $lg-desktop){
+      // right:rem(110);
+    }
+
+    img {
+      object-fit: contain;
+      object-position: top center;
+    }
+  }
+}
+.interior-hero{
+  background-color:#fff;
+  height:rem(710);
+  padding-top:rem(150);
+  overflow:hidden;
+  position: relative;
+  &.no-hero{
+    height:inherit;
+    background-color:#fafafa;
+    padding-bottom:rem(20);
+  }
+  @include mq($min, $tablet){
+    height:rem(872);
+  }
+  .interior-hero__inner{
+    // max-width:rem(660);
+    margin-inline:auto;
+    //padding-inline:rem(20);
+    .interior-hero__title{
+      text-align:center;
+      text-transform: uppercase;
+      font-size:rem(55);
+      font-weight:400;
+      line-height:1.14;
+
+      @include mq($min, $desktop){
+        font-size:rem(77);
+        max-width:rem(842);
+        margin-inline:auto;
+      }
+    }
+    .breadcrumbs__list{
+      text-align:center;
+    }
+  }
+  .interior-hero__building{
+    width:100%;
+    height:rem(305);
+    // position:absolute;
+    // left:0;
+    // bottom:0;
+    @include mq($min, $tablet){
+      height:rem(480);
+    }
+    @extend %responsive-img;
+  }
+}

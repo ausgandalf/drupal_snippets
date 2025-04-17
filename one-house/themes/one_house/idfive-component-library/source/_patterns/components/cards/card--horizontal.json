@@ -1,0 +1,12 @@
+{
+  "card": {
+    "title": "Card Title",
+    "body": "<p>Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>",
+    "image": {
+      "src": "../../images/feature-fpo.png",
+      "alt": ""
+    },
+    "url": "https://idfive.com",
+    "optional_text": "Learn More"
+  }
+}

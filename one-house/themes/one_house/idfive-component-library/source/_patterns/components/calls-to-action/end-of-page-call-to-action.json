@@ -1,0 +1,25 @@
+{
+  "end_of_page_call_to_action": {
+    "title": "End of Page CTA Lorem Ipsum",
+    "text": "Lorem Ipsum do adipiscing veniam exercitation dolore nostrud deserunt labore aute anim enim labore velit sint ut lorem esse adipiscing.",
+    "button_set": {
+      "button_set": {
+        "button_alt": true,
+        "buttons": [
+          {
+            "button_alt": {
+              "text": "CTA Label Lorem",
+              "url": "https://idfive.com/"
+            }
+          },
+          {
+            "button_alt": {
+              "text": "CTA Label Lorem",
+              "url": "https://idfive.com/"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

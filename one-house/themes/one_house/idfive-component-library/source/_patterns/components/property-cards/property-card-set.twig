@@ -1,0 +1,7 @@
+<div class="card-set">
+  <ul>
+    {% for card in card_set.cards %}
+        <li>{% include "@components/property-cards/property-card.twig" with card %}</li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,15 @@
+<div class="card card--horizontal">
+  <a href="{{ card.url }}"><span><span>{{ card.title }}</span></span></a>
+  <div class="card__media">
+    <img src="{{ card.image.src }}" alt="{{ card.image.alt }}" loading="lazy">
+  </div>
+  <div class="card__content">
+    <h2 class="card__title">{{ card.title }}</h2>
+    <div class="card__body">
+      {{ card.body|raw }}
+    </div>
+    <p class="card__optional">
+        {{ card.optional_text }}
+    </p>
+  </div>
+</div>

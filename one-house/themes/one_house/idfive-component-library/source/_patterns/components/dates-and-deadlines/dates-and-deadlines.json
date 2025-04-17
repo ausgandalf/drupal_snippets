@@ -1,0 +1,25 @@
+{
+    "dates_and_deadlines": {
+        "title": "Dates and<br />Deadlines",
+        "dates": [
+            {
+                "day":"04",
+                "month":"oct",
+                "name":"Application Deadline.",
+                "content":"For the October 11th auction lorem ipsum."
+            },
+            {
+                "day":"11",
+                "month":"oct",
+                "name":"Online Auction.",
+                "content":"Lorem Ipsum dolor sit amet."
+            },
+            {
+                "day":"12",
+                "month":"Oct",
+                "name":"End of Auction.",
+                "content":"Unsold properties moved to immediate sales lorem."
+            }
+        ]
+    }
+}

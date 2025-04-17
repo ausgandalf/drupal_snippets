@@ -1,0 +1,122 @@
+.accordion__content {
+  overflow: hidden;
+  transition-property: height, visibility;
+  transition-timing-function: ease-in-out;
+}
+
+.accordion__accordion.js-enabled .accordion__content {
+  visibility: hidden;
+}
+.accordion__accordion.is-active .accordion__content {
+  visibility: visible;
+}
+
+.accordion__accordion {
+  border-bottom: rem(2) solid $tertiary;
+
+  & + .accordion__accordion {
+    margin-top: rem(18);
+  }
+  &.is-active{
+    border-bottom: rem(2) solid $tertiary;
+  }
+}
+
+.accordion__title:hover .accordion__trigger[aria-expanded=true] + .sp-before-icon::after {
+  background-color: $white;
+}
+
+.accordion__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+
+  &:hover {
+    .accordion__trigger {
+      color: $darkbrick;
+    }
+    .sp-before-icon {
+      background-color: $darkbrick;
+      &::before,
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
+
+  button{
+    padding: rem(19) rem(40) rem(10) 0;
+    @include mq($min, $tablet) {
+      padding: rem(28) rem(40) rem(15) 0;
+    }
+    @include mq($min, $lg_desktop) {
+      padding: rem(28) rem(40) rem(15) 0;
+    }
+  }
+}
+
+.accordion__trigger {
+  @include _font-size(700, 26, 34);
+  background-color: transparent;
+  border: none;
+  color: $primary;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  padding-left:0;
+  transition: color 0.3s linear;
+  z-index: 10;
+  &[aria-expanded="true"] {
+    color: $secondary;
+
+    & + .sp-before-icon:after {
+      background: $secondary;
+      transform: translateX(-50%) rotate(-90deg);
+    }
+  }
+}
+
+.sp-before-icon {
+  align-items: center;
+  height: rem(32);
+  display: flex;
+  position: absolute;
+  right:0;
+  justify-content: center;
+  width: rem(32);
+  background-color:#F7F7F7;
+  border-radius:100%;
+  transition: background-color 0.3s linear;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    transform-origin: center center;
+    background-color: $primary;
+    transition: transform 0.25s linear, background-color 0.3s linear;
+  }
+  &:before {
+    height: rem(4);
+    width: rem(20);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &:after {
+    height: rem(20);
+    left: 50%;
+    transform: translateX(-50%);
+    width: rem(4);
+  }
+}
+
+.accordion__content-wrap {
+  padding: 0 rem(23) rem(18) 0;
+  text-align:left;
+  @include mq($min, $tablet) {
+    padding: 0 rem(37) rem(27) 0;
+  }
+}

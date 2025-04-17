@@ -1,0 +1,525 @@
+<?php
+
+/**
+ * @file
+ * One House (one_house), an idfive sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+use Drupal\node\Entity\Node;
+
+//
+// Hook Implements
+// .
+
+/**
+ * Implements hook_preprocess().
+ */
+function one_house_preprocess(&$variables, $hook) {
+
+  $variables = one_house_preprocess_by_hook($variables, $hook);
+  $variables = one_house_fill_variables($variables, $hook);
+
+}
+
+/**
+ * Function for hook specified preprocessing logic.
+ */
+function one_house_preprocess_by_hook($variables, $hook) {
+  // @todo Hook related process.
+  return $variables;
+}
+
+/**
+ * Function to fill up variables globally.
+ */
+function one_house_fill_variables($variables, $hook) {
+
+  $pageNamedId = one_house_get_page_id($variables);
+
+  // Define basic info.
+  $variables['host'] = \Drupal::request()->getSchemeAndHttpHost();
+  $variables['_page_type'] = $pageNamedId;
+  $variables['base_path'] = base_path();
+  $variables['res_path'] = 'themes/custom/' . $variables['theme_name'] . '/idfive-component-library/build';
+
+  $file_url_generator = \Drupal::service('file_url_generator');
+  $variables['res_url'] = $file_url_generator->generateString($variables['res_path']);
+
+  // Define site info.
+  $variables['_site_info'] = one_house_load_site_info();
+
+  // Add requested params.
+  $params = \Drupal::request()->query->all();
+  $variables['_params'] = $params;
+
+  // Define path info.
+  $path = \Drupal::request()->getRequestUri();
+  $url = $path;
+  $path = substr($path, 0, (strpos($path, '?') === FALSE) ? strlen($path) : strpos($path, '?'));
+
+  $rawArgs = \Drupal::routeMatch()->getRawParameters()->all();
+  $args = $rawArgs;
+
+  $variables['_path_info'] = [
+    'args' => $args,
+    'url' => $url,
+    'path' => $path,
+  ];
+
+  return $variables;
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes for different content types.
+ */
+function one_house_preprocess_html(&$variables) {
+
+  if (isset($variables['node_type'])) {
+    $bundle = $variables['node_type'];
+    if ($bundle == 'homepage') {
+      $variables['attributes']['class'][] = 'page-home';
+    }
+    elseif ($bundle == 'page') {
+      $variables['attributes']['class'][] = 'kitchen-sink';
+    }
+    elseif ($bundle == 'article') {
+      $variables['attributes']['class'][] = 'news-page';
+    }
+  }
+  else {
+    $routeName = \Drupal::routeMatch()->getRouteName();
+    if (strpos($routeName, 'sample')) {
+      $variables['attributes']['class'][] = 'sample_class';
+    }
+  }
+
+  one_house_refine_social_meta_tags($variables);
+}
+
+/**
+ * Refine social meta tags.
+ */
+function one_house_refine_social_meta_tags(&$variables) {
+  // Apply meta tag
+  // Meta tag default processing for Facebook, Twitter sharing
+  // .
+  if (isset($variables['page']['#attached']['html_head'])) {
+
+    $fbFound = FALSE;
+    $twitterFound = FALSE;
+
+    foreach ($variables['page']['#attached']['html_head'] as $_head) {
+      if ($_head[0]['#tag'] == 'meta') {
+        if (isset($_head[0]['#attributes']['property'])) {
+          if ($_head[0]['#attributes']['property'] == 'og:image') {
+            $fbFound = TRUE;
+          }
+        }
+        if (isset($_head[0]['#attributes']['name'])) {
+          if ($_head[0]['#attributes']['name'] == 'twitter:image') {
+            $twitterFound = TRUE;
+          }
+        }
+      }
+    }
+
+    $defaultPath = $variables['_site_info']['thumbnails']['share'];
+    if (strlen($defaultPath) > 0) {
+      if (strpos($defaultPath, 'http') === FALSE) {
+        $defaultPath = \Drupal::request()->getSchemeAndHttpHost() . '/' . $defaultPath;
+      }
+    }
+
+    if (strlen($defaultPath) > 0) {
+      if (!$fbFound) {
+        $metatag = [
+          '#tag' => 'meta',
+          '#attributes' => [
+            'property' => 'og:image',
+            'content' => $defaultPath,
+          ],
+        ];
+        $variables['page']['#attached']['html_head'][] = [$metatag, "og_image_0"];
+      }
+
+      if (!$twitterFound) {
+        $metatag = [
+          '#tag' => 'meta',
+          '#attributes' => [
+            'name' => 'twitter:image',
+            'content' => $defaultPath,
+          ],
+        ];
+        $variables['page']['#attached']['html_head'][] = [$metatag, "twitter_cards_image"];
+      }
+    }
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function one_house_preprocess_page(&$variables) {
+  // @todo Hook related process.
+  if (isset($variables['node'])) {
+    $variables['page_title'] = $variables['node']->title->value;
+  }
+  else {
+    $variables['page_title'] = $variables['page']['#title'];
+  }
+
+  if ($variables['_page_type'] == 'user.login') {
+    // Login Page.
+    $variables['_guide'] = one_house_theme_get_setting('one_house_login_guide');
+  }
+  elseif ($variables['_page_type'] == 'user.register') {
+    // Sign-up Page.
+    $variables['_guide'] = one_house_theme_get_setting('one_house_signup_guide');
+  }
+  elseif ($variables['_page_type'] == 'user.pass') {
+    // Reset Password Page.
+    $variables['_guide'] = one_house_theme_get_setting('one_house_reset_password_guide');
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_node() for Node templates..
+ *
+ * Some preprocessing on different content types.
+ */
+function one_house_preprocess_node(&$variables) {
+
+  // Specific variables/etc per type.
+  $node = $variables['elements']['#node'];
+  $bundle = $node->bundle();
+  $nid = $node->id();
+
+  if ($bundle == 'person') {
+    $_type = $node->field_person_type->value;
+    $_stype = $node->field_student_or_alumni->value;
+    $_etype = $node->field_employee_type->value;
+
+    $_type_str = 'faculty';
+    if ($_type == 0) {
+      if ($_etype == 'staff') {
+        $_type_str = 'staff';
+      }
+    }
+    elseif ($_type == 1) {
+      if ($_stype == 1) {
+        $_type_str = 'alumni';
+      }
+      else {
+        $_type_str = 'student';
+      }
+    }
+    else {
+      $_type_str = 'donor';
+    }
+
+    $variables['_type'] = $_type_str;
+  }
+}
+
+/**
+ * Breadcrumb preprocess hook.
+ */
+function one_house_preprocess_breadcrumb(&$variables) {
+  $variables['#cache']['contexts'][] = 'url.path';
+}
+
+/**
+ * Implements hook_theme_suggestions_breadcrumb_alter().
+ */
+function one_house_theme_suggestions_breadcrumb_alter(array &$suggestions, array $variables) {
+}
+
+/**
+ * Implements hook_theme_suggestions_container_alter().
+ */
+function one_house_theme_suggestions_container_alter(array &$suggestions, array &$variables) {
+  $fragments = [];
+  if (isset($variables['element']['#type'])) {
+    $fragments[] = $variables['element']['#type'];
+  }
+  if (isset($variables['element']['#name'])) {
+    $fragments[] = $variables['element']['#name'];
+  }
+  if (isset($variables['element']['#display_id'])) {
+    $fragments[] = $variables['element']['#display_id'];
+  }
+
+  for ($i = 0; $i < count($fragments); $i++) {
+    $output = array_slice($fragments, 0, $i + 1);
+    $ntg = implode('__', $output);
+    array_unshift($suggestions, 'container__' . $ntg);
+  }
+
+}
+
+/**
+ * Implements hook_theme_suggestions_breadcrumb_alter().
+ */
+function one_house_theme_suggestions_form_element_label_alter(array &$suggestions, array $variables) {
+  if (isset($variables['element']['#title_display'])) {
+    array_unshift($suggestions, 'form-element-label__' . $variables['element']['#title_display']);
+  }
+
+  $fragments = [];
+  if (isset($variables['element']['#form_element_type'])) {
+    $fragments[] = $variables['element']['#form_element_type'];
+  }
+  if (isset($variables['element']['#form_id'])) {
+    $fragments[] = $variables['element']['#form_id'];
+  }
+  if (isset($variables['element']['#title_display'])) {
+    $fragments[] = $variables['element']['#title_display'];
+  }
+
+  for ($i = 0; $i < count($fragments); $i++) {
+    $output = array_slice($fragments, 0, $i + 1);
+    $ntg = implode('__', $output);
+    array_unshift($suggestions, 'form-element-label__' . $ntg);
+  }
+}
+
+//
+// Custom Functions
+// .
+
+/**
+ * Get site specific information.
+ */
+function one_house_load_site_info() {
+  $site_info = [];
+
+  $config = \Drupal::config('system.site');
+  $site_info['name'] = $config->get('name');
+  $site_info['slogan'] = $config->get('slogan');
+
+  $site_info['full_address'] = one_house_theme_get_setting('one_house_full_address');
+  $site_info['phones'] = one_house_theme_get_setting('one_house_phone_numbers', TRUE);
+  $site_info['faxes'] = one_house_theme_get_setting('one_house_fax_numbers', TRUE);
+  $site_info['copyright'] = one_house_theme_get_setting('one_house_copyright_text');
+  $site_info['privacy_consent'] = one_house_theme_get_setting('one_house_privacy_consent_description');
+
+  $site_info['messages'] = [];
+  $mapper = one_house_load_get_bidder_status_message_mapper();
+  foreach ($mapper as $key => $label) {
+    $site_info['messages']['bidder_status_' . $key] = one_house_theme_get_setting('one_house_bidder_status_' . $key . '_message');
+  }
+
+  $site_info['paths'] = [];
+  $site_info['paths']['bidder_match'] = one_house_theme_get_setting('one_house_path_bidder_match');
+
+  $site_info['support_link'] = [
+    'title' => one_house_theme_get_setting('one_house_support_link_label'),
+    'url' => one_house_theme_get_setting('one_house_support_link_url'),
+  ];
+
+  $site_info['socials'] = one_house_load_social_links();
+
+  $file_url_generator = \Drupal::service('file_url_generator');
+
+  $thumbnails = [];
+  foreach (['share', 'default'] as $thmbkey) {
+    $thumb = trim(one_house_theme_get_setting('one_house_default_thumbnail_path_' . $thmbkey, TRUE));
+    if (strlen($thumb) > 0) {
+      $thumb = $file_url_generator->generateString(trim($thumb));
+    }
+    $thumbnails[$thmbkey] = $thumb;
+  }
+  $site_info['thumbnails'] = $thumbnails;
+
+  $bgs = [];
+  foreach (['page', 'page_mobile', 'landingpage', 'landingpage_mobile'] as $bgkey) {
+    $bg = trim(one_house_theme_get_setting('one_house_hero_background_path_' . $bgkey, TRUE));
+    if (strlen($bg) > 0) {
+      $bg = $file_url_generator->generateString(trim($bg));
+    }
+    $bgs[$bgkey] = $bg;
+  }
+  $site_info['bgs'] = $bgs;
+
+  /*
+  $paths = [];
+  foreach (['news', 'events'] as $pathkey) {
+  $path = trim(one_house_theme_get_setting('one_house_path_' . $pathkey, true));
+  $paths[$pathkey] = $path;
+  }
+  $site_info['paths'] = $paths;
+   */
+
+  return $site_info;
+}
+
+/**
+ * Default values for theme settings.
+ */
+function one_house_option_defaults($optKey = NULL) {
+  $defaults = [
+    'one_house_accept_terms_of_service_description' => t('I accept the <a href="/terms-and-conditions">terms and conditions</a> of use.'),
+    'one_house_privacy_consent_description' => t('This website uses cookies to measure traffic and improve your experience. View our <a href="/privacy-policy">Privacy Policy</a> to learn more.'),
+    'one_house_hero_background_path_page' => 'themes/custom/one_house/idfive-component-library/build/images/img-background-landscape-02@2x.png',
+    'one_house_hero_background_path_page_mobile' => '',
+    'one_house_hero_background_path_landingpage' => 'themes/custom/one_house/idfive-component-library/build/images/lp-hero-desktop-bkgrnd.jpg',
+    'one_house_hero_background_path_landingpage_mobile' => '',
+    'one_house_default_thumbnail_path_default' => '',
+    'one_house_default_thumbnail_path_share' => '',
+    'one_house_path_news' => '/news-releases',
+    'one_house_path_events' => '/events-calendar',
+    'one_house_bidder_status_0_message' => 'You have not submitted your application to become a bidder.',
+    'one_house_bidder_status_1_message' => 'Your bidding application is Pending Approval.',
+    'one_house_bidder_status_2_message' => 'Your bidder status is now Active.',
+    'one_house_bidder_status_3_message' => 'Your bidder status has Expired.',
+    'one_house_bidder_status_4_message' => 'Your bidder status has suspended.<br><span class="contact-message">For questions/concerns, contact <a href="mailto:office@onehousebaltimore.org">office@onehousebaltimore.org</a></span>',
+    'one_house_path_bidder_match' => '/bidder/one-house-match',
+  ];
+
+  if (is_null($optKey)) {
+    return $defaults;
+  }
+  elseif (isset($defaults[$optKey])) {
+    return $defaults[$optKey];
+  }
+
+  return NULL;
+}
+
+/**
+ * The wrapper function for theme_get_setting().
+ */
+function one_house_theme_get_setting($key, $preprocessing = FALSE) {
+  $v = theme_get_setting($key);
+
+  if (is_array($v)) {
+    $v = $v['value'];
+  }
+  // If (is_null($v) || ($v == '')) $v = one_house_option_defaults($key);
+  if (is_null($v)) {
+    $v = one_house_option_defaults($key);
+  }
+
+  // Preprocessing.
+  if ($preprocessing) {
+    if (str_starts_with($key, 'one_house_default_thumbnail_path_')) {
+      if (is_null($v)) {
+        $v = '';
+      }
+    }
+    elseif (str_starts_with($key, 'one_house_hero_background_path_')) {
+      if (is_null($v)) {
+        $v = '';
+      }
+    }
+    elseif (str_starts_with($key, 'one_house_path_')) {
+      if (is_null($v)) {
+        $v = '/';
+      }
+    }
+
+    if (!is_null($v) && ($key == 'one_house_phone_numbers')) {
+      $vArry = explode("\n", str_replace("\r\n", "\n", $v));
+      $v = array_filter($vArry, "one_house_array_filter_not_empty");
+    }
+
+    if (!is_null($v) && ($key == 'one_house_fax_numbers')) {
+      $vArry = explode("\n", str_replace("\r\n", "\n", $v));
+      $v = array_filter($vArry, "one_house_array_filter_not_empty");
+    }
+  }
+
+  return $v;
+}
+
+/**
+ * Array filter function to filter out empty item.
+ */
+function one_house_array_filter_not_empty($var) {
+  return ($var !== NULL && $var !== FALSE && trim($var) !== "");
+}
+
+/**
+ * Load social link key mapper.
+ */
+function one_house_load_get_bidder_status_message_mapper() {
+  $mapper = [
+    0 => "Not submitted",
+    1 => "Pending",
+    2 => "Active",
+    3 => "Expired",
+    4 => "Suspended",
+  ];
+  return $mapper;
+}
+
+/**
+ * Load social link key mapper.
+ */
+function one_house_load_get_social_mapper() {
+  $mapper = [
+    // "youtube" => "YouTube",
+    // "instagram" => "Instagram",
+    // "facebook" => "Facebook",
+    // "twitter" => "Twitter",
+    "linkedin" => "Linked In",
+  ];
+  return $mapper;
+}
+
+/**
+ * Load site social link info, set in Theme Settings.
+ */
+function one_house_load_social_links() {
+
+  $mapper = one_house_load_get_social_mapper();
+
+  $socialLinks = [];
+  foreach ($mapper as $key => $label) {
+    $link = one_house_theme_get_setting('one_house_' . $key . '_link');
+    if (!!$link && strlen(trim($link)) > 0) {
+      $socialLinks[$key] = [
+        'name' => $label,
+        'url' => trim($link),
+        'icon' => 'SVG_icon_' . str_replace(' ', '', $label) . '.svg',
+      ];
+    }
+  }
+
+  return $socialLinks;
+}
+
+/**
+ * Get page specific id.
+ */
+function one_house_get_page_id($variables) {
+
+  $namedId = '';
+
+  $routeMatched = \Drupal::routeMatch();
+  $node = $variables['node'] ?? $routeMatched->getParameter('node');
+  if ($node && ($node instanceof Node)) {
+
+    $type = $node->getType();
+    $namedId = $type;
+  }
+
+  if (!$namedId) {
+    $nodeType = $routeMatched->getParameter('node_type');
+    if ($nodeType) {
+      $namedId = $nodeType->get('type');
+    }
+  }
+
+  if (!$namedId) {
+    $namedId = \Drupal::routeMatch()->getRouteName();
+  }
+
+  return $namedId;
+}

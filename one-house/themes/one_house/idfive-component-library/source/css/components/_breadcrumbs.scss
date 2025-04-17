@@ -1,0 +1,71 @@
+.breadcrumbs__container {
+  margin: rem(16) 0;
+  padding: 0;
+}
+
+.breadcrumbs {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  a {
+    transition: border 0.3s;
+    color: $black;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: rem(1);
+    text-underline-offset: rem(3);
+    transition: 0.25s text-decoration-color ease-in-out;
+    &:hover,
+    &:focus {
+      text-decoration-color: $black;
+    }
+  }
+  a[aria-current="page"]{
+    color:$cement;
+  }
+  li {
+    display: none;
+    position: relative;
+    @include mq($min, $tablet) {
+      display: inline-block;
+    }
+    &:nth-last-child(2) {
+      display: inline-block;
+      padding-left: rem(15);
+      color: $cement;
+      @include mq($min, $tablet) {
+        padding-left: 0;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        margin-left: rem(-10);
+        width: rem(8);
+        height: rem(8);
+        border-left: rem(2) solid $black;
+        border-top: rem(2) solid $black;
+        transform: rotate(-45deg) translateY(-50%);
+        @include mq($min, $tablet) {
+          display: none;
+        }
+      }
+      &:after {
+        display: none;
+        @include mq($min, $tablet) {
+          display: inline-block;
+        }
+      }
+    }
+    &:not(:last-child) {
+      &:after {
+        content: "/";
+        padding:0 rem(10);
+      }
+    }
+    &:last-child{
+      color:$cement;
+    }
+  }
+}

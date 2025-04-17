@@ -1,0 +1,11 @@
+<div class="button-set">
+  <ul>
+    {% for button in button_set.buttons %}
+      {% if button_set.button_alt == false %}
+        <li>{% include "@components/buttons/button.twig" with button %}</li>
+      {% elseif button_set.button_alt == true %}
+        <li>{% include "@components/buttons/button-alt.twig" with button %}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

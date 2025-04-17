@@ -1,0 +1,13 @@
+<!-- Customize links
+Vars to pass:
+url: full url
+class: any classes needed
+text: link text
+target: window target, defaults to _self
+ -->
+
+{% for item in items %}
+  <a href="{{ url }}" class="{{ class }}" target="{{ target|default('_self') }}">
+    <span class="btn__text">{{ title }}</span>
+  </a>
+{% endfor %}

@@ -1,0 +1,81 @@
+{% set _color = content.field_ip_cta_bg_color.0['#markup'] %}
+{% set _size = content.field_ip_cta_size.0['#markup'] %}
+{% set _hide_bg = content.field_ip_cta_hide_bg.0['#markup'] %}
+{%
+  set classes = [
+    'paragraph-widget',
+    (_color == 'red') ? 'paragraph-widget--end-of-page-call-to-action' : 'paragraph-widget--call-to-action',
+  ]
+%}
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+    {% if (_color == 'red') %}
+
+      <div class="end-of-page-call-to-action">
+        <div class="end-of-page-call-to-action__text-wrap">
+          {% if content.field_ip_cta_title|field_value %}
+            <h2 class="end-of-page-call-to-action__title">{{ content.field_ip_cta_title|raw }}</h2>
+          {% endif %}
+          {% if content.field_ip_cta_text|field_value %}
+            <p class="end-of-page-call-to-action__text">{{ content.field_ip_cta_text|raw }}</p>
+          {% endif %}
+        </div>
+
+        {% if content.field_ip_cta_links|field_value %}
+          <div class="end-of-page-call-to-action__button-wrap">
+            <div class="button-set">
+                <ul>
+                  {%
+                    set linkData = {
+                      'links': content.field_ip_cta_links,
+                      'link_class': 'button button-alt',
+                      'link_pre': '<li>',
+                      'link_suff': '</li>',
+                    }
+                  %}
+                  {% include directory ~ '/templates/_includes/components/_links.html.twig' with linkData %}
+                </ul>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+    {% else %}
+
+      <div class="call-to-action">
+        {% if content.field_ip_cta_title|field_value %}
+          <h2 class="call-to-action__title">{{ content.field_ip_cta_title|raw }}</h2>
+        {% endif %}
+        {% if content.field_ip_cta_text|field_value %}
+          <p class="call-to-action__text">{{ content.field_ip_cta_text|raw }}</p>
+        {% endif %}
+
+        {% if content.field_ip_cta_links|field_value %}
+          <div class="button-set">
+              <ul>
+                {%
+                  set linkData = {
+                    'links': content.field_ip_cta_links,
+                    'link_class': 'button',
+                    'link_pre': '<li>',
+                    'link_suff': '</li>',
+                  }
+                %}
+                {% include directory ~ '/templates/_includes/components/_links.html.twig' with linkData %}
+              </ul>
+          </div>
+        {% endif %}
+
+      </div>
+
+    {% endif %}
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

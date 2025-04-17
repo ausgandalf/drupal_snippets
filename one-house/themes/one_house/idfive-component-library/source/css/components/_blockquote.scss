@@ -1,0 +1,153 @@
+$blockquote_source-font-size: rem(21) !default;
+$blockquote_source-font-weight: 400 !default;
+
+$blockquote_portrait-width: 6.25rem !default; // 100px
+$blockquote_portrait-aspect-ratio: 100% !default;
+
+.paragraph-widget--blockquote{
+  max-width:none;
+  @extend %negate-outer-pad-x;
+}
+
+.blockquote {
+  position: relative;
+  color: $black;
+  background-image:url('../images/IMG_Quote_Background.png');
+  background-size: cover;
+  margin: 0 auto;
+  display:flex;
+  overflow: hidden;
+  flex-direction: column;
+  @include mq($min, $desktop) {
+    align-items:end;
+    flex-direction: row;
+  }
+}
+.blockquote__quote-container{
+  align-self: center;
+  width:100%;
+  opacity: 1;
+  padding:rem(120) rem(40) rem(100) rem(40);
+  position:relative;
+  @include mq($min, $desktop) {
+    .has-image &{
+      width:50%;
+      padding-right:0;
+    }
+    width:100%;
+    padding-right:rem(175);
+    padding-left:rem(175);
+  }
+  .blockquote__quote-symbol{
+    position:absolute;
+    top:rem(80);
+    left:rem(40);
+    z-index:10;
+    @include mq($min, $desktop) {
+      left:rem(175);
+    }
+    svg{
+        width:rem(100);
+        height:rem(100)
+    }
+  }
+  .blockquote__quote {
+    position:relative;
+    font-size: rem(32);
+    line-height: 1.31;
+    font-family: $headerfont;
+    font-weight:400;
+    margin: rem(20) 0 0 0;
+    padding: 0;
+    padding-top:rem(60);
+    color:$white;
+    text-align: center;
+    .has-image &{
+      text-align: left;
+    }
+
+    @include mq($min, $desktop) {
+    font-size:rem(38);
+    line-height:1.47;
+    }
+  }
+}
+
+
+.blockquote__footer {
+  margin: 0;
+  padding: 0;
+}
+
+.blockquote__author {
+  font-size: rem(21);
+  font-weight: 400;
+  color:$white;
+  text-align:center;
+  .has-image &{
+    text-align:left;
+  }
+}
+
+.blockquote__source {
+  font-size: $blockquote_source-font-size;
+  font-weight: $blockquote_source-font-weight;
+  color:$white;
+}
+.blockquote__footer{
+  width:100%;
+  padding:rem(50) rem(45) 0;
+  align-items: baseline;
+  padding-right:0;
+  @include mq($min, $desktop) {
+    width:50%;
+    padding-right:rem(100);
+  };
+  .blockquote__portrait {
+    width:100%;
+    height:100%;
+    max-width:rem(520);
+    min-height:rem(480);
+    background-color:$brick;
+    position: relative;
+    border-radius:rem(260) rem(260) 0 0;
+    @extend %responsive-img;
+    @include mq($min, $desktop) {
+      width:rem(520);
+      height:rem(667);
+    }
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+    img {
+      display: block;
+      height: 100%;
+      width: 94%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      top: rem(8);
+      left: rem(3);
+      border-radius:rem(230) rem(230) 0 0;
+      @include mq($min, $tablet) {
+        left: rem(8);
+      }
+    }
+  }
+}
+
+blockquote {
+  position:relative;
+  font-size: rem(30);
+  line-height: 1.31;
+  font-family: $headerfont;
+  font-weight:400;
+  color:$cement;
+  margin: rem(40) rem(40) rem(40) rem(50);
+  @include mq($min, $desktop) {
+    font-size:rem(36);
+    line-height:1.47;
+  }
+}

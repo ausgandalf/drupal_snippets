@@ -1,0 +1,36 @@
+{% block node_hero %}{% endblock %}
+
+{#
+  {{ drupal_entity('block', 'sidemainnav', check_access=false) }}
+  {{ drupal_entity('block', 'submainnav', check_access=false) }}
+#}
+
+{% block node_heading %}{% endblock %}
+
+{% block node_content %}
+
+  {% block node_pre_content %}{% endblock %}
+
+  {% block node_body_content %}
+    {% if content.body|field_value %}
+      <div class="paragraph-widget paragraph-widget--text-html paragraph-widget--body">
+        <div class="text-content">
+          {{ content.body|field_value }}
+        </div>
+      </div>
+    {% endif %}
+  {% endblock %}
+
+  {% block node_middle_content %}{% endblock %}
+
+  {% block node_widget_content %}
+    {% if content.field_widgets|field_value %}
+      {{ content.field_widgets }}
+    {% endif %}
+  {% endblock %}
+
+  {% block node_tail_content %}{% endblock %}
+
+{% endblock %}
+
+{% block node_footer %}{% endblock %}

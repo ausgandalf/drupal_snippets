@@ -1,0 +1,44 @@
+{% set imgUri = content.field_ip_large_image_image|image_url %}
+{% set mobileImgUri = content.field_ip_large_image_img_mobile|image_url %}
+
+{% set imgAlt = content.field_ip_large_image_image|image_alt %}
+{% if not imgAlt|length %}
+  {% set imgAlt = content.field_ip_large_image_img_mobile|image_alt %}
+{% endif %}
+
+
+{%
+  set classes = [
+    'paragraph-widget',
+    'paragraph-widget--large-image',
+  ]
+%}
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+    {% if imgUri|length or mobileImgUri|length %}
+      <figure class="large-image">
+        <div class="large-image__image">
+          <picture>
+            {% if imgUri|length %}
+              <source srcset="{{ imgUri }}" media="(min-width: 768px)">
+            {% endif %}
+            <img src="{{ mobileImgUri|length ? mobileImgUri : imgUri }}" alt="{{ imgAlt }}" loading="lazy">
+          </picture>
+        </div>
+
+        {% if content.field_ip_large_image_caption|field_value %}
+          <figcaption class="large-image__caption">{{ content.field_ip_large_image_caption }}</figcaption>
+        {% endif %}
+      </figure>
+    {% endif %}
+
+  {% endblock %}
+
+</div>
+
+{% endblock paragraph %}

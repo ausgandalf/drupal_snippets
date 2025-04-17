@@ -1,0 +1,39 @@
+<div class="property-history">
+    <div class="property-history__row">
+        {% if property_history.auction_years %}
+            <div class="property-history__property">
+                <svg aria-hidden="false" width="50" height="50">
+                    <use xlink:href="#icon-onehouse_prop_history_prev_auction_year"></use>
+                </svg>
+                <h3>Previous Auction Year</h3>
+                <ul>
+                {% for year in property_history.auction_years %}
+                <li>{{ year }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if property_history.sale_amount %}
+            <div class="property-history__property">
+                <svg aria-hidden="false" width="50" height="50">
+                    <use xlink:href="#icon-onehouse_prop_history_previous_sale_mount"></use>
+                </svg>
+                <h3>Previous Sale Amount</h3>
+                <ul>
+                {% for amount in property_history.sale_amount %}
+                <li>{{ amount }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        {% if property_history.landrec_url %}
+            <div class="property-history__property">
+                <svg aria-hidden="false" width="50" height="50">
+                    <use xlink:href="#icon-onehouse_prop_history_landrec_link"></use>
+                </svg>
+                <h3>Public Land Records</h3>
+                <p><a href="{{ landrec_url }}">MDlandrec.net</a></p>
+            </div>
+        {% endif %}
+    </div>
+</div>

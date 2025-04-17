@@ -1,0 +1,39 @@
+{%
+  set classes = [
+    'paragraph-widget' ~ ((_page_type == 'homepage') ? '--home'),
+    'paragraph-widget--property-finder',
+  ]
+%}
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+    <div class="tabs">
+      <div class="tabs__nav">
+        <ul>
+          <li>
+            <button class="tabs__nav__button active" id="tab__toggle__sale" aria-controls="tab__sale">For Sale</button>
+          </li>
+          <li>
+            <button class="tabs__nav__button" id="tab__toggle__sold" aria-controls="tab__sold">Previously Sold</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tabs__content">
+        <div class="tabs__content__tab active" id="tab__sale" aria-labelledby="tab__toggle__sale">
+          {{ drupal_view('property_list', 'block_sale') }}
+        </div>
+        <div class="tabs__content__tab" id="tab__sold" aria-labelledby="tab__toggle__sold">
+          {{ drupal_view('property_list', 'block_sold') }}
+        </div>
+      </div>
+    </div>
+
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

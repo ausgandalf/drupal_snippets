@@ -1,0 +1,54 @@
+{% set _status = content.field_property_auction_status.0['#markup'] %}
+
+<div class="property-card has-image">
+  <a href="{{ url }}"><span>{{ label }}</span></a>
+  <div class="property_image">
+    {% if content.field_property_images|field_value %}
+      {{ content.field_property_images.0 }}
+    {% else %}
+      <img src="{{ _site_info.thumbnails.default }}" alt="{{ label|render|striptags|trim|raw}}" loading="lazy">
+    {% endif %}
+  </div>
+  <div class="card__content">
+    <div class="property_title">
+      <h3>{{ content.field_property_address.0.address_line1 }}</h3>
+    </div>
+    <div class="property_neighborhood">
+      {{ content.field_neighborhood|render|striptags|trim|raw }}
+    </div>
+    <div class="property_status">
+      {% if _status == 0 %}
+        <span class="property_status__label">
+          {{ 'Auction'|t }} :
+        </span>
+        <span class="property_status__details">
+          {{ content.field_property_auction_date }}
+        </span>
+      {% elseif _status == 1 %}
+        <span class="property_status__label">
+          {{ 'Immediate Sale'|t }} :
+        </span>
+        <span class="property_status__details">
+          {{ content.field_property_offer_link }}
+        </span>
+      {% elseif _status == 2 %}
+        <span class="property_status__label">
+          {{ 'Sold for'|t }} :
+        </span>
+        <span class="property_status__details">
+          {{ content.field_property_sold_price }}
+        </span>
+      {% elseif _status == 3 %}
+        <span class="property_status__label">
+          {{ 'Under Contract as of'|t }} :
+        </span>
+        <span class="property_status__details">
+          {{ content.field_property_contract_due }}
+        </span>
+      {% endif %}
+    </div>
+    <div class="arrow-button">
+      <div class="arrow"><span></span></div>
+    </div>
+  </div>
+</div>

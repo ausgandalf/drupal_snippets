@@ -1,0 +1,32 @@
+<div class="property-details">
+    <div class="property-details__about">
+        <div class="property-details__about-title">
+            <h2>About this property</h2>
+        </div>
+        <div class="property-details__about-description">
+            <p>{{ property_details.description }}</p>
+        </div>
+    </div>
+    <div class="property-details__auction">
+        <div class="property-details__auction-title">Auction</div>
+        <div class="property-details__auction-details">
+            <div class="property-details__auction-details__date">
+                <p>Next Auction: {{ property_details.auction_date }}</p>
+            </div>
+            <div class="property-details__auction-details__house">
+                <div class="property-details__auction-details__house-number">
+                    <h3>{{ property_details.beds }}</h3>
+                    <p>Beds</p>
+                </div>
+                <div class="property-details__auction-details__house-number">
+                    <h3>{{ property_details.baths }}</h3>
+                    <p>Baths</p>
+                </div>
+                <div class="property-details__auction-details__house-number">
+                    <h3>{{ property_details.sqft }}</h3>
+                    <p>Sq Ft.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

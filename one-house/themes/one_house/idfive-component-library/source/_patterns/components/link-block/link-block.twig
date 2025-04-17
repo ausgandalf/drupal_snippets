@@ -1,0 +1,12 @@
+<div class="link-block">
+  {% if link_block.title %}
+    <h3 class="link-block__label">{{link_block.title}}</h3>
+  {% endif %}
+  <ul>
+    {% for link in link_block.links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.text }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

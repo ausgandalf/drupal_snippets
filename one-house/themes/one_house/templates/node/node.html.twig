@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ */
+#}
+
+<!-- A shortcut to display the breadcrumbs block region, as we commonly use it in nodes. -->
+{{ breadcrumbs }}
+
+<article{{ attributes }}>
+
+  {{ node.title.value }}
+
+  <div{{ content_attributes }}>
+    {{ content }}
+  </div>
+
+</article>

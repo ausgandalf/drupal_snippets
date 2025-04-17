@@ -1,0 +1,134 @@
+.paragraph-widget--property-details{
+    background-color:#fafafa;
+}
+
+.property-details{
+    max-width:rem(1150);
+    margin-inline:auto;
+    .property-details__about{
+        display:flex;
+        gap:rem(0);
+        padding-bottom:rem(40);
+        flex-direction:column;
+        
+        @include mq($min, $desktop){
+            flex-direction:row;
+            gap:rem(40);
+        }
+        .property-details__about-title{
+            width:100%;
+            text-align:center;
+            margin-bottom:rem(20);
+            @include mq($min, $desktop){
+                width:50%;
+                text-align: left;
+            }
+            h2{
+                font-size:rem(50);
+                font-weight:400;
+                font-family:$header3font;
+                text-align:center;
+                text-transform: inherit;
+                line-height:1;
+                @include mq($min, $desktop){
+                text-align:left;
+                font-size:rem(66);
+                }
+            }
+        }
+        .property-details__about-description{
+            width:100%;
+            text-align:center;
+            @include mq($min, $desktop){
+                width:50%;
+                text-align: left;
+            }
+            p{
+                font-size:rem(22);
+                color:$pavement;
+                line-height:rem(30);
+            }
+        }
+    }
+    .property-details__auction{
+        border-top:rem(1) solid $cement;
+        margin:0;
+        .property-details__auction-title{
+            margin-inline:auto;
+            background-color: $secondary;
+            color:$white;
+            text-align:center;
+            font-size:rem(24);
+            padding:rem(10) rem(0);
+            width:rem(112);
+            @include mq($min, $desktop){
+                margin-inline:inherit;
+            }
+        }
+        .property-details__auction-details{
+            display:flex;
+            justify-content: space-between;
+            gap:rem(40);
+            flex-direction:column;
+            @include mq($min, $desktop){
+                flex-direction: row;
+            }
+            .property-details__auction-details__date{
+                margin-block:auto;
+                width:100%;
+                @include mq($min, $desktop){
+                    width:50%;
+                }
+                p{
+                    font-style:italic;
+                    font-weight: bold;
+                    font-size:rem(22);
+                    text-align: center;
+                    padding-top:rem(40);
+                    @include mq($min, $desktop){
+                    text-align:left;
+                    padding-top:inherit;
+                    font-size:rem(25.5);
+                    }
+                }
+            }
+            .property-details__auction-details__house{
+                display:flex;
+                gap:rem(40);
+                width:100%;
+                padding-inline:rem(15);
+                justify-content: space-evenly;
+                @include mq($min, $desktop){
+                    width:50%;
+                    justify-content: inherit;
+                    padding-left:rem(15);
+                    padding-right:rem(90);
+                }
+                .property-details__auction-details__house-number{
+                    h3{
+                        font-size:rem(40);
+                        line-height:1;
+                        text-align:center;
+                        margin:0;
+                        color:$pavement;
+                        padding:0;
+                        @include mq($min, $desktop){
+                            font-size:rem(66);
+                            line-height:rem(70);
+                        }
+                    }
+                    p{
+                        font-size:rem(20);
+                        font-weight: 700;
+                        text-align:center;
+                        margin:0;
+                        color:$pavement;
+                        @include mq($min, $desktop){
+                            font-size:rem(23);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

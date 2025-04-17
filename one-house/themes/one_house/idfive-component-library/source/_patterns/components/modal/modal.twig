@@ -1,0 +1,35 @@
+<div class="modal">
+  <ul>
+    {% for modal in modal.modals %}
+      <li>
+        <a class="modal__trigger" href="#" data-micromodal-trigger="modal-{{ loop.index }}">
+          {{modal.trigger_text}}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% for modal in modal.modals %}
+  {# Lightbox Overall Container #}
+  <div
+    class="modal__lightbox" id="modal-{{ loop.index }}" aria-hidden="true">
+    {# Lightbox Overlay #}
+    <div
+      class="modal__overlay" tabindex="-1" data-micromodal-close>
+      {# Lightbox Content Container #}
+      <div
+        class="modal__container" id="modal-{{ loop.index }}-content" role="dialog" aria-modal="true" aria-labelledby="modal-{{ loop.index }}-title">
+        {# Lightbox Close Button #}
+        <button class="modal__close" aria-label="Close modal" data-micromodal-close>Close
+
+        </button>
+
+        <div class="modal__content">
+          <h2 class="modal__content-title">{{ modal.popup.title }}</h2>
+          <div class="modal__content-body">{{ modal.popup.body|raw }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}

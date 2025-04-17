@@ -1,0 +1,11 @@
+{%- for item in items -%}
+  {{- item.content -}}
+
+  {% if not loop.last %}
+    <div class="how-we-work_arrow">
+        <svg aria-hidden="false">
+            <use xlink:href="#icon-onehouse_hww_arrow"></use>
+        </svg>
+    </div>
+  {% endif %}
+{%- endfor -%}

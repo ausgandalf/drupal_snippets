@@ -1,0 +1,40 @@
+
+{% set hasBackground = hero.image.url or hero.image_field|field_value %}
+
+<div class="interior-hero {{ hero.subnav ? 'hero-with-subnav' }} {{ not hasBackground ? 'no-hero' }}">
+  <div class="interior-hero__inner{% if hero.background_image %} hero-with-image{% endif %}" {% if hero.background_image %} style="background-image: url('{{ hero.background_image }}')" {% endif %}>
+
+    <h1 class="interior-hero__title">{{ hero.title }}</h1>
+
+    <nav class="breadcrumbs__container" aria-label="Breadcrumb">
+      {% if hero.custom_breadcrumbs|length > 0 %}
+        <ul class="breadcrumbs">
+          {% for link in hero.custom_breadcrumbs %}
+            <li>
+              {% if link.url|length %}
+                <a href="{{ link.url }}" {% if loop.last %} aria-current="page" {% endif %}>{{ link.title }}</a>
+              {% else %}
+                {{ link.title }}
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% elseif hero.breadcrumbs %}
+        {{ hero.breadcrumbs }}
+      {% else %}
+        {{ drupal_entity('block', 'breadcrumbs', check_access=false) }}
+      {% endif %}
+    </nav>
+
+    {% if hero.image.url %}
+      <div class="interior-hero__building">
+        <img src="{{ hero.image.url }}" alt="" class="{{ hero.image.alt }}" />
+      </div>
+    {% elseif hero.image_field|field_value %}
+      <div class="interior-hero__building">
+        {{ hero.image_field }}
+      </div>
+    {% endif %}
+  </div>
+
+</div>

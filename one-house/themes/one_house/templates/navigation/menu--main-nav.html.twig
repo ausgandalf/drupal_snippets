@@ -1,0 +1,47 @@
+<nav class="site-header__mega-menu-main-nav" aria-label="Main">
+  <ul>
+    {% for item in items %}
+      {% set menu_item_classes = [
+        'menu-item',
+        item.is_expanded ? 'menu-item--expanded',
+        item.is_collapsed ? 'menu-item--collapsed',
+        item.in_active_trail ? 'menu-item--active-trail',
+      ] %}
+
+      <li{{item.attributes.addClass(menu_item_classes)}}>
+        {% set menu_link_classes = [
+          'menu-item-link',
+          item.in_active_trail ? 'active-nav',
+        ] %}
+        <a {{ create_attribute(item.url.options.attributes ? item.url.options.attributes : []).addClass(menu_link_classes) }} href="{{ item.url }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+
+    <li class="header-signin-button__container">
+      <a href="/user/login" class="header-signin-button">Sign Up / Sign In</a>
+    </li>
+    <li class="search-icon">
+      <a href="#search-modal">
+        <span class="visible-for-screen-readers">Search</span>
+        <svg aria-hidden="false" width="44" height="32">
+            <use xlink:href="#icon-onehouse_search_icon"></use>
+        </svg>
+      </a>
+    </li>
+    <li class="search-area-container">
+      <div id="search-modal" class="search-modal">
+        <form role="search" aria-label="search form" method="get" class="search-form" aria-hidden="true" action="/search">
+          <label for="search-form-1" class="visible-for-screen-readers">Search</label>
+          <input type="search" id="searchForm_3285"  class="search-field" name="key" value="" placeholder="" tabindex="-1" aria-label="search"/>
+          <button type="submit" class="search-submit" value="Search">
+            <svg aria-hidden="false" width="38" height="25">
+              <use xlink:href="#icon-onehouse_search_icon"></use>
+            </svg>
+          </button>
+          <a href="#" class="search-close"></a>
+        </form>
+      </div>
+    </li>
+
+  </ul>
+</nav>

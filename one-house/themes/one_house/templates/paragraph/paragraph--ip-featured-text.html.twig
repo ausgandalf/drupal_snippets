@@ -1,0 +1,31 @@
+{% set _hasImage = content.field_ip_blockquote_image|field_value %}
+
+{%
+  set classes = [
+    'paragraph-widget',
+    (_page_type == 'homepage') ? 'paragraph-widget--home-page-primary-text' : 'paragraph-widget--primary-text',
+  ]
+%}
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+  <div class="home-page-primary-text" >
+    <div class="home-page-primary-text__header">
+        <h3>{{ content.field_ip_featured_text_title|raw }}</h3>
+    </div>
+    <div class="home-page-primary-text__content">
+        <p>{{ content.field_ip_featured_text_text|raw }}</p>
+        <p class="home-page-primary-text__content-cta">
+          {{ content.field_ip_featured_text_link }}
+        </p>
+    </div>
+  </div>
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

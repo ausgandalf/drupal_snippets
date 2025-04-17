@@ -1,0 +1,297 @@
+/*
+ ** Admin toolbar case
+ */
+ .site-header {
+  .toolbar-fixed & {
+    margin-top: rem(38);
+  }
+  .toolbar-fixed.toolbar-horizontal.toolbar-tray-open & {
+    margin-top: rem(76);
+  }
+}
+
+/*
+ ** Spinner
+ */
+.ajax-progress--fullscreen {
+  @include fixed--full();
+  background: transparent;
+  transform: none;
+  .spinner__curtain {
+    &::before {
+      background-color: transparent;
+    }
+  }
+  z-index: 10;
+}
+
+.ajax-progress--throbber {
+  @include absolute--full();
+  background: transparent;
+  transform: none;
+  .spinner__curtain {
+    &::before {
+      background-color: transparent;
+    }
+  }
+  z-index: 10;
+}
+
+.spinner__curtain {
+
+  @include absolute--center();
+
+  background: #fff;
+  border: solid 1px $darkbrick;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+
+  width: rem(100);
+  height: rem(100);
+
+  z-index: 1;
+
+  &::before {
+    content: "";
+    background-color: $white;
+    opacity: 0.9;
+    @include absolute--full();
+  }
+
+  .loading & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.spinner {
+  position: relative;
+
+  &, &__wrapper {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__wrapper {
+    @include absolute--center();
+    z-index: 1;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.spinner.spinner--4 {
+
+  $bar-width: 7px; //width of bars
+  // animation: rotation 12.8s steps(1) 0s infinite;
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    25% {
+      transform: rotate(90deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    75% {
+      transform: rotate(270deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes bar-top {
+    0% {
+      transform: scale(0,1);
+    }
+
+    12.5% {
+      transform: scale(1,1);
+      transform-origin: left top;
+    }
+
+    50% {
+      transform: scale(1,1);
+      transform-origin: right top;
+    }
+
+    62.5% {
+      transform: scale(0,1);
+      transform-origin: right top;
+    }
+
+    100% {
+      transform: scale(0,1);
+      transform-origin: right top;
+    }
+  }
+
+  @keyframes bar-right {
+    0% {
+      transform: scale(1,0);
+    }
+
+    12.5% {
+      transform: scale(1,0);
+      transform-origin: left top;
+    }
+
+    25% {
+      transform: scale(1,1);
+    }
+
+    62.5% {
+      transform: scale(1,1);
+      transform-origin: left bottom;
+    }
+
+    75% {
+      transform: scale(1,0);
+      transform-origin: left bottom;
+    }
+
+    100% {
+      transform: scale(1,0);
+      transform-origin: left bottom;
+    }
+  }
+
+  @keyframes bar-bottom {
+    0% {
+      transform: scale(0,1);
+    }
+
+    25% {
+      transform: scale(0,1);
+    }
+
+    37.5% {
+      transform: scale(1,1);
+      transform-origin: right top;
+    }
+
+    75% {
+      transform: scale(1,1);
+      transform-origin: left top
+    }
+
+    87.5% {
+      transform: scale(0,1);
+      transform-origin: left top
+    }
+
+    100% {
+      transform: scale(0,1);
+      transform-origin: left top
+    }
+  }
+
+  @keyframes bar-left {
+    0% {
+      transform: scale(1,0);
+    }
+
+    37.5% {
+      transform: scale(1,0);
+    }
+
+    50% {
+      transform: scale(1,1);
+      transform-origin: left bottom;
+    }
+
+    75% {
+      transform: scale(1,1);
+    }
+
+    87.5% {
+      transform: scale(1,1);
+      transform-origin: left top;
+    }
+
+    100% {
+      transform: scale(1,0);
+      transform-origin: left top;
+    }
+  }
+
+  .bar {
+    background-color: $darkbrick;
+
+    &-top {
+      width: 100%;
+      height: $bar-width;
+      @include position-absolute($top: 0, $left: 0);
+      transform-origin: left top;
+      transform: scale(0,1);
+      animation: bar-top 3.2s linear 0s infinite;
+    }
+
+    &-right {
+      width: $bar-width;
+      height: 100%;
+      @include position-absolute($top: 0, $right: 0);
+      transform-origin: left top;
+      transform: scale(1,0);
+      animation: bar-right 3.2s linear 0s infinite;
+    }
+
+    &-bottom {
+      width: 100%;
+      height: $bar-width;
+      @include position-absolute($bottom: 0, $right: 0);
+      transform-origin: right top;
+      transform: scale(0,1);
+      animation: bar-bottom 3.2s linear 0s infinite;
+    }
+
+    &-left {
+      width: $bar-width;
+      height: 100%;
+      @include position-absolute($bottom: 0, $left: 0);
+      transform-origin: left bottom;
+      transform: scale(1,0);
+      animation: bar-left 3.2s linear 0s infinite;
+    }
+  }
+}
+
+.paragraph-widget--blockquote + .paragraph-widget--end-of-page-call-to-action {
+  margin-bottom: rem(-50);
+  @include mq($min, $lg_tablet) {
+    margin-top: rem(-70);
+  }
+  @include mq($min, $lg_desktop) {
+    margin-top: rem(-90);
+  }
+}
+
+.large-image {
+  picture {
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.path-user {
+  .site-header__mobile-signin {
+    display: none;
+  }
+}

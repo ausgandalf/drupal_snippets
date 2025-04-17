@@ -1,0 +1,70 @@
+.view--view_search{
+    margin-block:rem(50);
+    .views-exposed-form{
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        gap:rem(20);
+        padding-bottom:rem(50);
+        @include mq($min, $desktop){
+            flex-direction: row;
+            gap:rem(30);
+        }
+        .form-item-key{
+            width:100%;
+            @include mq($min, $desktop){
+                width:80%;
+            }
+            label{
+                position:absolute;
+                left:9999px;
+            }
+            .form-item-key--icon{
+                position:absolute;
+                width:rem(30);
+                height:rem(30);
+                top:rem(10);
+                right:rem(30);
+            }
+        }
+        .form-actions{
+            .form-submit{
+                width:100%;
+                @include mq($min, $desktop){
+                    width:inherit;
+                }
+            }
+        }
+    }
+}
+.view-rows-wrap--with-result{
+    .views-row{
+        margin-bottom:rem(30);
+        .views-field-title{
+            .field-content{
+                font-size:rem(32);
+                font-weight: 600;
+                line-height:rem(38);
+                a{
+                    text-decoration:none;
+                    color:$pavement;
+                    transition: color .2s ease-in;
+                    &:hover{
+                        color:$secondary;
+                    }
+                }
+            }
+        }
+        .views-field-search-api-excerpt{
+            font-size:rem(22);
+            line-height:rem(32);
+        }
+    }
+}
+
+
+#views-exposed-form-view-search-block-content {
+    input[name=key] {
+        line-height: rem(36);
+    }
+}

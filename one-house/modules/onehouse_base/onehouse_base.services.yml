@@ -1,0 +1,13 @@
+services:
+  onehouse_base.customtwigfilters_extension:
+    class: Drupal\onehouse_base\TwigExtension\CustomTwigFilters
+    arguments: ['@renderer']
+    tags:
+      - { name: twig.extension }
+  redirect_events_subscriber:
+    # Event subscriber class that will listen for the events.
+    class: '\Drupal\onehouse_base\EventSubscriber\RedirectSubscriber'
+    arguments: ['@current_user', '@request_stack', '@current_route_match']
+    # Tagged as an event_subscriber to register this subscriber with the event_dispatch service.
+    tags:
+      - { name: 'event_subscriber' }

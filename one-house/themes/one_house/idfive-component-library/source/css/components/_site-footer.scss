@@ -1,0 +1,114 @@
+.site-footer {
+  border-top: rem(1) solid $black;
+  background-color:$pavement;
+  text-align: center;
+  padding: rem(37);
+  margin-inline: auto;
+  @include mq($min, $lg_desktop) {
+    text-align: left;
+    padding: rem(60) rem(130) rem(60) rem(170);
+  }
+}
+
+.site-footer__body {
+  @include mq($min, $lg_desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.site-footer__logo {
+  max-width: rem(212);
+  margin-inline: auto;
+  @include mq($min, $lg_desktop) {
+    flex: 0 0 auto;
+    margin-inline: 0;
+  }
+}
+
+.site-footer__primary-nav {
+  margin-top: rem(39);
+  margin-bottom:0;
+  @include mq($min, $lg_desktop) {
+    margin-block: 0;
+  }
+  ul {
+    display:flex;
+    flex-direction:column;
+    @include mq($min, $lg_desktop) {
+      flex-direction:row;
+      flex-wrap: wrap;
+    }
+    li {
+      margin-bottom: rem(20);
+      line-height: 1.16;
+      padding-right:0;
+      font-family: $headerfont;
+      text-transform: uppercase;
+      font-size:rem(32);
+      @include mq($min, $lg_desktop) {
+        padding-right:rem(40);
+      }
+      a {
+        font-weight: 400;
+        text-decoration: none;
+        color: $primary;
+        transition: 0.25s color ease-in-out;
+      }
+    }
+  }
+}
+
+.site-footer__locations {
+  padding-bottom:rem(40);
+  ul {
+    width:100%;
+    justify-content: center;
+    @include mq($min, $lg_desktop) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      gap: rem(30);
+      color:$white;
+    }
+    li {
+      margin-bottom: rem(13);
+      @include mq($min, $tablet) {
+        margin-bottom: 0;
+      }
+      @include mq($min, $lg_desktop) {
+        text-align: left;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      p {
+        font-size: rem(16);
+        line-height:rem(28);
+        font-family: $font;
+        color:$white;
+      }
+    }
+  }
+}
+.site-footer__housinglogo_desktop{
+  display:none;
+  @include mq($min, $lg_desktop) {
+    display:block;
+  }
+}
+.site-footer__housinglogo_mobile{
+  display:block;
+  padding-top:rem(40);
+  @include mq($min, $lg_desktop) {
+    display:none;
+  }
+}
+.site-footer__copyright {
+  padding-top:rem(40);
+  p{
+    color:$white;
+    font-style:italic;
+    font-size:rem(16);
+  }
+}

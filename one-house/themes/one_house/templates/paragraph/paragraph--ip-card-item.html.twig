@@ -1,0 +1,7 @@
+{% if _card_type == 'list' %}
+  {% include directory ~ '/templates/paragraph/paragraph--ip-card-item--list.html.twig' %}
+{% elseif _card_type == 'carousel' %}
+  {% include directory ~ '/templates/paragraph/paragraph--ip-card-item--carousel.html.twig' %}
+{% else %}
+  {% include directory ~ '/templates/paragraph/paragraph--ip-card-item--normal.html.twig' %}
+{% endif %}

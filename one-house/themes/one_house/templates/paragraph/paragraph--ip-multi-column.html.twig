@@ -1,0 +1,34 @@
+{% set cols = content.field_ip_multi_column_type.0['#markup'] %}
+{% set cols = 2 %}
+
+{%
+  set classes = [
+    'paragraph-widget' ~ ((_page_type == 'homepage') ? '--home'),
+    'paragraph-widget--multi-column-content',
+  ]
+%}
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+  <div class="multi-column-content{% if cols == 2 %} multi-column-content-two-col{% endif %}">
+    <div class="multi-column-content__column">
+      {{ content.field_ip_multi_column_1|raw }}
+    </div>
+    <div class="multi-column-content__column">
+      {{ content.field_ip_multi_column_2|raw }}
+    </div>
+    {% if cols > 2 %}
+    <div class="multi-column-content__column">
+      {{ content.field_ip_multi_column_3|raw }}
+    </div>
+    {% endif %}
+  </div>
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

@@ -1,0 +1,21 @@
+{% extends "node--full.html.twig" %}
+
+{% set _zipcode = node.field_zip_code.target_id %}
+{% set _auction_status = content.field_property_auction_status.0['#markup'] %}
+
+{% block node_hero %}
+  {%
+    set heroData = {
+      'hero' : {
+        'breadcrumbs': breadcrumbs,
+        'title': content.field_preferred_title|field_value ? content.field_preferred_title : label,
+        'image_field': content.field_image,
+      }
+    }
+  %}
+  {% include directory ~ '/templates/_includes/components/hero.html.twig' with heroData %}
+
+  {{ _local_actions_block }}
+  {{ _primary_local_tasks_block }}
+
+{% endblock %}

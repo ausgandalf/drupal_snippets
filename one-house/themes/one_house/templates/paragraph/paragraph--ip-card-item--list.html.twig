@@ -1,0 +1,27 @@
+{% set _hasImage = content.field_ip_card_item_image|field_value %}
+
+{% block paragraph %}
+
+  {% block content %}
+
+    <div class="card card--horizontal {{ _hasImage ? 'has-image' }}">
+      {{ content.field_ip_card_item_link }}
+      {% if _hasImage %}
+        <div class="card__media">
+          {{ content.field_ip_card_item_image }}
+        </div>
+      {% endif %}
+      <div class="card__content">
+        <h3 class="card__title">{{ content.field_ip_card_item_title|raw }}</h3>
+        <div class="card__body">
+          {{ content.field_ip_card_item_text|raw }}
+        </div>
+        <p class="card__optional">
+          {{ content.field_ip_card_item_link.0['#title']|raw }}
+        </p>
+      </div>
+    </div>
+
+  {% endblock %}
+
+{% endblock paragraph %}

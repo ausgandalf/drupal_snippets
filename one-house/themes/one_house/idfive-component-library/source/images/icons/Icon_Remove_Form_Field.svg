@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_8558" data-name="Rectangle 8558" width="44" height="44" transform="translate(506 2171)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Icon_Remove_Form_Field" transform="translate(-506 -2171)" clip-path="url(#clip-path)">
+    <g id="Expand_-_Plus" data-name="Expand - Plus" transform="translate(512 2177)">
+      <path id="ic_add_circle_outline_24px" d="M16.4,16.4H10v3.2H26V16.4H16.4ZM18,2A16,16,0,1,0,34,18,16.006,16.006,0,0,0,18,2Zm0,28.8A12.8,12.8,0,1,1,30.8,18,12.817,12.817,0,0,1,18,30.8Z" transform="translate(-2 -2)" fill="#f85a5e"/>
+    </g>
+  </g>
+</svg>

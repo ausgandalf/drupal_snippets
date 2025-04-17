@@ -1,0 +1,43 @@
+<div class="site-footer">
+  <div class="site-footer__body">
+    <div class="site-footer__container">
+
+      {{ page.footer_menu }}
+
+      <div class="site-footer__locations" aria-label="Footer Locations">
+        <ul>
+          <li>
+            <p>
+              {{ _site_info.full_address }}<br>
+              {% for _phone in _site_info.phones %}
+                <strong class="label--phone label--phone_{{ loop.index0 }}">PHONE</strong> {{ _phone }}<br>
+              {% endfor %}
+              {% for _fax in _site_info.faxes %}
+                <strong class="label--fax label--fax_{{ loop.index0 }}">FAX</strong> {{ _fax }}<br>
+              {% endfor %}
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="site-footer__housinglogo_desktop">
+        <a href="https://www.hud.gov/fairhousing" target="_blank">
+          <img src="{{ base_path ~ directory }}/idfive-component-library/public/images/Logo_equal-housing-opportunity.png" alt="Equal Housing Opportunity Logo" />
+        </a>
+      </div>
+    </div>
+    <div class="site-footer__logo">
+      <a href="{{ front_page }}">
+        <img src="{{ base_path ~ directory }}/idfive-component-library/public/images/Primary_Logo.png" alt="One House At A Time" loading="lazy" />
+      </a>
+    </div>
+  </div>
+  <div class="site-footer__housinglogo_mobile">
+    <a href="https://www.hud.gov/fairhousing" target="_blank">
+      <img src="{{ base_path ~ directory }}/idfive-component-library/public/images/Logo_equal-housing-opportunity.png" alt="Equal Housing Opportunity Logo" />
+    </a>
+  </div>
+  <div class="site-footer__copyright">
+    <p>&copy; {{ _site_info.copyright }} {{ 'now' | date('Y') }}</p>
+  </div>
+</div>
+

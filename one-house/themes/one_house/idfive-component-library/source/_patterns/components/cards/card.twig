@@ -1,0 +1,18 @@
+<div class="card {% if card.image.src %} has-image {% endif %}">
+  <a href="{{ card.url }}"><span><span>{{ card.title }}</span></span></a>
+  <div class="card__media">
+    {% if card.image.src %}<img src="{{ card.image.src }}" alt="{{ card.image.alt }}" loading="lazy">{% endif %}
+  </div>
+  <div class="card__content">
+    <h3 class="card__title">{{ card.title }}</h3>
+    <div class="card__body">
+      {{ card.body|raw }}
+    </div>
+    <p class="card__optional">
+        {{ card.optional_text }}
+    </p>
+    <div class="arrow-button">
+      <div class="arrow"><span></span></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<nav class="nav nav--bidder" aria-label="Bidder Menu in Side">
+  <div class="nav__list">
+    <ul>
+      {% for item in items %}
+        {% set menu_item_classes = [
+          'menu-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
+        ] %}
+        <li {{item.attributes.addClass(menu_item_classes)}}>
+          <a {{ create_attribute(item.url.options.attributes ? item.url.options.attributes : []) }} href="{{ item.url }}">
+            <span class="icon">
+              {{ item.content.field_menu_icon|raw }}
+            </span>
+            <span class="title">
+              {{ item.title }}
+            </span>
+          </a>
+          {% if item.below %}
+            <ul>
+              {% for child in item.below %}
+                {% set sub_menu_item_classes = [
+                  'menu-item',
+                  child.is_expanded ? 'menu-item--expanded',
+                  child.is_collapsed ? 'menu-item--collapsed',
+                  child.in_active_trail ? 'menu-item--active-trail',
+                ] %}
+                <li {{item.attributes.addClass(sub_menu_item_classes)}}>
+                  <a {{ create_attribute(child.url.options.attributes ? child.url.options.attributes : []) }} href="{{ child.url }}">
+                    <span class="title">
+                      {{ child.title }}
+                    </span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

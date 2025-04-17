@@ -1,0 +1,32 @@
+{% set _fType = content.field_ip_featured_block_type.0['#markup'] %}
+{% set _has_image = content.field_ip_featured_block_image|field_value %}
+
+{%
+  set classes = [
+    'paragraph-widget' ~ ((_page_type == 'homepage') ? '--home'),
+    'paragraph-widget--feature-set',
+  ]
+%}
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+    <div class="feature {{ not _has_image ? 'feature--no-image' }}">
+      {% if _has_image %}
+        <div class="feature__media">
+          {{ content.field_ip_featured_block_image }}
+        </div>
+      {% endif %}
+
+      <div class="feature__content">
+        {{ content.field_ip_featured_block_content }}
+      </div>
+    </div>
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

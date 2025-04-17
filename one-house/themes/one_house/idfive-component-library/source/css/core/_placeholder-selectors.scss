@@ -1,0 +1,40 @@
+%visible-for-screen-readers,
+.visible-for-screen-readers {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+%responsive-img,
+.responsive-img {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+  }
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+%negate-outer-pad-x,
+.negate-outer-pad-x {
+  margin-inline: rem(-36);
+  @include mq($min, $tablet) {
+    margin-inline: rem(-60);
+  }
+  @include mq($min, $lg_desktop) {
+    margin-inline: rem(-120);
+  }
+}

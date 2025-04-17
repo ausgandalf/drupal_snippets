@@ -1,0 +1,256 @@
+/* Base
+========================================================================== */
+
+body {
+  font-family: $font;
+  font-size: rem(20);
+  line-height: rem(28);
+  color: $black;
+  @include mq($min, $tablet){
+    font-size: rem(22);
+    line-height: rem(32);
+  }
+}
+
+a {
+  .text-content & {
+    color: $primary;
+    text-decoration: underline;
+    transition: 0.25s color ease-in-out;
+    &:hover {
+      color: $secondary;
+    }
+    &:active {
+      color: $secondary;
+    }
+  }
+}
+
+p {
+  margin: 1rem 0;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .text-content &{
+    @include mq($min, $tablet){
+    }
+  }
+}
+
+p, h2, h3, h4, h5, h6, ul, ol, blockquote {
+  & + .tight {
+    margin-top: rem(-12);
+  }
+}
+
+ul,
+ol {
+  .text-content & {
+    margin: 1rem 0;
+    padding: 0 1.5rem;
+    li {
+      font-size: rem(20);
+      margin: 0.25rem 0;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    ul,
+    ol {
+      margin: 0.25rem 0;
+    }
+  }
+  .text-content > & {
+    &:first-child {
+      margin-top: 0;
+      ul,
+      ol,
+      li {
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+      ul,
+      ol,
+      li {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+ul{
+  .text-content & {
+    list-style-type: none;
+  }
+  li {
+    .text-content & {
+      &:before{
+        content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        font-size:rem(37);
+        line-height:rem(20);
+        color: $granite; /* Change the color */
+        font-weight: bold; /* If you want it to be bold */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 1em; /* Also needed for space (tweak if needed) */
+        margin-left: -0.8em; /* Also needed for space (tweak if needed) */
+        margin-top:rem(4);
+        position: absolute;
+      }
+    }
+    ul{
+      .text-content & {
+      list-style-type: none;
+        li{
+          position:relative;
+            &:before{
+              content: "";
+              border-radius: 100%;
+              font-size:rem(20);
+              border:solid rem(3) $granite;
+              display: inline-block; /* Needed to add space between the bullet and the text */
+              width: 0.5em; /* Also needed for space (tweak if needed) */
+              height: 0.5em;
+              margin-left: -1em;
+              margin-right: 0.5em;
+              top:rem(6);
+            }
+          }
+      }
+    }
+  }
+}
+
+ol {
+  .text-content & {
+    list-style-type: decimal;
+  }
+}
+
+/* Headings
+  ========================================================================== */
+
+h1,
+.h1,
+%h1,
+h2,
+.h2,
+%h2,
+h3,
+.h3,
+%h3,
+h4,
+.h4,
+%h4,
+h5,
+.h5,
+%h5,
+h6,
+.h6,
+%h6 {
+  line-height: 1.2;
+  @include mq($max, $pre-tablet) {
+    text-align: center;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+.h1,
+%h1 {
+  color: $primary;
+  font-family: $headerfont;
+  font-size: clamp(#{rem(60)}, 8.5vw, #{rem(77)});
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 3rem 0 1rem;
+}
+
+h2,
+.h2,
+%h2 {
+  color: $primary;
+  font-family: $header3font;
+  text-align:center;
+  font-size: rem(50);
+  font-weight: 400;
+  line-height:1.1;
+  letter-spacing: 0;
+  margin: rem(60) 0 rem(20);
+  @include mq($min, $desktop){
+    font-size: rem(66);
+  }
+}
+
+h2 {
+
+}
+
+h3,
+.h3,
+%h3 {
+  color: $pavement;
+  font-family: $header3font;
+  font-size: rem(42);
+  line-height: rem(54);
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: rem(60) 0 rem(30);
+  @include mq($min, $desktop){
+    font-size: rem(47);
+    line-height: rem(52);
+  }
+}
+
+h4,
+.h4,
+%h4 {
+  color: $pavement;
+  font-family: $header3font;
+  font-size: rem(32);
+  line-height: rem(34);
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 3rem 0 1rem;
+}
+
+h5,
+.h5,
+%h5 {
+  color: $pavement;
+  font-family: $header3font;
+  font-size: rem(28);
+  line-height: rem(30);
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 3rem 0 1rem;
+}
+
+h6,
+.h6,
+%h6 {
+  color: $pavement;
+  font-family: $header3font;
+  font-size: rem(24);
+  line-height: rem(26);
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 3rem 0 1rem;
+}

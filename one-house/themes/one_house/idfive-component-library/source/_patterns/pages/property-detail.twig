@@ -1,0 +1,35 @@
+{% extends "@pages/page-structure.twig" %}
+{% block content %}
+    {% include "@components/hero/hero--internal.twig" with internal_hero %}
+    <div class="paragraph-widget property-block property-block--property-image">
+        {% include "@components/carousel/carousel.twig" with property_carousel %}
+    </div>
+    <div class="paragraph-widget property-block property-block--property-detail">
+        {% include "@components/property-details/property-details.twig" with property_details %}
+    </div>
+
+    <div class="paragraph-widget property-block property-block--property-snapshot">
+        <h3>Snapshot</h3>
+        {% include "@components/property-snapshot/property-snapshot.twig" with property_snapshot %}
+    </div>
+
+    <div class="paragraph-widget property-block property-block--property-location">
+        {% include "@components/property-location/property-location.twig" with property_location %}
+    </div>
+
+    <div class="paragraph-widget property-block property-block--property-history">
+        <h3>This Property's One House History</h3>
+        {% include "@components/property-history/property-history.twig" with property_history %}
+    </div>
+
+    <hr />
+
+    <div class="paragraph-widget property-block property-block--other-properties">
+        <h3>Explore Other Properties</h3>
+        {% include "@components/property-cards/property-card-set.twig" with other_properties %}
+    </div>
+
+    <div class="paragraph-widget property-block property-block--end-of-page-cta">
+        {% include "@components/calls-to-action/end-of-page-call-to-action.twig" with end_of_page_cta %}
+    </div>
+{% endblock %}

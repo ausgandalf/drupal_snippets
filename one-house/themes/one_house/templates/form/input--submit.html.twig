@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+
+{% set _plus_img = '/themes/custom/one_house/idfive-component-library/public/images/icons/Icon_Add_Form_Field.svg' %}
+{% set _minus_img = '/themes/custom/one_house/idfive-component-library/public/images/icons/Icon_Remove_Form_Field.svg' %}
+
+{% set _name = attributes.name.__toString() %}
+{% if _name == 'applicant_name_table_add' %}
+  {% set attributes = attributes.setAttribute('value', 'Add a co-applicant'|t) %}
+{% elseif _name == 'email_address_table_add' %}
+  {% set attributes = attributes.setAttribute('value', 'Add another email address'|t) %}
+{% else %}
+{% endif %}
+
+{% if 'remove' in _name %}
+  {% set attributes = attributes.addClass('button--remove') %}
+{% endif %}
+
+<input{{ attributes }} />{{ children }}

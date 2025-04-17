@@ -1,0 +1,72 @@
+{%
+  set classes = [
+    'paragraph-widget' ~ ((_page_type == 'homepage') ? '--home'),
+    (_form_type == 'bidder_form') ? 'paragraph-widget--application-form' : 'paragraph-widget--profile-form paragraph-widget--profile-form--' ~ _form_type,
+  ]
+%}
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+    {% if content.field_ip_profile_form_title|field_value %}
+      <div class="profile-form-title">
+        <h4>{{ content.field_ip_profile_form_title|raw }}</h4>
+      </div>
+    {% endif %}
+
+    {% if _form_type == 'password' %}
+
+      {{ drupal_form('Drupal\\change_pwd_page\\Form\\ChangePasswordForm', _user) }}
+
+    {% elseif _form_type == 'bidder_form' %}
+
+      {% if (_bidder_status is null) or (_bidder_status == 0) %}
+
+        {{ drupal_entity('webform', 'bid') }}
+
+      {% else %}
+
+        <div class="paragraph-widget paragraph-widget--text-block paragraph-widget--text-html" id="ip_paragraph_adv-{{ paragraph.id() }}__no_form_text">
+          <div class="text-content text-content--bidder_page">
+            {% if _bidder_status == 4 %}
+              {{ _site_info.messages.bidder_status_4|raw }}
+            {% elseif _bidder_status == 3 %}
+              {{ _site_info.messages.bidder_status_3|raw }}
+            {% elseif _bidder_status == 2 %}
+              {{ _site_info.messages.bidder_status_2|raw }}
+            {% elseif _bidder_status == 1 %}
+              {{ _site_info.messages.bidder_status_1|raw }}
+            {% endif %}
+          </div>
+        </div>
+
+      {% endif %}
+
+    {% else %}
+
+      {% if _form_type == 'bidder_options' %}
+        <script>
+          function cancel_bidder_option(me) {
+            let _form = me.closest('form');
+            if (!_form) return false;
+
+            let _opt = _form.querySelector('[name="field_user_participate"][value="0"]');
+            if (!_opt) return false;
+
+            _opt.setAttribute('checked', true);
+            _form.submit();
+          }
+        </script>
+      {% endif %}
+
+      {{ drupal_entity_form('user', user.id, _form_type) }}
+
+    {% endif %}
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

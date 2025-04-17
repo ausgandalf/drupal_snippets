@@ -1,0 +1,80 @@
+
+
+.property-snapshot{
+    border:solid rem(2) $secondary;
+    padding-block:rem(60);
+    display:flex;
+    flex-direction: column;
+    gap:rem(40);
+    max-width:1090px;
+    @include mq($min, $desktop){
+        margin-inline:auto;
+    }
+    @extend %negate-outer-pad-x;
+    .property-snapshot__row{
+        display:flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        @include mq($min, $desktop){
+            flex-direction: row;
+        }
+        .property-snapshot__property{
+            text-align:center;
+            width: 100%;
+            display:flex;
+            flex-direction: row;
+            margin-bottom:rem(40);
+            &:last-child{
+                margin-bottom:0;
+            }
+            .property-snapshot__property-icon{
+                width:30%;
+                margin:auto;
+                @include mq($min, $desktop){
+                    width:100%;
+                    margin:0;
+                }
+            }
+            @include mq($min, $desktop){
+                flex-direction: column;
+                max-width:rem(300);
+            }
+            .property-snapshot__property-details{
+                width:70%;
+                text-align: left;
+                @include mq($min, $desktop){
+                    width:100%;
+                    text-align:center;
+                }
+                h3{
+                    font-size:rem(23);
+                    font-family:$font;
+                    color:$pavement;
+                    margin-bottom:rem(5);
+                    padding:0;
+                    text-align: left;
+                    @include mq($min, $desktop){
+                        text-align:center;
+                        font-size:rem(32);
+                        margin-block:rem(10);
+                    }
+                }
+                p, li{
+                    @include mq($min, $desktop){
+                        font-size:rem(22);
+                    }
+                    margin:0;
+                    font-size:rem(20);
+                    color:$pavement;
+                    a{
+                        color:$primary;
+                        transition: color .2s ease-in;
+                        &:hover{
+                            color:$secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

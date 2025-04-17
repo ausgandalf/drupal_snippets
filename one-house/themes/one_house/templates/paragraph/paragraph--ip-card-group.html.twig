@@ -1,0 +1,30 @@
+{%
+  set classes = [
+    'paragraph-widget',
+    'paragraph-widget--card-set',
+  ]
+%}
+
+
+{% block paragraph %}
+
+<div {{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+
+  {% block content %}
+
+    <div class="card-set{% if content.field_ip_card_group_type.0['#markup'] == 1 %} card-set--horizontal{% endif %}">
+      <ul>
+        {% for key,card in content.field_ip_card_group_cards %}
+          {% if key matches '/^\\d+$/' %}
+            <li>
+              {{ card }}
+            </li>
+            {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+  {% endblock %}
+
+</div>
+{% endblock paragraph %}

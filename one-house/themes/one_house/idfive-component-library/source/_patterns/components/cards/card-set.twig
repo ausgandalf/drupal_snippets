@@ -1,0 +1,11 @@
+<div class="card-set{% if card_set.horizontal == true %} card-set--horizontal{% endif %}">
+  <ul>
+    {% for card in card_set.cards %}
+      {% if card_set.horizontal == false %}
+        <li>{% include "@components/cards/card.twig" with card %}</li>
+      {% elseif card_set.horizontal == true %}
+        <li>{% include "@components/cards/card--horizontal.twig" with card %}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

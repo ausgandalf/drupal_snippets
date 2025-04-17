@@ -1,0 +1,32 @@
+.paragraph-widget--end-of-page-call-to-action, .property-block--end-of-page-cta {
+  max-width:none;
+  margin-bottom: 0;
+}
+
+.end-of-page-call-to-action {
+  @extend %negate-outer-pad-x;
+  background-image:url('../images/IMG_Quote_Background.png');
+  background-color: rgba($black, 0.1);
+  background-size: cover;
+  padding: rem(55) rem(39);
+  @include mq($min, $tablet) {
+    padding: rem(55);
+  }
+  @include mq($min, $desktop) {
+    padding: rem(60) rem(106);
+  }
+}
+
+.end-of-page-call-to-action__text-wrap {
+  @include mq($min, $tablet) {
+    flex: 1 1 0;
+  }
+}
+
+.end-of-page-call-to-action__text {
+  margin-bottom: rem(30);
+  font-size:rem(20);
+  @include mq($min, $tablet) {
+    margin-bottom: 0;
+  }
+}

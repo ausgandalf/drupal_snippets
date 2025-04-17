@@ -1,0 +1,20 @@
+<div class="carousel__slide">
+  <div class="carousel__slide-image">
+    {{ content.field_ip_card_item_image }}
+  </div>
+  <div class="carousel__slide-content">
+    {% if content.field_ip_card_item_title|field_value %}
+      <h3>{{ content.field_ip_card_item_title|raw }}</h3>
+    {% endif %}
+    <p>{{ content.field_ip_card_item_text|raw }}</p>
+    {% if content.field_ip_card_item_link|field_value %}
+      {%
+        set linkData = {
+          'links': content.field_ip_card_item_link,
+          'link_class': 'button',
+        }
+      %}
+      {% include directory ~ '/templates/_includes/components/_links.html.twig' with linkData %}
+    {% endif %}
+  </div>
+</div>

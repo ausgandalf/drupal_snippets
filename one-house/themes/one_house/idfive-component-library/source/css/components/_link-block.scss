@@ -1,0 +1,49 @@
+.link-block {
+  background-color: $offwhite;
+  padding: rem(55) rem(39);
+  @include mq($min, $tablet) {
+    padding-left: rem(53);
+    padding-right: rem(53);
+  }
+  @include mq($min, $desktop) {
+    padding: rem(60) rem(106);
+  }
+
+  .link-block__label {
+
+  }
+}
+
+
+ul.link-block--ul {
+  padding: 0;
+  @include mq($min, $tablet) {
+    column-count: 2;
+    column-gap: rem(100);
+  }
+  li {
+    @include mq($min, $tablet) {
+      display: inline-block;
+    }
+    @include mq($max, $pre-tablet) {
+      text-align: center;
+    }
+    list-style: none;
+    padding-bottom: rem(30);
+
+    &::before {
+      display: none;
+    }
+    a {
+      color: $primary;
+      font-size: rem(20);
+      line-height: rem(28);
+      font-weight: bold;
+      text-decoration: underline;
+      transition: 0.25s color ease-in-out;
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}

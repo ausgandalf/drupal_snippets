@@ -1,0 +1,156 @@
+{
+    "name": "pantheon-upstreams/drupal-composer-managed",
+    "description": "Install Drupal 9 with Composer on Pantheon.",
+    "type": "project",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "path",
+            "url": "upstream-configuration"
+        }
+    ],
+    "require": {
+        "pantheon-upstreams/upstream-configuration": "dev-main",
+        "composer/installers": "^1.9",
+        "drupal/core-composer-scaffold": "^10",
+        "drupal/core-recommended": "^10",
+        "pantheon-systems/drupal-integrations": "^10",
+        "cweagans/composer-patches": "^1.7",
+        "drush/drush": "^11 || ^12",
+        "idfive/idfive": "^8.1",
+        "idfive/idfive_paragraphs": "^8.2",
+        "idfive/idfive_move_description": "^8.1",
+        "drupal/admin_toolbar": "^3.3",
+        "drupal/allowed_formats": "^2.0",
+        "drupal/captcha": "^1.9",
+        "drupal/ctools": "^4.0",
+        "drupal/devel": "^5.1",
+        "drupal/entity_browser": "^2.9",
+        "drupal/field_group": "^3.4",
+        "drupal/google_analytics": "^4.0",
+        "drupal/google_tag": "^2.0",
+        "drupal/imageapi_optimize": "^4.0",
+        "drupal/link_target": "^1.4",
+        "drupal/menu_admin_per_menu": "^1.5",
+        "drupal/metatag": "^1.22",
+        "drupal/module_filter": "^4.0",
+        "drupal/paragraphs": "^1.15",
+        "drupal/pathauto": "^1.11",
+        "drupal/redirect": "^1.8",
+        "drupal/search_api": "^1.29",
+        "drupal/tablefield": "^2.4",
+        "drupal/token": "^1.11",
+        "drupal/xmlsitemap": "^1.4",
+        "drupal/entity_embed": "^1.0@dev",
+        "drupal/focal_point": "^2.0@alpha",
+        "drupal/imageapi_optimize_resmushit": "^2.0@beta",
+        "drupal/inline_entity_form": "^1.0@RC",
+        "drupal/linkit": "^6.0@RC",
+        "drupal/markup": "^2.0@beta",
+        "drupal/viewfield": "^3.0@beta",
+        "drupal/webform": "6.2.x-dev",
+        "drupal/twig_tweak": "^3.2",
+        "drupal/toolbar_edit_page_button": "^1.0",
+        "drupal/user_registrationpassword": "^2.0",
+        "drupal/persistent_login": "^2.0",
+        "drupal/menu_block": "^1.10",
+        "drupal/menu_item_extras": "^2.19",
+        "drupal/twig_field_value": "^2.0",
+        "drupal/change_pwd_page": "^2.0",
+        "drupal/address": "^1.11",
+        "drupal/yearonly": "^9.1",
+        "drupal/quick_node_clone": "^1.16",
+        "drupal/quicktabs": "^3.0@alpha",
+        "drupal/stringoverrides": "^1.8",
+        "drupal/better_exposed_filters": "^6.0",
+        "drupal/ckeditor_link_styles": "^1.0",
+        "drupal/editor_advanced_link": "^2.1",
+        "drupal/smtp": "^1.2",
+        "drupal/mailsystem": "^4.4",
+        "drupal/swiftmailer": "^2.4",
+        "drupal/config_partial_export": "^2.0@alpha",
+        "drupal/clientside_validation": "^4.0",
+        "drupal/views_ajax_history": "^1.7",
+        "drupal/media_entity_remote_image": "^1.0@alpha",
+        "drupal/login_redirect_per_role": "^1.9",
+        "drupal/mimemail": "^1.0@alpha"
+    },
+    "require-dev": {
+        "drupal/core-dev": "^10"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "./web"
+            },
+            "allowed-packages": ["pantheon-systems/drupal-integrations"],
+            "file-mapping": {
+                "[project-root]/.editorconfig": false,
+                "[project-root]/pantheon.upstream.yml": false,
+                "[project-root]/.gitattributes": false
+            }
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "web/private/scripts/quicksilver/{$name}/": ["type:quicksilver-script"]
+        },
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "patches": {
+            "drupal/core": {
+                "2915792-allow-base-links": "https://www.drupal.org/files/issues/2023-03-22/2915792-allow-base-links.patch",
+                "3359725-ckeditor5-media-image-into-img--10.0.x-v1.3": "https://www.drupal.org/files/issues/2023-06-03/3359725-ckeditor5-media-image-into-img--10.0.x-v1.3.patch"
+            },
+            "drupal/webform": {
+                "3303027-signature-attachment--6.2.x-dev-v1.0": "https://www.drupal.org/files/issues/2023-05-19/3303027-signature-attachment--6.2.x-dev-v1.0.patch"
+            },
+            "drupal/media_entity_remote_image": {
+                "3367270-add-form-missing-v1.0": "https://www.drupal.org/files/issues/2023-06-16/3367270-add-form-missing-v1.0.patch"
+            },
+            "drupal/mimemail": {
+                "Error when to attach file just by content (without path provided)": "https://www.drupal.org/files/issues/2023-08-10/3380541-attach-file-without-path.patch"
+            }
+        },
+        "enable-patching": true
+    },
+    "autoload": {
+        "classmap": ["upstream-configuration/scripts/ComposerScripts.php"]
+    },
+    "scripts": {
+        "pre-update-cmd": ["DrupalComposerManaged\\ComposerScripts::preUpdate"],
+        "post-update-cmd": ["DrupalComposerManaged\\ComposerScripts::postUpdate"]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": false,
+        "platform": {
+            "php": "8.1.13"
+        },
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
+        }
+    }
+}

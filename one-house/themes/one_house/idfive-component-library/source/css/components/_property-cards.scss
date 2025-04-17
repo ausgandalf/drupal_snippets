@@ -1,0 +1,195 @@
+.property-block--other-properties{
+  h3{
+    color:$pavement;
+    padding-top:rem(40);
+  }
+}
+
+.property-card {
+    background-color: $white;
+    // overflow: hidden;
+    border:solid rem(0.5) $cement;
+    transition: box-shadow .25s linear;
+    position:relative;
+    height:100%;
+    margin-bottom:rem(63);
+    &.card--clickable {
+      cursor: pointer;
+      &:hover {
+
+        .card__cta {
+          background-color: rgba($black, 0.5);
+        }
+      }
+    }
+
+    a{
+        position:absolute;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        z-index: 1;
+        span{
+            visibility: hidden;
+        }
+    }
+
+    &:hover {
+      box-shadow:0px -2px 40px rgba($black, 0.4);
+      .property_image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+      .arrow-button {
+        background-color: $graybrick;
+        .arrow {
+          background-color: $offwhite;
+        }
+        &::after {
+          border-color: $offwhite;
+        }
+      }
+    }
+
+  }
+
+  .card__cta {
+    background-color: $black;
+    color: $white;
+    text-decoration: none;
+    transition: 0.25s background-color ease-in-out;
+    overflow: hidden;
+    margin-top: rem(20);
+    &:hover {
+      background-color: rgba($black, 0.1);
+    }
+  }
+
+  .card__content {
+    margin: rem(10) 0 0;
+    padding: rem(30) rem(30) rem(20);
+    position: relative;
+    .card--horizontal & {
+      flex: 1 1 0;
+      margin: 0;
+    }
+    .property_title, .property_neighborhood, .property_status{
+      text-align:center;
+    }
+    h3{
+        padding:0;
+        text-align:center;
+        margin-bottom:rem(16);
+        line-height:1.0625;
+        .has-image &{
+          line-height:1.16;
+        }
+        .address-line1{
+          font-size:rem(32);
+          line-height:1.0625;
+          color:$pavement;
+          font-family:$font;
+          .has-image &{
+            font-size:rem(24);
+          }
+        }
+    }
+    .property_neighborhood{
+      font-size:rem(20);
+      line-height:1.4;
+      color:$pavement;
+      margin-bottom:rem(20);
+      a{
+        color:$pavement;
+        text-decoration:none;
+        position: relative;
+      }
+    }
+    .property_status{
+      color:$primary;
+      margin:0;
+      span{
+        color:$primary;
+        text-decoration:none;
+        font-style:italic;
+        &:active{
+          color:$secondary;
+        }
+      }
+    }
+  }
+
+  .property_image {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    @extend %responsive-img;
+    .has-image &{
+      &:before {
+        padding-top: 66.6%;
+        .card--horizontal & {
+          padding-top: 150%;
+          @include mq($min, $sm_palm) {
+            padding-top: 100%;
+          }
+          @include mq($min, $tablet) {
+            padding-top: 66.6%;
+          }
+        }
+      }
+    }
+    img {
+      transition: transform 0.3s linear;
+    }
+  }
+  .arrow-button{
+    background-color:#EFECEC;
+    border-radius: 100%;
+    width:rem(68);
+    height:rem(3);
+    padding:rem(34) rem(16);
+    position:absolute;
+    top:rem(-44);
+    right:rem(33);
+    text-align:center;
+    @include mq($min, $tablet) {
+      top:rem(-53);
+      right:rem(-15);
+    }
+    .has-image &{
+      top:rem(-44);
+      right:rem(33);
+      @include mq($min, $tablet) {
+        top:rem(-53);
+        right:rem(33);
+      }
+    }
+    @include mq($min, $tablet) {
+      width:rem(83);
+      padding:rem(41.5) rem(16);
+    }
+    &:after{
+      content:"";
+      width:rem(15);
+      height:rem(15);
+      border-right:rem(3) solid $brick;
+      border-bottom:rem(3) solid $brick;
+      position:absolute;
+      right:rem(20);
+      bottom:rem(25);
+      transform:rotate(-45deg);
+      @include mq($min, $tablet) {
+        right:rem(26);
+        bottom:rem(33);
+      }
+    }
+    .arrow{
+      background-color:$brick;
+      width:rem(30);
+      height:rem(3);
+      margin-inline:auto;
+    }
+  }

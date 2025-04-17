@@ -1,0 +1,21 @@
+<div class="video-embed">
+  <div class="video-embed__media-wrap">
+    {% if video_embed.wallpaper %}
+      <img src="{{ video_embed.wallpaper }}" alt="" loading="lazy">
+    {% else %}
+      {% if video_embed.source == "youtube" %}
+        <img src="https://img.youtube.com/vi/{{ video_embed.youtube_video_id }}/maxresdefault.jpg" alt="Video Poster" loading="lazy">
+      {% elseif video_embed.source == "vimeo" %}
+        <img src="https://vumbnail.com/{{ video_embed.vimeo_video_id }}.jpg" alt="Video Poster" loading="lazy">
+      {% endif %}
+    {% endif %}
+    {% if video_embed.source == "youtube" %}
+      <div class="video-embed__video" aria-label="YouTube Video: {{ video_embed.title }}" data-vid="{{ video_embed.youtube_video_id }}"></div>
+    {% elseif video_embed.source == "vimeo" %}
+      <div data-vimeo-id="{{ video_embed.vimeo_video_id }}" class="video--vim"></div>
+    {% endif %}
+  </div>
+  {% if video_embed.caption %}
+    <div class="video-embed__caption">{{ video_embed.caption }}</div>
+  {% endif %}
+</div>

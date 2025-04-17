@@ -1,0 +1,55 @@
+{
+  "subnav": {
+    "items": [
+      {
+        "url": "https://www.iastate.edu/",
+        "title": "Parent Page",
+        "current": false,
+        "children": []
+      },
+      {
+        "url": "https://www.iastate.edu/",
+        "title": "Sibling Page Title Lorem Ipsum",
+        "current": false,
+        "children": []
+      },
+      {
+        "url": "https://www.iastate.edu/",
+        "title": "Sibling Page Title Lorem Ipsum",
+        "current": false,
+        "children": []
+      },
+      {
+        "url": "https://www.iastate.edu/",
+        "title": "Sibling Page Title Lorem Ipsum",
+        "current": false,
+        "children": []
+      },
+      {
+        "url": "https://www.iastate.edu/",
+        "title": "Kitchen Sink",
+        "current": true,
+        "children": [
+          {
+            "url": "https://www.iastate.edu/",
+            "title": "Child Page Title Lorem",
+            "current": false,
+            "children": []
+          },
+          {
+            "url": "https://www.iastate.edu/",
+            "title": "Child Page Title Lorem",
+            "current": false,
+            "children": []
+          }
+        ]
+      },
+      {
+        "url": "https://www.iastate.edu/",
+        "title": "Sibling Page Title Lorem Ipsum",
+        "current": false,
+        "children": []
+      }
+    ]
+  }
+}

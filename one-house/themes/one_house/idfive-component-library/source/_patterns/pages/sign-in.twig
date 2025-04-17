@@ -1,0 +1,65 @@
+{% extends "@pages/page-structure.twig" %}
+{% block content %}
+    {% include "@components/hero/hero--internal.twig" with internal_hero %}
+
+<div class="property-block layout--2cols">
+    <div class="property-block property-block--sign-in column--left">
+        <div class="inner">
+			<div data-drupal-messages-fallback="" class="hidden"></div>
+	        <div class="local-tasks-menu-wrapper">
+                <h2 class="visually-hidden">Primary tabs</h2>
+                <ul class="primary">
+                    <li><a href="/user/login" data-drupal-link-system-path="user/login" class="is-active">Log in<span class="visually-hidden">(active tab)</span></a></li>
+                    <li><a href="/user/register" data-drupal-link-system-path="user/register">Create new account</a></li>
+                    <li><a href="/user/password" data-drupal-link-system-path="user/password">Reset your password</a></li>
+                </ul>
+            </div>
+            <h3>Welcome back.</h3>
+            <form class="user-login-form" data-drupal-selector="user-login-form" action="/user/login" method="post" id="user-login-form" accept-charset="UTF-8">
+                <div class="js-form-item form-item js-form-type-textfield form-item-name js-form-item-name">
+                    <label for="edit-name" class="js-form-required form-required">Username</label>
+                    <input autocorrect="none" autocapitalize="none" spellcheck="false" autofocus="autofocus" data-drupal-selector="edit-name" aria-describedby="edit-name--description" type="text" id="edit-name" name="name" value="" size="60" maxlength="60" class="form-text required" required="required" aria-required="true">
+                    <div id="edit-name--description" class="description">Enter your One House At A Time  username.</div>
+                </div>
+                <div class="js-form-item form-item js-form-type-password form-item-pass js-form-item-pass">
+                    <label for="edit-pass" class="js-form-required form-required">Password</label>
+                    <input data-drupal-selector="edit-pass" aria-describedby="edit-pass--description" type="password" id="edit-pass" name="pass" size="60" maxlength="128" class="form-text required" required="required" aria-required="true">
+                    <div id="edit-pass--description" class="description">Enter the password that accompanies your username.</div>
+                </div>
+                <fieldset class="fieldset_user_link fieldset_reset_link js-form-item form-item js-form-wrapper form-wrapper" data-drupal-selector="edit-reset-link" id="edit-reset-link">
+                    <legend><span class="fieldset-legend"></span></legend>
+                    <div class="fieldset-wrapper">
+                        <a href="/user/password">Forgot Password</a>
+                    </div>
+                </fieldset>
+                <input autocomplete="off" data-drupal-selector="form-swlh7oetsvhphjwkqlalwyipdtfy4smcuormrg9uffe" type="hidden" name="form_build_id" value="form-SWLH7oEtsvHphJWKQlaLwyIpDTFY4sMcUoRMRg9uFFE">
+                <input data-drupal-selector="edit-user-login-form" type="hidden" name="form_id" value="user_login_form">
+                <div class="js-form-item form-item js-form-type-checkbox form-item-persistent-login js-form-item-persistent-login">
+                    <input data-drupal-selector="edit-persistent-login" type="checkbox" id="edit-persistent-login" name="persistent_login" value="1" class="form-checkbox">
+                    <label for="edit-persistent-login" class="option"><span class="checkbox"></span>Remember me</label>
+                </div>
+                <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+                    <input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Sign In" class="button js-form-submit form-submit">
+                </div>
+                <fieldset class="fieldset_user_link fieldset_signup_link js-form-item form-item js-form-wrapper form-wrapper" data-drupal-selector="edit-signup-link" id="edit-signup-link">
+                    <legend> <span class="fieldset-legend"></span></legend>
+                    <div class="fieldset-wrapper">Don’t have an account? <a href="/user/register">Sign Up</a></div>
+                </fieldset>
+            </form>
+		</div>
+    </div>
+    <div class="property-block property-block--how-it-works column--right">
+        <div class="inner text-content">
+            <h2>How it Works</h2>
+            <ul>
+                <li>Create a new account to take advantage of our new online portal omnis iste natus</li>
+                <li>Edit your profile with your contact information for the One House Match system omnis iste natus</li>
+                <li>Submit your bidder application to be able to make offers on properties at auction and up for immediate sale omnis iste natus</li>
+                <li>Let us know what you're looking for with One House Match omnis iste natus</li>
+                <li>Get info straight to your email regarding the properties you are interested in omnis iste natus</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

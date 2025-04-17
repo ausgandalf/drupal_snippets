@@ -1,0 +1,26 @@
+<div class="hero{% if hero_subnav %} hero-with-subnav{% endif %}">
+  <div class="hero__inner{% if hero.background_image %} hero-with-image{% endif %}" {% if hero.background_image %} style="background-image: url('{{ hero.background_image }}')" {% endif %}>
+    <!--{ % include "@components/breadcrumbs/breadcrumbs.twig" with hero_breadcrumbs %}-->
+    <div class="hero__arc">
+      <svg aria-hidden="false" >
+          <use xlink:href="#icon-one-house-shape"></use>
+      </svg>
+    </div>
+    <div class="hero__title-container">
+      <p class="hero__subtitle">{{ hero.subtitle }}</p>
+      <h1 class="hero__title">{{ hero.title|raw }}</h1>
+      <div class="hero__title-buttons">
+        {% include "@components/buttons/button-set.twig" with hero_button_set %}
+      </div>
+    </div>
+    <div class="hero__buttons-mobile">
+      {% include "@components/buttons/button-set.twig" with mobile_button_set %}
+    </div>
+    <div class="hero__building">
+      <img src="../../images/IMG_Hero_Building.png" alt="" class="hero__building-image" />
+    </div>
+  </div>
+  <!--{ % if hero_subnav %}
+    { % include "@components/subnav/subnav.twig" with hero_subnav %}
+  { % endif %}-->
+</div>

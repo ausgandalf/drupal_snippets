@@ -1,0 +1,187 @@
+{
+  "title": "One House at a Time | Properties",
+  "bodyClass": "kitchen-sink",  
+  "internal_hero":{
+        "hero": {
+            "title": "PROPERTIES",
+            "subtitle": "",
+            "background_image": "",
+            "hero_image": {
+              "url":"",
+              "alt":""
+            }
+        },
+        "hero_breadcrumbs": {
+            "breadcrumbs": {
+              "links": [
+                {
+                  "url": "https://idfive.com",
+                  "name": "Home"
+                },
+                {
+                  "url": "https://idfive.com",
+                  "name": "Properties"
+                }
+              ]
+            }
+        }
+    },
+    "sale_properties":{
+        "card_set": {
+            "horizontal": false,
+            "cards": [
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street Lorem ipsum",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street Lorem ipsum",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street Lorem",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                }
+            ]
+        }
+    },
+    "sold_properties":{
+        "card_set": {
+            "horizontal": false,
+            "cards": [
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street Lorem ipsum",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street Lorem",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street Lorem ipsum",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                },
+                {
+                    "card": {
+                        "address": "705 E. 22nd Street Lorem ipsum",
+                        "body": "<p>East Baltimore Midway</p>",
+                        "image": {
+                            "src": "../../images/IMG_Success_Story.jpg",
+                            "alt": ""
+                        },
+                        "status_label": "Auction",
+                        "status_detail": "06/17/2023"
+                    }
+                }
+            ]
+        }
+    }
+}

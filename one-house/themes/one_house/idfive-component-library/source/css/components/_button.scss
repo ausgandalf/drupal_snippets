@@ -1,0 +1,50 @@
+.button,
+%button{
+  display: block;
+  width:100%;
+  border: solid rem(3) $primary;
+  border-radius: rem(25);
+  padding: rem(8) rem(30);
+  margin-bottom:rem(30);
+  appearance: none;
+  cursor: pointer;
+  background-color: $white;
+  color: $primary;
+  font-family: $headerfont;
+  letter-spacing:rem(1);
+  font-size: rem(20);
+  line-height:1.25;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: 400;
+  text-align: center;
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+  .text-content &{
+    text-decoration: none;
+  }
+  @include mq($min, $desktop){
+    display:inline-block;
+    width:inherit;
+    min-width:rem(200);
+  }
+  &.button-alt {
+    background: none;
+    border:solid rem(3) $white;
+    color:$white;
+    &:hover {
+      background-color: $white;
+      color:$primary;
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    .text-content &{
+      background-color: $primary;
+      color: $white;
+      text-decoration: none;
+    }
+    background-color: $primary;
+    color: $white;
+    text-decoration: none;
+  }
+}

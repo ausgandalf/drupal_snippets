@@ -1,0 +1,39 @@
+{% set _hasImage = content.field_ip_card_item_image|field_value %}
+
+{% block paragraph %}
+
+  {% block content %}
+
+    <div class="card {{ _hasImage ? 'has-image' }}">
+      {{ content.field_ip_card_item_link }}
+      {% if _hasImage %}
+        <div class="card__media">
+          {{ content.field_ip_card_item_image }}
+        </div>
+      {% endif %}
+
+      {% set _card_title = content.field_ip_card_item_title|render %}
+
+      <div class="card__content">
+        <h3 class="card__title">{{ _card_title|raw }}</h3>
+        <div class="card__body">
+          {{ content.field_ip_card_item_text|raw }}
+        </div>
+        {% if content.field_ip_card_item_link|field_value %}
+          {% set _card_title_pure = _card_title|striptags|trim %}
+          {% set _link_title = content.field_ip_card_item_link.0['#title'] %}
+          {% if (_link_title != _card_title_pure) %}
+            <p class="card__optional">
+              {{ _link_title|raw }}
+            </p>
+          {% endif %}
+        {% endif %}
+        <div class="arrow-button">
+          <div class="arrow"><span></span></div>
+        </div>
+      </div>
+    </div>
+
+  {% endblock %}
+
+{% endblock paragraph %}

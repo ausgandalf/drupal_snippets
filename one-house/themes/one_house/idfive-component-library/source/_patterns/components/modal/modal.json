@@ -1,0 +1,20 @@
+{
+  "modal": {
+    "modals": [
+      {
+        "trigger_text": "Modal Trigger 1",
+        "popup": {
+          "title": "Modal 1 Title",
+          "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis est finibus enim vestibulum eleifend eu eu magna. Sed nulla risus, congue nec imperdiet tempor, dapibus nec lacus. Curabitur molestie, libero non sollicitudin suscipit, mi odio aliquam arcu, nec molestie nisi ipsum sed nulla. Nullam efficitur feugiat orci, sed sodales leo maximus scelerisque. Maecenas placerat nulla odio, a venenatis ligula interdum in. Nulla feugiat volutpat ipsum convallis imperdiet.</p>"
+        }
+      },
+      {
+        "trigger_text": "Modal Trigger 2",
+        "popup": {
+          "title": "Modal 2 Title",
+          "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis est finibus enim vestibulum eleifend eu eu magna. Sed nulla risus, congue nec imperdiet tempor, dapibus nec lacus. Curabitur molestie, libero non sollicitudin suscipit, mi odio aliquam arcu, nec molestie nisi ipsum sed nulla. Nullam efficitur feugiat orci, sed sodales leo maximus scelerisque. Maecenas placerat nulla odio, a venenatis ligula interdum in. Nulla feugiat volutpat ipsum convallis imperdiet.</p>"
+        }
+      }
+    ]
+  }
+}

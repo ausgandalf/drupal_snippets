@@ -1,0 +1,13 @@
+{% set _date = elements['#paragraph'].field_ip_date_board_item_date_v.0.date %}
+{% set _day = _date|date('U')|format_date('custom', 'd') %}
+{% set _month = _date|date('U')|format_date('custom', 'M') %}
+
+<div class="dates-and-deadlines__content-event">
+    <div class="dates-and-deadlines__content-event__date">
+        <p class="dates-and-deadlines__content-event__date-day">{{ _day }}</p>
+        <p class="dates-and-deadlines__content-event__date-month">{{ _month }}</p>
+    </div>
+    <div class="dates-and-deadlines__content-event__content">
+        <p><strong>{{ content.field_ip_date_board_item_title|raw }}</strong> {{ content.field_ip_date_board_item_text|raw }}</p>
+    </div>
+</div>

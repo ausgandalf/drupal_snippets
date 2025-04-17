@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - onehouse_base
+  module:
+    - user
+id: action_user_set_bidder_status_expired
+label: 'Set Bidder Status Expired'
+type: user
+plugin: action_user_set_bidder_status_expired
+configuration: {  }

@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * IP Table paragraph bundle.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'paragraph-widget',
+    'paragraph-widget--table',
+  ]
+%}
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes).setAttribute('id','ip_paragraph_adv-'~paragraph.id())}}>
+		{% block content %}
+			<div class="table text-content" role="region" aria-labelledby="caption1" tabindex="0">
+				{{ content.field_ip_tb_table }}
+			</div>
+		{% endblock %}
+	</div>
+{% endblock paragraph %}

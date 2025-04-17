@@ -1,0 +1,15 @@
+{% extends "page.html.twig" %}
+
+{% set page_content_class = 'content--bidder' %}
+
+{% block content %}
+  {{ page.pre_content }}
+	<div class="layout--sidebar">
+    <div class="block--sidebar">
+      {{ page.bidder_sidebar }}
+    </div>
+    <div class="block--main">
+			{{ page.content }}
+		</div>
+	</div>
+{% endblock %}

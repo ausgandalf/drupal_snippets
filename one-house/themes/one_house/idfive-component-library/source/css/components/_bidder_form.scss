@@ -1,0 +1,133 @@
+form.webform-submission-form {
+
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  select {
+    @include mq($min, $desktop){
+      width: auto;
+    }
+  }
+
+  td {
+    padding: 0 !important;
+  }
+
+  .webform-multiple-table-responsive td > div > label.visually-hidden {
+    position: absolute !important;
+  }
+
+  select {
+    padding-right: 50px;
+  }
+
+  .js-form-type-webform-multiple {
+    .tabledrag-toggle-weight-wrapper,
+    .tableresponsive-toggle-columns,
+    .webform-multiple-table--handle {
+      display: none;
+    }
+  }
+
+  .webform-multiple-table td.webform-multiple-table--operations input[type="image"] {
+    border: none;
+    margin-top: rem(-4);
+    opacity: 1;
+    padding: 0;
+    width: auto;
+    &, &:active, &:focus, &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .webform-multiple-table table tbody tr {
+    &:first-child {
+      td.webform-multiple-table--operations input[type="image"] {
+        display: none;
+      }
+    }
+  }
+
+  .form-item-applicant-name {
+
+    input[type=text] {
+      width: 100%;
+    }
+
+    .webform-name--wrapper {
+      @include mq($min, $desktop){
+        align-items: flex-start;
+        display: flex;
+        column-gap: rem(30);
+        & > div {
+          flex: 3;
+          margin: 0;
+          &:last-child {
+            flex: 1;
+          }
+        }
+      }
+    }
+
+    .webform-multiple-table td.webform-multiple-table--operations input[type="image"] {
+      margin-top: rem(30);
+    }
+
+    .webform-multiple-add {
+      margin-top: rem(20);
+    }
+
+  }
+
+  .form-item {
+    label{
+      &.error {
+        @include error-text();
+      }
+
+      .file {
+        margin-left: rem(10);
+        a {
+          &, &:active, &:focus {
+            color: $darkbrick;
+          }
+        }
+      }
+    }
+  }
+
+  .webform-signature-pad {
+    .button {
+      right: rem(20);
+      top: rem(20);
+    }
+  }
+
+  .webform-signature-pad .button,
+  .button--remove {
+    @include override-button-simple();
+    margin-bottom: rem(20);
+  }
+
+  .form-item-if-none-initial-here,
+  .form-item-disclosures-initials,
+  .form-item-disclosures-initials-02,
+  .form-item-disclosures-initials-03 {
+    align-items: center;
+    column-gap: rem(10);
+    display: flex;
+    margin-top: rem(-10);
+
+    input[type=text] {
+      width: rem(100);
+    }
+  }
+}
+
+.layout--sidebar .block--main .paragraph-widget--application-form .bidder-status-form .affirmation__fieldgroup {
+  flex-direction: column;
+  @include mq($min, $sm_palm) {
+    flex-direction: row;
+  }
+}
+

@@ -1,0 +1,10 @@
+<div class="off-canvas">
+    {% include "@components/site-header/site-header.twig" %}
+    <div class="max-bound">
+      <main id="main-content" class="{{ mainClass }}">
+        <div class="outer-pad"> {% block content %}{% endblock %}
+        </div>
+      </main>
+    </div>
+    {% include "@components/site-footer/site-footer.twig" %}
+</div>

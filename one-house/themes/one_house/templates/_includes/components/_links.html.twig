@@ -1,0 +1,42 @@
+{# {
+  "links": [],
+  "link_class": "",
+  "link_pre": "",
+  "link_suff": "",
+  "link_label_pre": "<span>",
+  "link_label_suff": "</span>",
+  "link_wrap_pre": "",
+  "link_wrap_suff": "",
+} #}
+
+{% if ((link_label_pre is null) and ((link_type is null) or (link_type not in [0, 2]))) %}
+  {% set link_label_pre = "<span>" %}
+  {% set link_label_suff = "<span>" %}
+{% endif %}
+
+{% if (links.0) %}{{ link_wrap_pre|raw }}{% endif %}
+
+{% for key, link in links|default([]) %}
+  {% if key matches '/^\\d+$/' %}
+
+    {% set _url = link['#url']|render %}
+    {% set _title = link['#title']|render %}
+    {% set _target = link['#options'].attributes.target %}
+    {% set _is_external = link['#options'].external %}
+
+    {% if _url|length %}
+
+      {% if link_pre|length %} {{ link_pre|raw }} {% endif %}
+
+      <a href="{{ _url }}" class="{{ link_class }}" {% if _target|length %} target="{{ _target }}" {% endif %}>
+        {{ link_label_pre|raw }}{{ _title }}{{ link_label_suff|raw }}
+      </a>
+
+      {% if link_suff|length %} {{ link_suff|raw }} {% endif %}
+
+    {% endif %}
+
+  {% endif %}
+{% endfor %}
+
+{% if (links.0) %}{{ link_wrap_suff|raw }}{% endif %}

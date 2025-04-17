@@ -1,0 +1,177 @@
+.content--login,
+.content--reset-password,
+.content--signup {
+	.local-tasks-menu-wrapper {
+		display: none;
+	}
+}
+
+.site-footer__locations {
+	.label--phone {
+		opacity: 0;
+		&.label--phone_0 {
+			opacity: 1;
+		}
+	}
+
+	.label--fax {
+		opacity: 0;
+		&.label--fax_0 {
+			opacity: 1;
+		}
+	}
+}
+
+.error, .password-suggestions {
+    @include error-text();
+}
+
+.layout--2cols .column--left .inner label.error {
+    font-size:rem(18);
+}
+
+.form-item {
+    label {
+        &.error {
+            display: block;
+        }
+    }
+}
+.form-item-field-user-accept-value {
+    display: flex;
+    flex-wrap: wrap;
+    label.error {
+        order: 2;
+        width: 100%;
+        padding-left: 0;
+        &::before {
+            content: "This";
+        }
+        p {
+            display: none;
+        }
+    }
+    label:not(.error) {
+        padding-left: rem(40);
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.layout--2cols{
+    display:flex;
+    gap:rem(50);
+    margin-block:rem(60);
+    flex-direction: column;
+    max-width:rem(1130);
+    margin-inline:auto;
+    @include mq($min, $desktop){
+        flex-direction: row;
+    }
+    .column--left{
+        width:100%;
+        @include mq($min, $desktop){
+            width:50%;
+        }
+        .inner{
+            padding-right:0;
+            @include mq($min, $desktop){
+                padding-right:rem(30);
+            }
+            h3{
+                font-size:rem(47);
+                margin-top:0;
+                color:$pavement;
+                text-align: center;
+                @include mq($min, $desktop){
+                    text-align:left;
+                }
+            }
+            label{
+                font-size:rem(24);
+            }
+            a{
+                color:$primary;
+            }
+            .js-form-type-password{
+                margin:0;
+            }
+            .description{
+                display:none;
+            }
+            .fieldset_user_link{
+                padding-left:0;
+                border:none;
+                margin:0;
+            }
+            .fieldset_reset_link{
+                margin-top:rem(10);
+                margin-bottom:rem(15);
+                a{
+                    font-size:rem(20);
+                    font-weight:600;
+                }
+                legend{
+                    margin:0;
+                }
+            }
+            .form-item-field-user-accept-value{
+                margin-bottom:rem(38);
+                @include mq($min, $tablet){
+                    margin-bottom:rem(45);
+                }
+                p{
+                    font-size:rem(20);
+                    font-weight:400;
+                    line-height:1.4;
+                    display:inline;
+                    &:after{
+                        display:inline;
+                    }
+                }
+            }
+        }
+    }
+    .column--right{
+        border:solid rem(1) $cement;
+        width:100%;
+        @include mq($min, $desktop){
+            width:50%;
+        }
+        .inner{
+            padding:rem(50) rem(45) rem(30) rem(35);
+            @include mq($min, $desktop){
+                padding:rem(60) rem(60) rem(30) rem(75);
+            }
+            h2{
+                font-size:rem(32);
+                font-family:$font;
+                color:$pavement;
+                font-weight:600;
+                text-align: center;
+                @include mq($min, $desktop){
+                    text-align:left;
+                }
+            }
+            ul{
+                padding-left:rem(20);
+                padding-right:0;
+                @include mq($min, $desktop){
+                    padding-left:rem(60);
+                    padding-right:0;
+                }
+                li{
+                    font-size:rem(20);
+                    line-height:1.4;
+                    margin-bottom:rem(20);
+                    @include mq($min, $desktop){
+                        font-size:rem(22);
+                        line-height:1.45;
+                        margin-bottom:rem(15);
+                    }
+                }
+            }
+        }
+    }
+}

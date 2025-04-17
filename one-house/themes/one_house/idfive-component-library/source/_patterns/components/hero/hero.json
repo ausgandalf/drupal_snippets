@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "title": "One House<span class='title-line2'><br />at a Time</span>",
+    "subtitle": "Rebuilding Baltimore",
+    "background_image": "../../images/IMG_Hero_Sky.png"
+  },
+  "hero_button_set": {
+    "button_set": {
+      "button_alt": false,
+      "buttons": [
+        {
+          "button": {
+            "text": "Become a Bidder",
+            "url": "https://idfive.com/"
+          }
+        },
+        {
+          "button": {
+            "text": "Browse Properties",
+            "url": "https://idfive.com/"
+          }
+        }
+      ]
+    }
+  },
+  "mobile_button_set": {
+    "button_set": {
+      "button_alt": false,
+      "buttons": [
+        {
+          "button": {
+            "text": "Become a Bidder",
+            "url": "https://idfive.com/"
+          }
+        },
+        {
+          "button": {
+            "text": "Browse Properties",
+            "url": "https://idfive.com/"
+          }
+        }
+      ]
+    }
+  }
+}

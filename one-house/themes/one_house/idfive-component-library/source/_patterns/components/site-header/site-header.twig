@@ -1,0 +1,71 @@
+<header class="site-header">
+  <div class="site-header__top">
+    <a href="{{ site_header.logo.link }}" class="site-header__logo">
+      <img src="{{ site_header.logo.src }}" alt="{{ site_header.logo.alt }}" loading="lazy" />
+    </a>
+  </div>
+  <div class="site-header__main">
+    <a href="#site-header-mega-menu" class="site-header__mega-menu-open" role="button" aria-controls="site-header-mega-menu">
+      <span class="visible-for-screen-readers">Toggle Menu</span>
+      <span class="site-header__mega-menu-open-line-wrap">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </a>
+    <div class="site-header__mega-menu" id="site-header-mega-menu">
+      <div class="site-header__mega-menu-inner">
+        <div class="site-header__mega-menu-scroller">
+          <noscript>
+            <a href="#" role="button" class="nojs-close-menu">Close Main Menu</a>
+          </noscript>
+          <div>
+            <div class="site-header__mega-menu-main">
+              <div class="site-header__mega-menu-max-bound">
+                <nav class="site-header__mega-menu-main-nav" aria-label="Main">
+                  <ul>
+                    {% for link in site_header.full_nav %}
+                      <li>
+                        <a {% if link.current_page %} class="active-nav" {% endif %} href="{{ link.url }}" {% if link.newtab %} target="_blank" {% endif %}>{{ link.title }}</a>
+                      </li>
+                    {% endfor %}
+                      <li class="header-signin-button__container">
+                        <a href="#" class="header-signin-button">Sign Up / Sign In</a>
+                      </li>
+                      <li class="search-icon">
+                        <a href="#search-modal">
+                          <svg aria-hidden="false" width="44" height="32">
+                              <use xlink:href="#icon-onehouse_search_icon"></use>
+                          </svg>
+                          <span class="visible-for-screen-readers">Expand Search Form</span>
+                        </a>
+                      </li>
+                      <li class="search-area-container">
+                        <div id="search-modal" class="search-modal">
+                          <form role="search" aria-label="search form" method="get" class="search-form" aria-hidden="true" action="/">
+                            <label for="searchForm_3285" class="visible-for-screen-readers">Search</label>
+                            <input type="search" id="searchForm_3285"  class="search-field" name="s" value="" placeholder=""  aria-label="search"/>
+                            <button type="submit" class="search-submit" value="Search" >
+                              <svg aria-hidden="false" width="38" height="25">
+                                <use xlink:href="#icon-onehouse_search_icon"></use>
+                              </svg>
+                              <span class="visible-for-screen-readers">Search</span>
+                            </button>
+                            <a href="#" class="search-close" ><span class="visible-for-screen-readers">close search form</span></a>
+                          </form>
+                        </div>
+                      </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="site-header__mobile-signin">
+    <a href="#">Sign Up / Sign In</a>
+  </div>
+</header>

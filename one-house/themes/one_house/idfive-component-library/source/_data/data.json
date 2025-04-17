@@ -1,0 +1,68 @@
+{
+  "site_header": {
+    "logo": {
+      "src": "../../images/icons/onehouse_logo_horizontal.svg",
+      "alt": "One House at a Time",
+      "link": "https://idfive.com/"
+    },
+    "full_nav": [
+      {
+        "title": "How we work",
+        "url": "https://idfive.com/",
+        "current_page": false
+      },
+      {
+        "title": "Become a Bidder",
+        "url": "https://idfive.com/",
+        "current_page": false
+      },
+      {
+        "title": "Properties",
+        "url": "https://idfive.com/",
+        "current_page": false
+      },
+      {
+        "title": "Resources",
+        "url": "https://idfive.com/",
+        "current_page": false
+      },
+      {
+        "title": "About",
+        "url": "https://idfive.com/",
+        "current_page": false
+      }
+    ]
+  },
+  "site_footer": {
+    "logo": {
+      "src": "../../images/Primary_Logo.png",
+      "alt": "One House at a Time, Rebuilding Baltimore",
+      "link": "https://idfive.com/"
+    },
+    "footer_nav": [
+      {
+        "title": "About",
+        "url": "https://idfive.com/"
+      },
+      {
+        "title": "Become a Bidder",
+        "url": "https://idfive.com/"
+      },
+      {
+        "title": "Join Our Mailing List",
+        "url": "https://idfive.com/"
+      },
+      {
+        "title": "Sign Up / Sign In",
+        "url": "https://idfive.com/"
+      }
+    ],
+    "locations": [
+      {
+        "street": "3533 Chesternut Avenue 2N, Baltimore, MD 21211",
+        "phone": "(410) 467-1826",
+        "fax": "(443) 438-9113"
+      }
+    ]
+  }
+}

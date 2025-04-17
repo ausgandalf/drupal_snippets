@@ -1,0 +1,11 @@
+<div class="interior-hero{% if hero_subnav %} hero-with-subnav{% endif %} {% if not hero.hero_image.url %} no-hero{% endif %}">
+  <div class="interior-hero__inner{% if hero.background_image %} hero-with-image{% endif %}" {% if hero.background_image %} style="background-image: url('{{ hero.background_image }}')" {% endif %}>
+    <h1 class="interior-hero__title">{{ hero.title }}</h1>
+    {% include "@components/breadcrumbs/breadcrumbs.twig" with hero_breadcrumbs %}
+  </div>
+  {% if hero.hero_image.url %}
+    <div class="interior-hero__building">
+      <img src="{{ hero.hero_image.url }}" alt="" class="{{ hero.hero_image.alt }}" />
+    </div>
+  {% endif %}
+</div>

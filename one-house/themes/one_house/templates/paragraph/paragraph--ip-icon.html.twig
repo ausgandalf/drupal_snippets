@@ -1,0 +1,30 @@
+{% set _type = content.field_ip_icon_type.0['#markup'] %}
+{% set _svgIcon = content.field_ip_icon_svg.0['#context']['value'] %}
+
+{% if (_parent_type == 'ip_steps_block') %}
+
+  <div class="how-we-work_icon">
+    {% if _type == '1' %}
+      {{ _svgIcon|raw }}
+    {% else %}
+      {{ content.field_ip_icon_image }}
+    {% endif %}
+
+    {% if content.field_ip_icon_label|field_value %}
+    <p class="how-we-work_label">{{ content.field_ip_icon_label }}</p>
+    {% endif %}
+  </div>
+
+{% else %}
+
+  {% if _type == '1' %}
+    {{ _svgIcon|raw }}
+  {% else %}
+    {{ content.field_ip_icon_image }}
+  {% endif %}
+
+  {% if content.field_ip_icon_label|field_value %}
+  <span>{{ content.field_ip_icon_label }}</span>
+  {% endif %}
+
+{% endif %}

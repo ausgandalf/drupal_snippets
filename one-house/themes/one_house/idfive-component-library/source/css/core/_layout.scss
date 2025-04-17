@@ -1,0 +1,46 @@
+main {
+  padding-top: rem(0);
+  @include mq($min, $lg_desktop) {
+    padding-top: rem(0);
+  }
+}
+
+.off-canvas {
+  overflow-x: hidden;
+}
+
+.max-bound {
+  width: 100%;
+  background-color: #fff;
+}
+
+.outer-pad {
+  margin-inline: auto;
+  /*max-width: rem(1440);*/
+  padding-inline: rem(36);
+  @include mq($min, $tablet) {
+    padding-inline: rem(60);
+  }
+  @include mq($min, $lg_desktop) {
+    padding-inline: rem(120);
+  }
+}
+
+.display-none {
+  display: none !important;
+}
+
+.no-result-wrap {
+  text-align: center;
+  h3 {
+    line-height: rem(52);
+    font-family: $header3font;
+    font-size: rem(47);
+    font-weight: bold;
+  }
+
+  h4 {
+    margin-top: rem(50);
+    text-align: left;
+  }
+}

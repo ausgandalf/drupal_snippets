@@ -1,0 +1,9 @@
+<div class="multi-column-content{% if multi_column_content.columns|length < 3 %} multi-column-content-two-col{% endif %}">
+  {% for column in multi_column_content.columns %}
+    <div class="multi-column-content__column">
+      <div class="text-content">
+        {{ column | raw }}
+      </div>
+    </div>
+  {% endfor %}
+</div>

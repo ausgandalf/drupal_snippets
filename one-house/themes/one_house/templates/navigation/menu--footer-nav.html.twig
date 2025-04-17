@@ -1,0 +1,26 @@
+<nav class="site-footer__primary-nav" aria-label="Footer Primary">
+  <ul>
+    {% for item in items %}
+      {% set menu_item_classes = [
+        'menu-item',
+        item.is_expanded ? 'menu-item--expanded',
+        item.is_collapsed ? 'menu-item--collapsed',
+        item.in_active_trail ? 'menu-item--active-trail',
+      ] %}
+      <li {{ item.attributes.addClass(menu_item_classes) }}>
+        {% set menu_link_classes = [
+          'menu-item-link',
+          item.in_active_trail ? 'active-nav',
+        ] %}
+        <a {{ create_attribute(item.url.options.attributes ? item.url.options.attributes : []).addClass(menu_link_classes) }} href="{{ item.url }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+
+    {% if (_site_info.socials.linkedin.url|length) %}
+    <li>
+      <a href="{{ _site_info.socials.linkedin.url }}"><img src="{{ base_path ~ directory }}/idfive-component-library/public/images/Icon_LinkedIn.png" alt="Linked In" /></a>
+    </li>
+    {% endif %}
+
+  </ul>
+</nav

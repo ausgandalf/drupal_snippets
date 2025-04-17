@@ -1,0 +1,133 @@
+{% extends "@pages/page-structure.twig" %}
+{% block content %}
+    {% include "@components/hero/hero--internal.twig" with internal_hero %}
+<div class="layout--sidebar">
+    <div class="block--sidebar">
+        <nav role="navigation" aria-labelledby="block-biddermainmenu-menu" id="block-biddermainmenu">
+            <h2 class="visually-hidden" id="block-biddermainmenu-menu">Bidder Main Menu</h2>
+            <nav class="nav nav--bidder" aria-label="Bidder Menu in Side">
+                <div class="nav__list">
+                    <ul>
+                        <li class="menu-item menu-item--active-trail">
+                            <a href="/bidder/my-dashboard">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="21" height="21">
+                                        <use xlink:href="#icon-onehouse_my_dashboard_active"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">My Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/bidder/my-bidder-status">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="27" height="27">
+                                        <use xlink:href="#icon-onehouse_status_default"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">My Bidder Status</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/bidder/one-house-match">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="26" height="22">
+                                        <use xlink:href="#icon-onehouse_one_house_match"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">One House Match</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/bidder/account-details">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="19" height="26">
+                                        <use xlink:href="#icon-onehouse_change_password"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">Change Password</span>
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/user/logout">
+                                <span class="icon">
+                                    <svg aria-hidden="false" width="19" height="26">
+                                        <use xlink:href="#icon-onehouse_log-out"></use>
+                                    </svg>
+                                </span>
+                                <span class="title">Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </nav>
+    </div>
+    <div class="block--main">
+	    <div data-drupal-messages-fallback="" class="hidden"></div>
+        <div class="paragraph-widget paragraph-widget--match-status">
+            <h2>Hello, Lorem!</h2>
+            <p>One House Match is a way you can get emails sent directly to you regarding properties in the areas you select….sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <div class="match-status-bar not-submitted">
+                <span class="icon">
+                    <svg aria-hidden="false" width="33" height="28">
+                        <use xlink:href="#icon-onehouse_not-submitted"></use>
+                    </svg>
+                </span>
+                <div class="status-message">You have not submitted your application to become a bidder.</div>
+            </div>
+            <div class="match-status-bar pending-approval">
+                <span class="icon">
+                    <svg aria-hidden="false" width="33" height="28">
+                        <use xlink:href="#icon-onehouse_pending_approval"></use>
+                    </svg>
+                </span>
+                <div class="status-message">Your bidding application is Pending Approval.</div>
+            </div>
+            <div class="match-status-bar active-status">
+                <span class="icon">
+                    <svg aria-hidden="false" width="33" height="28">
+                        <use xlink:href="#icon-onehouse_active"></use>
+                    </svg>
+                </span>
+                <div class="status-message">Your bidder status is now Active.</div>
+            </div>
+            <div class="match-status-bar expired-suspended exipred">
+                <span class="icon">
+                    <svg aria-hidden="false" width="33" height="28">
+                        <use xlink:href="#icon-onehouse_expired-suspended"></use>
+                    </svg>
+                </span>
+                <div class="status-message">Your bidder status has Expired.</div>
+            </div>
+            <div class="match-status-bar expired-suspended suspended">
+                <span class="icon">
+                    <svg aria-hidden="false" width="33" height="28">
+                        <use xlink:href="#icon-onehouse_expired-suspended"></use>
+                    </svg>
+                </span>
+                <div class="status-message">Your bidder status has suspended.<br /><span class="contact-message">For questions/concerns, contact <a href="mailto:office@onehousebaltimore.org">office@onehousebaltimore.org</a></span></div>
+            </div>
+            <a href="#" class="button">Become a bidder</a>
+        </div>
+        <hr />
+        <div class="paragraph-widget paragraph-widget--match-suggestion" id="ip_paragraph_adv-2">
+            <div class="headline">
+                <h2>My One House Match Suggestions</h2>
+                <a href="/bidder/one-house-match" class="btn btn--secondary">
+                    <span>Change Preferences<span></span></span>
+                </a>
+            </div>
+            <div class="content">
+                <div class="views-element-container">
+                    <div class="js-view-dom-id-76aef7184de551f4b0f694b1301f9e662f422de10438b33bc927d045e3bf167b view--property-list view--property-list--block_suggestion" data-once="ajax-pager">
+                        {% include "@components/property-cards/property-card-set.twig" with suggested_properties %}
+                        <div class="pagination">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+<div class="dates-and-deadlines">
+    <div class="dates-and-deadlines__title-container">
+        <h2 class="dates-and-deadlines__title">{{ dates_and_deadlines.title|raw }}</h2>
+    </div>
+    <div class="dates-and-deadlines__content">
+        {% for date in dates_and_deadlines.dates %}
+            <div class="dates-and-deadlines__content-event">
+                <div class="dates-and-deadlines__content-event__date">
+                    <p class="dates-and-deadlines__content-event__date-day">{{ date.day }}</p>
+                    <p class="dates-and-deadlines__content-event__date-month">{{ date.month }}</p>
+                </div>
+                <div class="dates-and-deadlines__content-event__content">
+                    <p><strong>{{ date.name }}</strong> {{ date.content }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

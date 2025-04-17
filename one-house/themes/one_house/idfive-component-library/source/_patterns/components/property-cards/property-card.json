@@ -1,0 +1,13 @@
+{
+  "card": {
+    "address": "Card Title",
+    "body": "<p>Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>",
+    "image": {
+      "src": "../../images/card-image-fpo.png",
+      "alt": ""
+    },
+    "url": "#",
+    "status_label": "Auction",
+    "status_detail": "06/17/2023"
+  }
+}

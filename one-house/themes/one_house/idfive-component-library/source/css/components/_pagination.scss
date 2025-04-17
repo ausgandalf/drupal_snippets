@@ -1,0 +1,123 @@
+.pagination, .pagination-wrap {
+  margin: rem(50) auto;
+  .pager{
+    position: relative;
+  }
+  .pagination-list, .pager__items {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap:rem(10);
+    @include mq($min, $tablet){
+      justify-content: center;
+    }
+    li {
+      font-weight: 400;
+      font-size: rem(25);
+      line-height: 1.875;
+      color: $black;
+      min-width: rem(21);
+      text-decoration: none;
+      position: relative;
+      padding-inline: rem(8);
+      @include mq($min, $lg_desktop) {
+        font-size: rem(30);
+        line-height: 1.33;
+        min-width: rem(40);
+      }
+      &.disabled {
+        opacity: 0.2;
+      }
+      &.first,
+      &.prev,
+      &.next,
+      &.last {
+        a,
+        button {
+          background-color: transparent;
+          border: none;
+          span:not(.visible-for-screen-readers) {
+            position: relative;
+            top: rem(2);
+            margin-inline: rem(5);
+          }
+          &:hover{
+            &:before {
+              opacity: 0 !important;
+            }
+          }
+        }
+      }
+      &.first, &.prev, &.pager__item--prev, &.pager__item--first{
+        svg{
+          transform:rotate(180deg);
+        }
+      }
+      &.pager__item--first{
+        padding-right:0;
+        display:none;
+        @include mq($min, $tablet){
+          display:block;
+        }
+      }
+      &.pager__item--prev{
+        padding-left:0;
+      }
+      &.pager__item--next{
+        padding-right:0;
+      }
+      &.pager__item--last{
+        padding-left:0;
+        display:none;
+        @include mq($min, $tablet){
+          display:block;
+        }
+      }
+      a {
+        color: currentColor;
+        text-decoration: none;
+        &:hover{
+          &:before {
+            opacity: 1;
+          }
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: rem(3);
+          width: 80%;
+          margin-inline:auto;
+          left: 0;
+          right: 0;
+          border-bottom: rem(3) solid $black;
+          opacity: 0;
+          transition: 0.2s opacity ease-in-out;
+          @include mq($min, $lg_desktop) {
+            bottom: rem(-7);
+          }
+        }
+      }
+      &.is-active {
+        font-weight:700;
+        a{
+          &:before{
+            opacity: 1;
+          }
+        }
+      }
+      &.pager__item--prev, &.pager__item--first, &.pager__item--next, &.pager__item--last{
+        a{
+          transition:opacity 0.2s ease-in-out;
+          &:hover{
+            opacity: 0.5;
+            &:before {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

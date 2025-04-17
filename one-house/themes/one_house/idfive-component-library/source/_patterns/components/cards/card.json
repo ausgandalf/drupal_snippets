@@ -1,0 +1,12 @@
+{
+  "card": {
+    "title": "Card Title",
+    "body": "<p>Nullam quis risus eget urna mollis ornare vel eu leo. Aenean lacinia bibendum nulla sed consectetur.</p>",
+    "image": {
+      "src": "../../images/card-image-fpo.png",
+      "alt": ""
+    },
+    "url": "",
+    "optional_text": "Learn More"
+  }
+}

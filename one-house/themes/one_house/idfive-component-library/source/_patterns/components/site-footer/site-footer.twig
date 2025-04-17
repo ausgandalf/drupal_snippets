@@ -1,0 +1,51 @@
+<div class="site-footer">
+  <div class="site-footer__body">
+    <div class="site-footer__container">
+      <nav role="navigation" aria-labelledby="block-footer-nav-menu" id="block-footer-nav">
+        <h2 class="visually-hidden" id="block-footer-nav-menu">Footer</h2>
+        <nav class="site-footer__primary-nav" aria-label="Footer Primary">
+          <ul>
+            {% for link in site_footer.footer_nav %}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+              <li>
+                <a href="#"><img src="../../images/Icon_LinkedIn.png" alt="Linked In" /></a>
+              </li>
+          </ul>
+        </nav>
+        <div class="site-footer__locations" aria-label="Footer Locations">
+          <ul>
+            {% for location in site_footer.locations %}
+              <li>
+                <p>
+                  {{ location.street }}<br>
+                  <strong>PHONE</strong> {{ location.phone }}<br>
+                  <strong>FAX</strong> {{ location.fax }}</p>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="site-footer__housinglogo_desktop">
+          <a href="https://www.hud.gov/fairhousing" target="_blank">
+            <img src="../../images/Logo_equal-housing-opportunity.png" alt="Equal Housing Opportunity Logo" />
+          </a>
+        </div>
+      </nav>
+    </div>
+    <div class="site-footer__logo">
+      <a href="{{ site_footer.logo.link }}">
+        <img src="{{ site_footer.logo.src }}" alt="{{ site_footer.logo.alt }}" loading="lazy">
+      </a>
+    </div>
+  </div>
+  <div class="site-footer__housinglogo_mobile">
+    <a href="https://www.hud.gov/fairhousing" target="_blank">
+      <img src="../../images/Logo_equal-housing-opportunity.png" alt="Equal Housing Opportunity Logo" />
+    </a>
+  </div>
+  <div class="site-footer__copyright">
+    <p>&copy; One House At A Time 2023</p>
+  </div>
+</div>

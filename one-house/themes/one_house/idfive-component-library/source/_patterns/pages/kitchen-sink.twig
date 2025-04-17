@@ -1,0 +1,111 @@
+{% extends "@pages/page-structure.twig" %}
+{% block content %}
+  {% include "@components/hero/hero--internal.twig" with kitchen_sink_hero %}
+  <div class="ks-page-section-name">  
+    <p>Hero without Image</p>
+  </div>
+  {% include "@components/hero/hero--internal.twig" with kitchen_sink_hero2 %}
+  <div class="paragraph-widget paragraph-widget--text-html">
+    <div class="text-content">
+      <h2 style="display:none;">.<h2>
+      <h2>Heading 2 - This is a title of major section of a page</h2>
+      <p>Body copy….This should be used for any basic text, especially when writing in sentences. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <h2>Heading 2 - This is a title of major section of a page</h2>
+      <p>Body copy….This should be used for any basic text, especially when writing in sentences. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <h3>Heading 3 - This is the title of a subsection of a page</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+      <ul>
+        <li>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</li>
+        <li>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+          <ul>
+            <li>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+            <li>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+            <li>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+          </ul>
+        </li>
+      </ul>
+      <ol>
+        <li>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</li>
+        <li>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</li>
+        <li>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</li>
+      </ol>
+      <p>Lorem ipsum dolor sit amet, <a href="#">Inline Text Link</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+    </div>
+  </div>
+  
+  <div class="paragraph-widget paragraph-widget--text-html2">
+    <div class="text-content">
+      {% include "@components/buttons/button-set.twig" with kitchen_sink_button_set %}
+      {# Right aligned image with caption #}
+      <div class="ks-page-section-name">
+        <p>How Images Can Be Used</p>
+      </div>
+      <figure class="align-right">
+        <div class="media media--type-image media--view-mode-default">
+          <img src="{{ "../../images/IMG_KS_How-Images-Can-Be-Used-1.png" }}" width="324" height="324" alt="" loading="lazy">
+        </div>
+        <figcaption>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</figcaption>
+      </figure>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+      {# Left aligned image with caption #}
+      <figure class="align-left">
+        <div class="media media--type-image media--view-mode-default">
+          <img src="{{ "../../images/IMG_KS_How-Images-Can-Be-Used-1.png" }}" width="324" height="324" alt="" loading="lazy">
+        </div>
+        <figcaption>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</figcaption>
+      </figure>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+      {# Center aligned image with caption #}
+      <figure class="align-center">
+        <div class="media media--type-image media--view-mode-default">
+          <img src="{{ "../../images/IMG_KS_How-Images-Can-Be-Used-Large.jpg" }}" width="736" height="451" alt="" loading="lazy">
+        </div>
+        <figcaption>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</figcaption>
+      </figure>
+     
+    </div>
+  </div>
+  <div class="ks-page-section-name">
+    <p>Accordions</p>
+  </div>
+  <div class="paragraph-widget paragraph-widget--accordion">
+    {% include "@components/accordion/accordion.twig" with kitchen_sink_accordion %}
+  </div>
+  <div class="ks-page-section-name">
+    <p>Featured Quote</p>
+  </div>
+  <div class="paragraph-widget paragraph-widget--blockquote">
+    {% include "@components/blockquote/blockquote.twig" with kitchen_sink_blockquote %}
+  </div>
+  <div class="ks-page-section-name">
+    <p>Carousel</p>
+  </div>
+  <div class="paragraph-widget paragraph-widget--carousel">
+    {% include "@components/carousel/carousel.twig" with kitchen_sink_carousel %}
+  </div>
+  <div class="ks-page-section-name">
+    <p>Card Set with Images</p>
+  </div>
+  <div class="paragraph-widget paragraph-widget--card-set">
+    {% include "@components/cards/card-set.twig" with kitchen_sink_card_set %}
+  </div>
+  <div class="ks-page-section-name">
+    <p>Card Set without Images</p>
+  </div>
+  <div class="paragraph-widget paragraph-widget--card-set">
+    {% include "@components/cards/card-set.twig" with kitchen_sink_card_set2 %}
+  </div>
+  
+  <div class="paragraph-widget paragraph-widget--call-to-action">
+    {% include "@components/calls-to-action/call-to-action.twig" with kitchen_sink_call_to_action %}
+  </div>
+  <div class="paragraph-widget paragraph-widget--end-of-page-call-to-action">
+    {% include "@components/calls-to-action/end-of-page-call-to-action.twig" with kitchen_sink_end_of_page_call_to_action %}
+  </div>
+{% endblock %}
