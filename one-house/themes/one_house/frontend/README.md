@@ -1,6 +1,6 @@
-# idfive pattern lab component library (starter version)
+# Pattern lab component library (starter version)
 
-The idfive component library is a front-end framework/starter, focusing on functionality over opinionated styles. It features purposeful and semantic HTML, minimal JavaScript, and SASS variables for easy customization.
+The component library is a front-end framework/starter, focusing on functionality over opinionated styles. It features purposeful and semantic HTML, minimal JavaScript, and SASS variables for easy customization.
 
 It is designed to be modified once downloaded, and all CSS/JS/etc to be modified per specific project. It acts as a starter, with common, accessible components present in a vanilla way, that can be used or not, and styles as needed.
 
@@ -8,9 +8,9 @@ It is designed to be modified once downloaded, and all CSS/JS/etc to be modified
 
 ### Scaffolding
 
-Depending on the project, this can be downloaded/cloned in several different places, but best practice is to keep the folder named "idfive-pattern-lab-starter", wherever you choose to utilize it.
+Depending on the project, this can be downloaded/cloned in several different places, but best practice is to keep the folder named "pattern-lab-starter", wherever you choose to utilize it.
 
-- Drupal: "/themes/custom/client_theme/idfive-pattern-lab-starter"
+- Drupal: "/themes/custom/client_theme/pattern-lab-starter"
 
 ### Remove .git tracking
 
@@ -20,9 +20,9 @@ Remove the repo git, as the desire is to commit all to your new client theme.
 
 ### Dependencies
 
-Dependencies need to be installed with [node/npm](https://docs.npmjs.com/getting-started/installing-node), and is best pinned to stable versions via [nvm](https://github.com/nvm-sh/nvm). More on [node usage at idfive](https://developers.idfive.com/#/front-end/node).
+Dependencies need to be installed with [node/npm](https://docs.npmjs.com/getting-started/installing-node), and is best pinned to stable versions via [nvm](https://github.com/nvm-sh/nvm).
 
-- `cd idfive-pattern-lab-starter`
+- `cd pattern-lab-starter`
 - `nvm use`
 - `npm install`
 
@@ -32,7 +32,7 @@ The component library includes [Pattern Lab](https://patternlab.io/) for compone
 
 ### To start the development server:
 
-- `cd idfive-pattern-lab-starter` (if not there)
+- `cd pattern-lab-starter` (if not there)
 - `nvm use` (if you haven't previously done so, this uses version 19.0.0, so you may need to install)
 - `npm run develop`
 
